@@ -1,0 +1,183 @@
+body, html {
+    font-family: "Lato", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    line-height: 1.8;
+}
+
+.login-button {
+    background-color: #009970;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #00b383;
+}
+
+.navbar {
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    border-radius: 30px;
+    padding: 0.5rem;
+    font-size: 13.5px;
+}
+
+/* Adjusted for vertical display */
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: #067054 !important;
+    margin-left: 3px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.navbar-toggler {
+    border: none !important;
+    margin-right: 3px;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+.nav-link .section-title {
+    display: block; /* This makes 'Section' appear on a new line */
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+@media (min-width: 1200px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+           /* first video css  */
+           .video-section {
+
+            position: static;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+           
+
+        }
+      
+        .vide_art {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* -webkit-transform: translate(-50%,-50%); */
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #FFF;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .video-overlay button {
+            background-color: #ffffff;
+            color: #000;
+            padding: 12px 24px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .video-overlay button:hover {
+            background-color: #00b383;
+        }
+
+        .sections
+        {
+        color: #ccaf96;
+        background-color:#ffffff    ; 
+        text-align:center;
+        padding:50px 80px;
+        text-align: justify;
+        }
+
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #6d857e;
+            text-align: center;
+            width: 100vw;
+            height: 20vh;
+            margin: 0;
+            padding: 0;
+        }
+        .footer-button {
+            
+            background-color: #ffffff;
+        
+        }
