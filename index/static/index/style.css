@@ -157,11 +157,12 @@ body, html {
 
         .sections
         {
-        color: #ccaf96;
+        color: #000000;
         background-color:#ffffff    ; 
-        text-align:center;
-        padding:50px 80px;
-        text-align: justify;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 5%;
+        margin-bottom: 5%;
         }
 
 
@@ -181,3 +182,25 @@ body, html {
             background-color: #ffffff;
         
         }
+
+
+        .leftside, .rightside{
+
+            height:75vh;
+            width: 100%;
+            
+        
+          }
+          .leftside
+          {
+            background: #ffffff;
+  
+            
+          }
+          .rightside
+          {
+            background-image:url("Resources/med1.png");
+            background-size:cover ;
+            background-position: center;
+            
+          }
