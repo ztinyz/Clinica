@@ -80,7 +80,7 @@ body, html {
     color: #000;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
     .nav-link::before {
         content: "";
         position: absolute;
