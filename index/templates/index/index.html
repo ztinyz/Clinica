@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
  
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
         * {
             font-family: 'Poppins', sans-serif;
@@ -293,45 +293,17 @@
   
       </div>
   </div>
-       
-  <div class="container-fluid my-5">
-    <div class="row">
-        <div class="col-12 m-auto">
-            <div class="owl-carousel owl-theme">
-                <div class="item mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" type="card-img-top">
-                        <div class="card-body">
-                            <div class="card-title text-center">
-                                <h4>Owl Carousel</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="{% static 'index/Resources/doctor_aest2.jpg' %}" type="card-img-top">
-                        <div class="card-body">
-                            <div class="card-title text-center">
-                                <h4>Owl Carousel</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="{% static 'index/Resources/doctor.jpg' %}" type="card-img-top">
-                        <div class="card-body">
-                            <div class="card-title text-center">
-                                <h4>Owl Carousel</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Carousel Section -->
+     
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12 m-auto">
                 <div class="owl-carousel owl-theme">
+                    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
                     <div class="item mb-4">
                         <div class="card border-0 shadow">
-                            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" type="card-img-top">
+                            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top">
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>Owl Carousel</h4>
@@ -339,22 +311,35 @@
                             </div>
                         </div>
                     </div>
-                <!-- Add more items as needed -->
+                    <div class="item mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="{% static 'index/Resources/doctor_aest2.jpg' %}" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title text-center">
+                                    <h4>Owl Carousel</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="{% static 'index/Resources/doctor.jpg' %}" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title text-center">
+                                    <h4>Owl Carousel</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more items as needed -->
+                </div>
             </div>
         </div>
     </div>
-</div>
+    
 
-
-   
- <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-    <footer class="footer" >
-        <a href="#home" class="w3-button footer-button w3-hover-pale-yellow w3-xlarge"><i class="fa fa-arrow-up w3-margin-right w3-creme"></i>To the top</a>
-  
-    </footer>
-<!-- Footer end. -->
-<script>
-    $(document).ready(function(){
+    <script>
+        
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 15,
@@ -370,9 +355,18 @@
                     items: 3
                 }
             }
-        });
-    });
-</script>   
+        })
+    </script>
+
+
+   
+ <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+    <footer class="footer" >
+        <a href="#home" class="w3-button footer-button w3-hover-pale-yellow w3-xlarge"><i class="fa fa-arrow-up w3-margin-right w3-creme"></i>To the top</a>
+  
+    </footer>
+<!-- Footer end. -->
+
 </body>
    
 </html>
