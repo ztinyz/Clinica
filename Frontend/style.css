@@ -28,6 +28,7 @@ body, html {
     margin: 20px;
     border-radius: 30px;
     padding: 0.5rem;
+    font-size: 13.5px;
 }
 
 /* Adjusted for vertical display */
@@ -71,12 +72,15 @@ body, html {
     font-weight: 500;
     position: relative;
 }
+.nav-link .section-title {
+    display: block; /* This makes 'Section' appear on a new line */
+}
 
 .nav-link:hover, .nav-link.active {
     color: #000;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1025px) {
     .nav-link::before {
         content: "";
         position: absolute;
@@ -129,7 +133,7 @@ body, html {
             transform: translate(-50%, -50%);
             text-align: center;
             color: #FFF;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
             padding: 20px;
             border-radius: 10px;
@@ -165,10 +169,15 @@ body, html {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #009970;
+            background-color: #6d857e;
             text-align: center;
             width: 100vw;
             height: 20vh;
             margin: 0;
             padding: 0;
+        }
+        .footer-button {
+            
+            background-color: #ffffff;
+        
         }
