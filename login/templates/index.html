@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome!</title>
+    </head>
+
+    <body>
+
+        <h1>Welcome, {{request.user.first_name}}</h1>
+        <a href="{% url 'login:logout' %}">Logout</a>
+    </body>
+</html>
