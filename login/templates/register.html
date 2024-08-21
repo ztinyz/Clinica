@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Register</title>
     </head>
 
     <body>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'login:register' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="username" name="username" required>
             <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" placeholder="password" name="password" required>
             <br>
-            <label for="password">Confirm Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" placeholder="password Confirm" name="password_confirm" required>
             <br>
-            <button type="submit">Create Account</button>
+            <input type="text" placeholder="Email" name="email" required>
+            <br>
+            <input type="submit" value="Register">
             <h1>Already have an account?</h1>
             <a href="{% url 'login:login' %}">Login</a>
         </form>
