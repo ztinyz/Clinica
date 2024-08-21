@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome!</title>
+        <title>Account</title>
     </head>
 
     <body>
 
-        <h1>Welcome, {{request.user.first_name}}</h1>
+        <h1>Welcome, {{request.user.username}}</h1>
+        <form action="{% url 'login:index' %}" method="post">
+            {% csrf_token %}
+            {{request.user.first_name}}
+            <input type="text" placeholder="First Name" name="first_name">
+            <br>
+            {{request.user.last_name}}
+            <input type="text" placeholder="Last Name" name="last_name">
+            <br>
+            {{request.user.username}}
+            <input type="text" placeholder="username" name="username">
+            <br>
+            <h1>Change Password</h1>
+            <input type="password" placeholder="password" name="password">
+            <br>
+            <input type="password" placeholder="password Confirm" name="password_confirm">
+            <br>
+            {{request.user.email}}
+            <input type="text" placeholder="New Email" name="email">
+            <br>
+            <input type="submit" value="Change">
+        </form>
+
+        {% if message %}
+        <div>{{ message }}</div>
+        {% endif %}
+
         <a href="{% url 'login:logout' %}">Logout</a>
     </body>
 </html>
