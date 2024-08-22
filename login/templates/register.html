@@ -20,6 +20,11 @@
             <br>
             <input type="text" placeholder="Email" name="email" required>
             <br>
+            <select name="user_type" required>
+                <option value="patient">Pacient</option>
+                <option value="doctor">Doctor</option>
+            </select>
+            <br>
             <input type="submit" value="Register">
             <h1>Already have an account?</h1>
             <a href="{% url 'login:login' %}">Login</a>

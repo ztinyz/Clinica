@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from .models import UserProfile
+from django.core.mail import send_mail
 # Create your views here.
 
 def login_view(request):
@@ -30,9 +32,10 @@ def register(request):
         #form data
         username = request.POST.get('username')
         password = request.POST.get('password')
-        email = request.POST.get('email')
         password_confirm = request.POST.get('password_confirm')
-        
+        email = request.POST.get('email')
+        user_type = request.POST.get('user_type')
+
         #login conditions:
         if password != password_confirm:
             return render(request, 'register.html', {
@@ -55,10 +58,24 @@ def register(request):
             user = User.objects.create_user(
                 username=username,
                 password=password,
-                email=email
+                email=email,
             )
             user.save()
+            user_profile = UserProfile(user=user, user_type=user_type)
+            user_profile.save()
             login(request, user)
+
+            # Send welcome email
+            subject = 'Welcome to Clinica'
+            message = 'Thank you for registering at Clinica. We are glad to have you!'
+            from_email = 'bardirobert1@gmail.com'
+            recipient_list = [email]
+            try:
+                send_mail(subject, message, from_email, recipient_list)
+            except Exception as e:
+                return render(request, 'register.html', {'message': 'Error sending email: ' + str(e)})
+
+
             return HttpResponseRedirect(reverse('login:index'))
         except Exception as e:
             return render(request, 'register.html', {
@@ -69,6 +86,7 @@ def register(request):
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login:login'))
+
     if request.method == 'POST':
         #form data
         username = request.POST.get('username')
@@ -77,7 +95,6 @@ def index(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
-        
         
         #login conditions:
         if password is not "":
@@ -115,5 +132,12 @@ def index(request):
             return render(request, 'index.html', {
                 'message': 'Error updating user: ' + str(e)
             })
-    return render(request, 'index.html')
-
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+        context = {
+            'user_type': user_profile.user_type,
+            'message': request.GET.get('message', '')
+        }
+        return render(request, 'index.html', context)    
+    except:    
+        return render(request, 'index.html')

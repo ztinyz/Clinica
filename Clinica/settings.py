@@ -41,6 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server
+EMAIL_PORT = 587  # Typically 587 for TLS, 465 for SSL
+EMAIL_USE_TLS = True  # Use TLS (True) or SSL (False)
+EMAIL_HOST_USER = 'bardirobert1@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'ejca cvmy swmk skgd'  # Your email password
+DEFAULT_FROM_EMAIL = 'bardirobert1@gmail.com'  # Default from email address
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
