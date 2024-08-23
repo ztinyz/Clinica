@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from .models import UserProfile
 from django.core.mail import send_mail
+import re
 # Create your views here.
 
 def login_view(request):
@@ -48,10 +49,24 @@ def register(request):
         if User.objects.filter(email=email).exists():
             return render(request, 'register.html', {
                 'message': 'Email already exists.'})
+        #email conditions
+        if not re.search(r'@', email):
+            return render(request, 'register.html', {
+                'message': 'Email not valid.'})
         
+        #Password conditions
+
         if len(password) < 8:
             return render(request, 'register.html', {
                 'message': 'Password must be at least 8 characters long.'})
+        
+        if not re.search(r'\d', password):
+            return render(request, 'register.html', {
+                'message': 'Password must contain at least one number.'})
+        
+        if not re.search(r'[.,!?/#]', password):
+            return render(request, 'register.html', {
+                'message': 'Password must contain at least one special character(.,!?/#).'})
         
         #account creation
         try:
@@ -141,3 +156,25 @@ def index(request):
         return render(request, 'index.html', context)    
     except:    
         return render(request, 'index.html')
+
+def reset(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if not User.objects.filter(email=email).exists():
+            return render(request, 'reset.html', {
+                'message': 'Email does not exist.'
+            })
+        user = User.objects.get(email=email)
+        new_password = User.objects.make_random_password()
+        user.set_password(new_password)
+        user.save()
+        subject = 'Password Reset'
+        message = 'Your new password is: ' + new_password
+        from_email = 'bardirobert1@gmail.com'
+        recipient_list = [email]
+        try:
+            send_mail(subject, message, from_email, recipient_list)
+            return render(request, 'login.html')
+        except Exception as e:
+            return render(request, 'password_reset.html', {'message': 'Error sending email: ' + str(e)})
+    return render(request, 'password_reset.html')
