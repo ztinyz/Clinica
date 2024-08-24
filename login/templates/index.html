@@ -7,7 +7,14 @@
     <body>
 
         <h1>Welcome, {{request.user.username}}</h1>
-        <p>User Type: {{ user_type }}</p>
+        <p>
+            User Type: {{ user_type }}
+        </p>
+        
+        <p>
+            Verified user: {{ email_verified }}
+        </p>
+
         <form action="{% url 'login:index' %}" method="post">
             {% csrf_token %}
             {{request.user.first_name}}

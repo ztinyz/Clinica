@@ -5,7 +5,10 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from .models import UserProfile
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
+from .models import UserProfile
 import re
+import uuid
 # Create your views here.
 
 def login_view(request):
@@ -27,6 +30,13 @@ def logout_view(request):
     return render(request, 'login.html', {
         'message': 'Logged out.'
     })
+
+def verify_email(request,token):
+    user_profile = get_object_or_404(UserProfile, verification_token=token)
+    user_profile.email_verified = True
+    user_profile.save()
+    return HttpResponse('Email verified successfully. You can now log in.')
+
 
 def register(request):
     if request.method == 'POST':
@@ -76,13 +86,14 @@ def register(request):
                 email=email,
             )
             user.save()
-            user_profile = UserProfile(user=user, user_type=user_type)
+            verification_token = str(uuid.uuid4())
+            user_profile = UserProfile(user=user, user_type=user_type, verification_token=verification_token)
             user_profile.save()
             login(request, user)
 
-            # Send welcome email
-            subject = 'Welcome to Clinica'
-            message = 'Thank you for registering at Clinica. We are glad to have you!'
+            # Send verification email
+            subject = 'Verify your email address'
+            message = f'Please click the link to verify your email address: http://127.0.0.1:8000/users/verify-email/{verification_token}/'
             from_email = 'bardirobert1@gmail.com'
             recipient_list = [email]
             try:
@@ -90,8 +101,7 @@ def register(request):
             except Exception as e:
                 return render(request, 'register.html', {'message': 'Error sending email: ' + str(e)})
 
-
-            return HttpResponseRedirect(reverse('login:index'))
+            return render(request, 'register.html', {'message': 'Please check your email to verify your account.'})
         except Exception as e:
             return render(request, 'register.html', {
                 'message': 'Error creating user: ' + str(e)
@@ -151,6 +161,7 @@ def index(request):
         user_profile = UserProfile.objects.get(user=request.user)
         context = {
             'user_type': user_profile.user_type,
+            'email_verified': user_profile.email_verified,
             'message': request.GET.get('message', '')
         }
         return render(request, 'index.html', context)    
@@ -178,3 +189,4 @@ def reset(request):
         except Exception as e:
             return render(request, 'password_reset.html', {'message': 'Error sending email: ' + str(e)})
     return render(request, 'password_reset.html')
+
