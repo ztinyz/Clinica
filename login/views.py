@@ -122,7 +122,7 @@ def index(request):
         email = request.POST.get('email')
         
         #login conditions:
-        if password is not "":
+        if password != "":
             if password != password_confirm:
                 return render(request, 'index.html', {
                     'message': 'Passwords do not match.'})
@@ -142,15 +142,15 @@ def index(request):
         #account updating
         try:
             user = request.user
-            if username is not "":
+            if username != "":
                 user.username = username
-            if email is not "":
+            if email != "":
                 user.email = email
-            if first_name is not "":
+            if first_name != "":
                 user.first_name = first_name
-            if last_name is not "":
+            if last_name != "":
                 user.last_name = last_name
-            if password is not "":
+            if password != "":
                 user.set_password(password)
             user.save()
         except Exception as e:
