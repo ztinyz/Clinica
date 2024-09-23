@@ -1,21 +1,260 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
     <head>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                /* Add your background pattern here */
+                --size: 80px; /* control the size */
+                --color: #fefae0;
+
+                --l: var(--color) 20%, #0000 0;
+                --bg: 35%, #606c38 0 45%, var(--color) 0;
+                background: linear-gradient(45deg, var(--l) 45%, var(--color) 0 70%, #0000 0),
+                    linear-gradient(-45deg, var(--l) var(--bg) 70%, #0000 0),
+                    linear-gradient(45deg, var(--color) var(--bg));
+                background-size: var(--size) var(--size);
+}
+             body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            }
+     
+            .form-container {
+            padding: 20px; /* Set equal padding on all sides */
+            
+            border-radius: 8px;
+            
+            max-width: 100%; /* Ensure responsiveness */
+            box-sizing: border-box;
+            }
+            .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 80vw;
+            max-height: 90vh;
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            }
+    
+            .title {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            color: #009970;
+            }
+    
+            .title::before {
+            width: 18px;
+            height: 18px;
+            }
+    
+            .title::after {
+            width: 18px;
+            height: 18px;
+            animation: pulse 1s linear infinite;
+            }
+    
+            .title::before,
+            .title::after {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 0px;
+            background-color: #009970;
+            }
+    
+            .message, 
+            .signin {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.7);
+            }
+    
+            .signin {
+            text-align: center;
+            }
+    
+            .signin a:hover {
+            text-decoration: underline #00b383;
+            }
+    
+            .signin a {
+            color: #00b383;
+            }
+    
+            .flex {
+            display: flex;
+            width: 100%;
+            gap: 5%;
+            }
+    
+            .form label {
+            position: relative;
+            }
+    
+            .form label .input {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 20px 05px 05px 10px;
+            outline: 0;
+            border: 1px solid rgba(105, 105, 105, 0.397);
+            border-radius: 10px;
+            }
+    
+            .form label .input + span {
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+            }
+    
+            .form label .input:placeholder-shown + span {
+            top: 12.5px;
+            font-size: 0.9em;
+            }
+    
+            .form label .input:focus + span,
+            .form label .input:valid + span {
+            color: #009970;
+            top: 0px;
+            font-size: 0.7em;
+            font-weight: 600;
+            }
+    
+            .input {
+            font-size: medium;
+            }
+    
+            .submit {
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            transform: .3s ease;
+            background-color: #009970;
+            }
+    
+            .submit:hover {
+            background-color: #00b383;
+            }
+    
+            @keyframes pulse {
+            from {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+    
+            to {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+            }
+
+            .header {
+            background-color: #009970;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            max-width: 80vw;
+        }
+
+        .paragraph {
+            background-color: #009970;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50px;
+            margin-top: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+       
+            
+
+        </style>
         <title>Account</title>
     </head>
 
     <body>
+        <div class="container">
+            <h1 class="header">Welcome, {{request.user.username}}</h1>
+            <p class="paragraph">
+                User Type: {{ user_type }}
+            </p>
+            <p class="paragraph">
+                Verified user: {{ email_verified }}
+            </p>
 
-        <h1>Welcome, {{request.user.username}}</h1>
-        <p>
-            User Type: {{ user_type }}
-        </p>
-        
-        <p>
-            Verified user: {{ email_verified }}
-        </p>
+        <div class="form-container">
+            <form class="form" action="{% url 'login:index' %}" method="post">
+                {% csrf_token %}
+                <p class="title">Your account </p>
+                <p class="message">Here is the dashboard for your account</p>
+                    <div class="flex">
+                        {{request.user.first_name}}
+                    <label>
+                        <input class="input"  type="text" placeholder="" name="first_name" required>
+                        <span>Firstname</span>
+                    </label>
+                        {{request.user.last_name}}
+                    <label>
+                        <input class="input"  type="text" placeholder="" name="last_name" required>
+                        <span>Lastname</span>
+                    </label>
+                </div>  
+                        
+                {{request.user.username}}
+                <label>
+                    <input class="input" type="text" placeholder="" name="username" required>
+                    <span>Username</span>
+                </label> 
+                <button class="submit" type="submit" value="Register" href="{% url 'login:logout' %}">Log out</button>
+                    
 
-        <form action="{% url 'login:index' %}" method="post">
+                <p class="signin">Change password</p>
+                <label>
+                    <input class="input" type="password" placeholder="" name="password" required>
+                    <span>Password</span>
+                </label>
+                <label>
+                    <input class="input" type="password" placeholder="" name="password_confirm" required>
+                    <span>Confirm password</span>
+                </label>
+                {{request.user.email}}
+                <label>
+                    <input class="input" type="text" placeholder="" name="email" required>
+                    <span>Email</span>
+                </label> 
+                <button class="submit" type="submit" value="Change" >Change</button>
+               
+            </form>
+            </div>
+
+            
+        <!-- <form action="{% url 'login:index' %}" method="post">
             {% csrf_token %}
             {{request.user.first_name}}
             <input type="text" placeholder="First Name" name="first_name">
@@ -35,12 +274,13 @@
             <input type="text" placeholder="New Email" name="email">
             <br>
             <input type="submit" value="Change">
-        </form>
+        </form> -->
 
         {% if message %}
         <div>{{ message }}</div>
         {% endif %}
 
-        <a href="{% url 'login:logout' %}">Logout</a>
+        <!-- <a href="{% url 'login:logout' %}">Logout</a> -->
+    </div>
     </body>
 </html>
