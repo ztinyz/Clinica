@@ -1,11 +1,13 @@
 {% load static %}
+{% load custom_filters %}
+
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
 
         <title>Prader-Wili</title>
-
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
 
@@ -97,6 +99,8 @@
 
 
 <body >
+
+
     <!-- Script section -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -297,7 +301,6 @@
           at nisi tempus, ac ultricies sapien mollis. Mauris fermentum
            at purus non tincidunt. Donec tellus urna, iaculis a ornare vitae,
             luctus a metus. Nam accumsan sodales sodales. Etiam et ex quis dui suscipit molestie sed et ante.</p>
-  
       </div>
   </div>
        
@@ -423,6 +426,11 @@
                 }
             });
         </script>
+
+    {% with path=request.get_full_path|split:"/" %}
+        {{ path.2 }}    <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+        <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
+    {% endwith %}
 </body>
    
 </html>
