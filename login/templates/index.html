@@ -215,40 +215,39 @@
                 <p class="message">Here is the dashboard for your account</p>
                     <div class="flex">
                         {{request.user.first_name}}
+
                     <label>
-                        <input class="input"  type="text" placeholder="" name="first_name" required>
+                        <input class="input"  type="text" placeholder="" name="first_name">
                         <span>Firstname</span>
                     </label>
                         {{request.user.last_name}}
                     <label>
-                        <input class="input"  type="text" placeholder="" name="last_name" required>
+                        <input class="input"  type="text" placeholder="" name="last_name">
                         <span>Lastname</span>
                     </label>
                 </div>  
                         
                 {{request.user.username}}
                 <label>
-                    <input class="input" type="text" placeholder="" name="username" required>
+                    <input class="input" type="text" placeholder="" name="username">
                     <span>Username</span>
                 </label> 
-                <button class="submit" type="submit" value="Register" href="{% url 'login:logout' %}">Log out</button>
-                    
-
+                <button class="submit" type="submit" value="Register" href="{% url 'login:logout' %}" name="Logout">Log out</button>
                 <p class="signin">Change password</p>
                 <label>
-                    <input class="input" type="password" placeholder="" name="password" required>
+                    <input class="input" type="password" placeholder="" name="password">
                     <span>Password</span>
                 </label>
                 <label>
-                    <input class="input" type="password" placeholder="" name="password_confirm" required>
+                    <input class="input" type="password" placeholder="" name="password_confirm">
                     <span>Confirm password</span>
                 </label>
                 {{request.user.email}}
                 <label>
-                    <input class="input" type="text" placeholder="" name="email" required>
+                    <input class="input" type="text" placeholder="" name="email">
                     <span>Email</span>
                 </label> 
-                <button class="submit" type="submit" value="Change" >Change</button>
+                <button class="submit" type="submit" value="Change" name="Change">Change</button>
                
             </form>
             </div>

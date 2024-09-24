@@ -111,16 +111,17 @@ def register(request):
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login:login'))
-
     if request.method == 'POST':
         #form data
         username = request.POST.get('username')
+        Logout = request.POST.get('Logout')
         password = request.POST.get('password')
         password_confirm = request.POST.get('password_confirm')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
-        
+        if Logout:
+            return HttpResponseRedirect(reverse('login:logout'))
         #login conditions:
         if password != "":
             if password != password_confirm:
@@ -138,7 +139,6 @@ def index(request):
             return render(request, 'index.html', {
                 'message': 'Email already exists.'})
         
-
         #account updating
         try:
             user = request.user
