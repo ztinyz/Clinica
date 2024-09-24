@@ -40,6 +40,10 @@
         body {
             background: hsl(0, 0, 94%);
         }
+        .navbar-red {
+            /* background-color: rgb(230, 240, 172) !important; */
+            border: 2px solid #000000;
+        }
     </style>
 
 </head>
@@ -59,7 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
     <!-- Navbar (sit on top) -->
    
-    <nav class="navbar navbar-expand-xl fixed-top">
+    <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand me-auto" href="{% url 'index' %}">Logo</a>
             
@@ -363,6 +367,16 @@
                     }
                 }
             });
+        });
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > window.innerHeight/1.2) {
+                navbar.classList.add('navbar-red');
+            } else {
+                navbar.classList.remove('navbar-red');
+            }
         });
     </script>
 </body>
