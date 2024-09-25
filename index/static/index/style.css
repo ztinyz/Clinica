@@ -7,6 +7,25 @@ body, html {
     line-height: 1.8;
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    height: 280px;
+}
+
+body {
+    background: hsl(0, 0, 94%);
+}
+.navbar-red {
+    /* background-color: rgb(230, 240, 172) !important; */
+    border: 2px solid #000000;
+}
+
 .login-button {
     background-color: #009970;
     color: #fff;
@@ -193,7 +212,7 @@ body, html {
           }
           .leftside
           {
-            background: #ffffff;
+            background: #efefef;
   
             
           }
@@ -205,4 +224,68 @@ body, html {
             
           }
 
-          
+          .photo-section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Ensure the image doesn't overflow */
+        }
+        
+        .photo_art {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire section */
+            display: block;
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        
+        .photo-overlay p {
+            margin: 10px 0;
+        }
+        
+        .photo-overlay button {
+            background-color: #009970;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .photo-overlay button:hover {
+            background-color: #00b383;
+        }
+
+          .footer {
+            background-color: #009970;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        .container2 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .carousel{
+            background-color: #efefef;
+            padding-top: 1%;
+        }
+   
