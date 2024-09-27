@@ -10,7 +10,7 @@ def ghiduri(request):
     return render(request, 'index/ghiduri.html')
 
 def protocoale(request):
-    return render(request, 'index/template.html')
+    return render(request, 'index/Protocoale.html')
 
 def diagnostic(request):
     return render(request, 'index/diagnostic.html')
