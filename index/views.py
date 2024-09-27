@@ -7,13 +7,13 @@ def index(request):
 
 ## Prader-Wili
 def ghiduri(request):
-    return render(request, 'index/template.html')
+    return render(request, 'index/ghiduri.html')
 
 def protocoale(request):
     return render(request, 'index/template.html')
 
 def diagnostic(request):
-    return render(request, 'index/template.html')
+    return render(request, 'index/diagnostic.html')
 
 def tratament_gh(request):
     return render(request, 'index/template.html')
