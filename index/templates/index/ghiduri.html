@@ -28,6 +28,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
  
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        ul li a:hover {
+            background-color: #e7f3ff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            color: #007BFF;
+        }
+        ul li a::before {
+            content: "🔗";
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Styled Links</title>
 
 
 </head>
@@ -232,112 +269,20 @@
 <div style="position: relative; ">
     <div class="sections">
       <h3 style="text-align:center; font-size:2rem;">Information</h3>
-      <p class="text-justify" style="font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Nam vehicula lectus consectetur blandit fermentum. Aliquam 
-         in tempus justo, sit amet viverra enim. Donec at tortor vitae 
-         tellus rhoncus vestibulum eu ut felis. Curabitur feugiat nisl
-          at nisi tempus, ac ultricies sapien mollis. Mauris fermentum
-           at purus non tincidunt. Donec tellus urna, iaculis a ornare vitae,
-            luctus a metus. Nam accumsan sodales sodales. Etiam et ex quis dui suscipit molestie sed et ante.</p>
-      </div>
-  </div>
-       
-  <div class="row g-0">
-    <div class="col-12 col-md-6 g-0">
-      <div class="leftside " style="padding-top: 5%;">
-        <!-- Content for the left side -->
-        <h1 class="text-center" style="font-size: 2rem;"> ABOUT ME</h1>
-        <p class="text-justify " style="font-size: 1.5rem; padding-left: 10%; padding-top: 0%; padding-right: 10%; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Nam vehicula lectus consectetur blandit fermentum. Aliquam 
-          in tempus justo, sit amet viverra enim. Donec at tortor vitae 
-          tellus rhoncus vestibulum eu ut felis. Curabitur feugiat nisl
-           at nisi tempus, ac ultricies sapien mollis. Mauris fermentum
-            at purus non tincidunt. Donec tellus urna, iaculis a ornare vitae,
-             luctus a metus. Nam accumsan sodales sodales. Etiam et ex quis dui suscipit molestie sed et ante.</p>
+      <p class="text-justify" style="font-size: 1.5rem;">
 
-      </div>
-    </div>
-    <div class="col-12 col-md-6 g-0">
-      <div class="rightside  ">
+        <ul>
+            <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK1330/" target="_blank">NCBI Bookshelf: NBK1330</a></li>
+            <li><a href="https://www.has-sante.fr/upload/docs/application/pdf/2021-10/1_texte_pnds_spw.pdf" target="_blank">HAS Santé: 1 Texte PNDS SPW</a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/18697869/" target="_blank">PubMed: 18697869</a></li>
+            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6418440/" target="_blank">NCBI PMC: PMC6418440</a></li>
+            <li><a href="https://ipwso.org/information-for-medical-professionals/guides-for-doctors-consensus-documents/" target="_blank">IPWSO: Guides for Doctors Consensus Documents</a></li>
+        </ul>
         
-        <!-- Content for the right side -->
-      </div>
-    </div>
-  </div>
-
-
-  
-
-  
-  <div style="position: relative; ">
-    <div class="sections">
-      <h3 style="text-align:center; font-size:2rem;">Information</h3>
-      <p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Nam vehicula lectus consectetur blandit fermentum. Aliquam 
-         in tempus justo, sit amet viverra enim. Donec at tortor vitae 
-         tellus rhoncus vestibulum eu ut felis. Curabitur feugiat nisl
-          at nisi tempus, ac ultricies sapien mollis. Mauris fermentum
-           at purus non tincidunt. Donec tellus urna, iaculis a ornare vitae,
-            luctus a metus. Nam accumsan sodales sodales. Etiam et ex quis dui suscipit molestie sed et ante.</p>
-  
+      </p>
       </div>
   </div>
-      <!-- Carousel Section -->
-       <div class="carousel">
-      <div class="container mt-5">
-        <div class="owl-carousel owl-theme mt-5">
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Ghiduri</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Protocoale</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor_aest2.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Diagnostic</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor2.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Tratament GH</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/med1.png' %}" class="card-img-top">
-                        <h5 class="card-title">Tratament</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
+    
 <section class="game-section">
     <h2 class="line-title">Trending Medical Topics</h2>
     <div class="owl-carousel custom-carousel owl-theme">
