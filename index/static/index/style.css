@@ -218,8 +218,10 @@ body {
           }
           .rightside
           {
-           
-            background: #b0b0b0;
+            background-image:url("Resources/med1.png");
+            background-size:cover ;
+            background-position: center;
+            
           }
 
           .photo-section {
