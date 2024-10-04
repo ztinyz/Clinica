@@ -20,14 +20,14 @@ def login_view(request):
             login(request, user)
             return HttpResponseRedirect(reverse('login:index'))
         else:
-            return render(request, 'login.html', {
+            return render(request, 'login/login.html', {
                 'message': 'Invalid credentials.'
             })
-    return render(request, 'login.html')
+    return render(request, 'login/login.html')
 
 def logout_view(request):
     logout(request)
-    return render(request, 'login.html', {
+    return render(request, 'login/login.html', {
         'message': 'Logged out.'
     })
 
@@ -46,36 +46,37 @@ def register(request):
         password_confirm = request.POST.get('password_confirm')
         email = request.POST.get('email')
         user_type = request.POST.get('user_type')
-
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
         #login conditions:
         if password != password_confirm:
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Passwords do not match.'})
         
         if User.objects.filter(username=username).exists():
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Username already exists.'})
         
         if User.objects.filter(email=email).exists():
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Email already exists.'})
         #email conditions
         if not re.search(r'@', email):
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Email not valid.'})
         
         #Password conditions
 
         if len(password) < 8:
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Password must be at least 8 characters long.'})
         
         if not re.search(r'\d', password):
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Password must contain at least one number.'})
         
         if not re.search(r'[.,!?/#]', password):
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Password must contain at least one special character(.,!?/#).'})
         
         #account creation
@@ -84,6 +85,8 @@ def register(request):
                 username=username,
                 password=password,
                 email=email,
+                first_name=first_name,
+                last_name=last_name
             )
             user.save()
             verification_token = str(uuid.uuid4())
@@ -99,14 +102,14 @@ def register(request):
             try:
                 send_mail(subject, message, from_email, recipient_list)
             except Exception as e:
-                return render(request, 'register.html', {'message': 'Error sending email: ' + str(e)})
+                return render(request, 'login/register.html', {'message': 'Error sending email: ' + str(e)})
 
-            return render(request, 'register.html', {'message': 'Please check your email to verify your account.'})
+            return render(request, 'login/register.html', {'message': 'Please check your email to verify your account.'})
         except Exception as e:
-            return render(request, 'register.html', {
+            return render(request, 'login/register.html', {
                 'message': 'Error creating user: ' + str(e)
             })
-    return render(request, 'register.html')
+    return render(request, 'login/register.html')
 
 def index(request):
     if not request.user.is_authenticated:
@@ -125,18 +128,18 @@ def index(request):
         #login conditions:
         if password != "":
             if password != password_confirm:
-                return render(request, 'index.html', {
+                return render(request, 'login/index.html', {
                     'message': 'Passwords do not match.'})
             if len(password) < 8:
-                return render(request, 'index.html', {
+                return render(request, 'login/index.html', {
                     'message': 'Password must be at least 8 characters long.'})
             
         if User.objects.filter(username=username).exists():
-            return render(request, 'index.html', {
+            return render(request, 'login/index.html', {
                 'message': 'Username already exists.'})
         
         if User.objects.filter(email=email).exists():
-            return render(request, 'index.html', {
+            return render(request, 'login/index.html', {
                 'message': 'Email already exists.'})
         
         #account updating
@@ -154,7 +157,7 @@ def index(request):
                 user.set_password(password)
             user.save()
         except Exception as e:
-            return render(request, 'index.html', {
+            return render(request, 'login/index.html', {
                 'message': 'Error updating user: ' + str(e)
             })
     try:
@@ -164,15 +167,15 @@ def index(request):
             'email_verified': user_profile.email_verified,
             'message': request.GET.get('message', '')
         }
-        return render(request, 'index.html', context)    
+        return render(request, 'login/index.html', context)    
     except:    
-        return render(request, 'index.html')
+        return render(request, 'login/index.html')
 
 def reset(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         if not User.objects.filter(email=email).exists():
-            return render(request, 'reset.html', {
+            return render(request, 'login/reset.html', {
                 'message': 'Email does not exist.'
             })
         user = User.objects.get(email=email)
@@ -185,8 +188,8 @@ def reset(request):
         recipient_list = [email]
         try:
             send_mail(subject, message, from_email, recipient_list)
-            return render(request, 'login.html')
+            return render(request, 'login/login.html', {'message': 'Please check your email for your temporary password.'})
         except Exception as e:
-            return render(request, 'password_reset.html', {'message': 'Error sending email: ' + str(e)})
-    return render(request, 'password_reset.html')
+            return render(request, 'login/password_reset.html', {'message': 'Error sending email: ' + str(e)})
+    return render(request, 'login/password_reset.html')
 

@@ -1,9 +1,11 @@
+{% extends 'index/navbar.html'%}
 {% load static %}
 {% load custom_filters %}
 
 
 <!DOCTYPE html>
 <html lang="en">
+    {% block content %}
     <head>
 
         <title>Prader-Wili</title>
@@ -35,7 +37,7 @@
 
 <body >
 
-
+    
     <!-- Script section -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -49,167 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
     <!-- Navbar (sit on top) -->
    
-    <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand me-auto" href="{% url 'index' %}">Logo</a>
-            
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                 <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Sindromul</span> Prader-Wili
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="{% url 'ghiduri' %}">Ghiduri</a></li>
-                                <li><a class="dropdown-item" href="{% url 'protocoale' %}">Protocoale</a></li>
-                                <li><a class="dropdown-item" href="{% url 'diagnostic' %}">Diagnostic</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tratament_gh' %}">Tratament GH</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tratament' %}">Tratament</a></li>
-                                <li><a class="dropdown-item" href="{% url 'evaluare_initiala' %}">Evaluare inițială și monitorizare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'laboratoare_diagnostic' %}">Laboratoare diagnostic</a></li>
-                                <li><a class="dropdown-item" href="{% url 'clinici_ingrijire' %}">Clinici îngrijire</a></li>
-                                <li><a class="dropdown-item" href="{% url 'alerte' %}">Alerte</a></li>
-                            </ul>
-                        </li>
-                        <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Obezitati</span> Rare
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="{% url 'patologii' %}">Patologii</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tratament_obezitati' %}">Tratament</a></li>
-                                <li><a class="dropdown-item" href="{% url 'monitorizare' %}">Monitorizare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'laboratoare_diagnostic_obezitati' %}">Laboratoare diagnostic</a></li>
-                                <li><a class="dropdown-item" href="{% url 'clinici_ingrijire_obezitati' %}">Clinici îngrijire</a></li>
-                            </ul>
-                        </li>
-                        <!-- Services Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Traseul</span> Pacientului
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                                <li><a class="dropdown-item" href="{% url 'centre_de_ingrijire' %}">Centre de îngrijire</a></li>
-                                <li><a class="dropdown-item" href="{% url 'asociatii_de_pacienti' %}">Asociații de pacienți</a></li>
-                                <li><a class="dropdown-item" href="{% url 'medico_social' %}">Medico-social</a></li>
-                                <li><a class="dropdown-item" href="{% url 'viata_scolara' %}">Viața școlară</a></li>
-                                <li><a class="dropdown-item" href="{% url 'viata_sociala' %}">Viața socială</a></li>
-                                <li><a class="dropdown-item" href="{% url 'proiecte_de_viata' %}">Proiecte de viață</a></li>
-                                <li><a class="dropdown-item" href="{% url 'formare_profesionala' %}">Formare profesională</a></li>
-                                <li><a class="dropdown-item" href="{% url 'hobby' %}">Hobby</a></li>
-                                <li><a class="dropdown-item" href="{% url 'servicii_sociale' %}">Servicii sociale</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tranzitia_adolescent_adult' %}">Tranziția adolescent adult</a></li>
-                                <li><a class="dropdown-item" href="{% url 'urgente_si_riscuri_de_decompensare' %}">Urgențe și riscuri de decompensare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'calatorii' %}">Călătorii</a></li>
-                                <li><a class="dropdown-item" href="{% url 'screening' %}">Screening</a></li>
-                                <li><a class="dropdown-item" href="{% url 'forum_de_discutii' %}">Forum de discuții</a></li>
-                                <li><a class="dropdown-item" href="{% url 'cercetare_clinica' %}">Cercetare clinică</a></li>
-                                <li><a class="dropdown-item" href="{% url 'centre_de_expertiza' %}">Centre de expertiză</a></li>
-                                <li><a class="dropdown-item" href="{% url 'servici_medicale' %}">Servici medicale</a></li>
-                                <li><a class="dropdown-item" href="{% url 'educatia_familiei_si_a_institutiilor' %}">Educația familiei și a instituțiilor</a></li>
-                                <li><a class="dropdown-item" href="{% url 'comportament' %}">Comportament</a></li>
-                            </ul>
-                        </li>
-                        <!-- Portfolio Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Educatia terapeutica</span> a pacientului
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                                <li><a class="dropdown-item" href="{% url 'instrumente_dieta' %}">Instrumente dietă</a></li>
-                                <li><a class="dropdown-item" href="{% url 'workshop' %}">Workshop</a></li>
-                                <li><a class="dropdown-item" href="{% url 'retete_culinare' %}">Rețete culinare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'ingrijire' %}">Îngrijire</a></li>
-                                <li><a class="dropdown-item" href="{% url 'aspecte_psihologice' %}">Aspecte psihologice</a></li>
-                                <li><a class="dropdown-item" href="{% url 'activitate_fizica' %}">Activitate fiziză</a></li>
-                                <li><a class="dropdown-item" href="{% url 'instrumente_practice_ingrijire' %}">Instrumente practice de îngrijire</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tratament_hormon_crestere' %}">Tratamentul cu hormon de creștere</a></li>
-                                <li><a class="dropdown-item" href="{% url 'linkuri_utile' %}">Link-uri utile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'recomandari' %}">Recomandări</a></li>
-                            </ul>
-                        </li>
-                        <!-- Contact Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Echipa</span> Multidisciplinara
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                                <li><a class="dropdown-item" href="{% url 'profesionisti_implicati' %}">Profesioniști implicați</a></li>
-                                <li><a class="dropdown-item" href="{% url 'plan_actiune' %}">Plan de acțiune</a></li>
-                                <li><a class="dropdown-item" href="{% url 'grupuri_lucru' %}">Grupuri de lucru</a></li>
-                                <li><a class="dropdown-item" href="{% url 'plan_intalniri' %}">Planul întâlnirilor</a></li>
-                                <li><a class="dropdown-item" href="{% url 'cpms' %}">CPMS</a></li>
-                                <li><a class="dropdown-item" href="{% url 'plan_boli_rare' %}">Planul de Boli Rare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'parteneri' %}">Parteneri</a></li>
-                            </ul>
-                        </li>  
-                        <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Formare si</span> Informare
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="{% url 'evenimente' %}">Evenimente</a></li>
-                                <li><a class="dropdown-item" href="{% url 'newsletter' %}">Newsletter</a></li>
-                                <li><a class="dropdown-item" href="{% url 'radio_noro' %}">Radio Noro</a></li>
-                                <li><a class="dropdown-item" href="{% url 'webinar' %}">Webinar</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tutoriale' %}">Tutoriale</a></li>
-                                <li><a class="dropdown-item" href="{% url 'podcast' %}">Podcast</a></li>
-                                <li><a class="dropdown-item" href="{% url 'video' %}">Video</a></li>
-                                <li><a class="dropdown-item" href="{% url 'formare_pentru_medici' %}">Formare pentru medici</a></li>
-                                <li><a class="dropdown-item" href="{% url 'formare_pentru_pacienti' %}">Formare pentru pacienți</a></li>
-                            </ul>
-                        </li>
-                        <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title"></span> Cercetare
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="{% url 'actualitati' %}">Actualități</a></li>
-                                <li><a class="dropdown-item" href="{% url 'tipuri_de_cercetare' %}">Tipuri de cercetare</a></li>
-                                <li><a class="dropdown-item" href="{% url 'cercetare_europa' %}">Cercetare Europa</a></li>
-
-                            </ul>
-                        </li>
-                        <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Tratamentul</span> cu GH
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                <li><a class="dropdown-item" href="{% url 'protocol_de_tratament' %}">Protocol de tratament</a></li>
-                                <li><a class="dropdown-item" href="{% url 'informatii_despre_medicament' %}">Informații despre medicament</a></li>
-                                <li><a class="dropdown-item" href="{% url 'protocoale_terapeutice' %}">Protocoale terapeutice</a></li>
-                                <li><a class="dropdown-item" href="{% url 'monitorizarea_tratamentului' %}">Monitorizarea tratamentului</a></li>
-
-
-                            </ul>
-                        </li>
-                        <!-- About Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="section-title">Registru</span> National
-                            </a>
-                            
-                        </li>                                                
-                
-                    </ul>            
-                </div>
-            </div>
-            <a href="{% url 'login:login' %}" class="login-button">Login</a>
-            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+ 
 
 
 
@@ -430,7 +272,7 @@
             });
         </script>
 
- 
+        
 </body>
-   
+   {% endblock %}
 </html>

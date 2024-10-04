@@ -1,0 +1,86 @@
+{% extends 'login/navbar.html'%}
+<!DOCTYPE html>
+<html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
+    <head>
+        <title>Register</title>
+    </head>
+    
+    <body>
+    {%block content%}
+    <div class="fsec">
+        <div class="form-container">
+        <form class="form" action="{% url 'login:register' %}" method="post">
+            {% csrf_token %}
+            <p class="title">Register </p>
+            {% if message %}
+            <div>{{ message }}</div>
+            {% endif %} 
+            <p class="message">Signup now and get full access to our app. </p>
+                <div class="flex">
+                <label>
+                    <input class="input"  type="text" placeholder="" name="firstname" required>
+                    <span>Firstname</span>
+                </label>
+
+                <label>
+                     <input class="input"  type="text" placeholder="" name="lastname" required>
+                    <span>Lastname</span>
+                </label>
+            </div>  
+                    
+            <label>
+                <input class="input" type="text" placeholder="" name="email" required>
+                <span>Email</span>
+            </label> 
+            <label>
+                <input class="input" type="text" placeholder="" name="username" required>
+                <span>Username</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password" placeholder="" name="password" required>
+                <span>Password</span>
+            </label>
+            <label>
+                <input class="input" type="password" placeholder="" name="password_confirm" required>
+                <span>Confirm password</span>
+            </label>
+            <label>
+                <select class="input" name="user_type" required>
+                    <option value="patient">Pacient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+            </label>
+            <button class="submit" type="submit" value="Register" >Submit</button>
+            <p class="signin">Already have an acount ? <a href="{% url 'login:login' %}">Login</a> </p>
+        </form>
+        </div>
+    </div>
+
+
+        <!-- <form action="{% url 'login:register' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="username" name="username" required>
+            <br>
+            <input type="password" placeholder="password" name="password" required>
+            <br>
+            <input type="password" placeholder="password Confirm" name="password_confirm" required>
+            <br>
+            <input type="text" placeholder="Email" name="email" required>
+            <br>
+            <select name="user_type" required>
+                <option value="patient">Pacient</option>
+                <option value="doctor">Doctor</option>
+            </select>
+            <br>
+            <input type="submit" value="Register">
+            <h1>Already have an account?</h1>
+            <a href="{% url 'login:login' %}">Login</a>
+        </form> -->
+    </div>
+    {%endblock%}
+    </body>
+</html>
