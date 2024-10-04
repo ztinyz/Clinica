@@ -54,6 +54,16 @@
                     <input class="input" type="text" placeholder="{{request.user.email}}" name="email">
                     <span>Email</span>
                 </label> 
+                {% if user_type == "patient" %}
+                    <label>
+                        <input class="input" type="text" placeholder="{{code}}" name="code">
+                        <span>Assignment Code</span>
+                    </label> 
+                        Your doctor with the same code: {{doctor}}
+                {% else %}
+                        Your code is: {{code}}
+                {% endif %}
+                
                 <button class="submit" type="submit" value="Change" name="Change">Change</button>
                 <button class="submit" type="submit" value="Register" href="{% url 'login:logout' %}" name="Logout">Log out</button>
             </form>

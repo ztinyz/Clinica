@@ -9,8 +9,10 @@ from django.shortcuts import get_object_or_404
 from .models import UserProfile
 import re
 import uuid
-# Create your views here.
+import random
+import string
 
+# Create your views here.
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -48,6 +50,13 @@ def register(request):
         user_type = request.POST.get('user_type')
         first_name = request.POST.get('firstname')
         last_name = request.POST.get('lastname')
+        if user_type == 'doctor':
+            code = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+        else:
+            code = '0000'
+       # while User.objects.filter(code=code).exists():
+        #    code = generate_random_sequence()
+
         #login conditions:
         if password != password_confirm:
             return render(request, 'login/register.html', {
@@ -90,7 +99,7 @@ def register(request):
             )
             user.save()
             verification_token = str(uuid.uuid4())
-            user_profile = UserProfile(user=user, user_type=user_type, verification_token=verification_token)
+            user_profile = UserProfile(user=user, user_type=user_type, code=code, verification_token=verification_token)
             user_profile.save()
             login(request, user)
 
@@ -116,6 +125,7 @@ def index(request):
         return HttpResponseRedirect(reverse('login:login'))
     if request.method == 'POST':
         #form data
+        code = request.POST.get('code')
         username = request.POST.get('username')
         Logout = request.POST.get('Logout')
         password = request.POST.get('password')
@@ -145,6 +155,10 @@ def index(request):
         #account updating
         try:
             user = request.user
+            if code != "":
+                user_profile = UserProfile.objects.get(user=user)
+                user_profile.code = code
+                user_profile.save()
             if username != "":
                 user.username = username
             if email != "":
@@ -162,9 +176,13 @@ def index(request):
             })
     try:
         user_profile = UserProfile.objects.get(user=request.user)
+        patient_code = user_profile.code
+        doctor = UserProfile.objects.filter(user_type='doctor', code=patient_code).first()
         context = {
             'user_type': user_profile.user_type,
             'email_verified': user_profile.email_verified,
+            'code': user_profile.code,
+            'doctor': doctor,
             'message': request.GET.get('message', '')
         }
         return render(request, 'login/index.html', context)    
