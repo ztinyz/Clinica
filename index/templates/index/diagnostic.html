@@ -227,7 +227,59 @@
             </div>
         </div>
     </div>
-   
+   <!-- Carousel Section -->
+   <div class="carousel">
+    <div class="container mt-5">
+      <div class="owl-carousel owl-theme mt-5">
+          <div class="item">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top">
+                      <h5 class="card-title">Ghiduri</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <img src="{% static 'index/Resources/doctor.jpg' %}" class="card-img-top">
+                      <h5 class="card-title">Protocoale</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <img src="{% static 'index/Resources/doctor_aest2.jpg' %}" class="card-img-top">
+                      <h5 class="card-title">Diagnostic</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <img src="{% static 'index/Resources/doctor2.jpg' %}" class="card-img-top">
+                      <h5 class="card-title">Tratament GH</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <img src="{% static 'index/Resources/med1.png' %}" class="card-img-top">
+                      <h5 class="card-title">Tratament</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 
 
 
@@ -279,7 +331,33 @@
         <p>&copy; 2024 LRC. All rights reserved.</p>
     </div>
 </footer>
+<!-- styleing carusel-->
+<style>
+    .carousel .card {
+        display: flex;             /* Use flexbox for better alignment */
+        flex-direction: column;    /* Stack content vertically */
+        justify-content: space-between; /* Distribute space between items */
+        width: 100%;               /* Ensure cards take full width available */
+        height: auto;              /* Allow height to be determined by content */
+        overflow: hidden;          /* Hide any overflow from images */
+        margin-bottom: 20px;       /* Space between cards */
+    }
     
+    .carousel .card-img-top {
+        max-width: 100%;           /* Prevent images from exceeding card width */
+        height: 200px;             /* Set a fixed height for images */
+        object-fit: cover;         /* Maintain aspect ratio without distortion */
+    }
+    
+    .card-body {
+        padding: 10px;             /* Add padding around card content */
+    }
+    
+    .card-title {
+        font-size: 1.25rem;        /* Adjust font size for titles */
+        margin: 10px 0;            /* Add some margin to the title */
+    }
+    </style>
     <!-- Initialize Owl Carousel -->
     <script>
                $(".custom-carousel").owlCarousel({
