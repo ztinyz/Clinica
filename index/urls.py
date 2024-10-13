@@ -73,4 +73,5 @@ urlpatterns = [
     path('Tratamentul_GH/informatii-despre-medicament/', views.informatii_despre_medicament, name='informatii_despre_medicament'),
     path('Tratamentul_GH/protocoale-terapeutice/', views.protocoale_terapeutice, name='protocoale_terapeutice'),
     path('Tratamentul_GH/monitorizarea-tratamentului/', views.monitorizarea_tratamentului, name='monitorizarea_tratamentului'),
+    path('Test/', views.Test, name='Test'),
 ]

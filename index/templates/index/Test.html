@@ -1,13 +1,15 @@
 {% extends 'index/navbar.html'%}
 {% load static %}
+{% load custom_filters %}
+
 
 <!DOCTYPE html>
 <html lang="en">
-    {% block content %}
+    {%block content%}
     <head>
 
         <title>Prader-Wili</title>
-
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
 
@@ -28,12 +30,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
  
+    <style>
+        /* Scoped styles for the cute links container */
+        .cute-links-container {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .cute-links-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cute-links-container ul li {
+            margin: 10px 0;
+        }
+        .cute-links-container ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .cute-links-container ul li a:hover {
+            background-color: #e7f3ff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            color: #007BFF;
+        }
+        .cute-links-container ul li a::before {
+            content: "🔗";
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Styled Links</title>
+    
 
 
 </head>
 
 
 <body >
+
     <!-- Script section -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -46,16 +88,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
-
-
-    <div class="video-section" id="home">
-        <video class="video_art" autoplay muted loop>
-            <source src="{% static 'index/Resources/video.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay">
-            <p>Centrul Noro</p>
-            <p>Prader Wili</p>
+    <div class="photo-section" id="home">
+        <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
+        <div class="photo-overlay">
+            <p>Prader-Wili</p>
+            <p>   {% with path=request.get_full_path|split:"/" %}
+                {{ path.2 }}    <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+                <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
+            {% endwith %}</p>
         </div>
     </div>
 
@@ -65,114 +105,28 @@
    
 <div style="position: relative; ">
     <div class="sections">
-      <h3 style="text-align:center; font-size:2rem;">General Information</h3>
-      <p class="text-justify" style="font-size: 1.5rem;">Prader-Willisyndrome is a rare genetic disorder that results in a number of physical, 
-        mental and behavioral problems. A key feature of Prader-Willi syndrome is a constant sense of hunger that usually begins at about 2 years of age.</p>
-  
-      </div>
-  </div>
-       
-  <div class="row g-0">
-    <div class="col-12 col-md-6 g-0">
-      <div class="leftside " style="padding-top: 5%;">
-        <!-- Content for the left side -->
-        <h1 class="text-center" style="font-size: 2rem;"> ABOUT US</h1>
-        <p class="text-justify " style="font-size: 1.5rem; padding-left: 10%; padding-top: 0%; padding-right: 10%; ">Centrul Pilot de Referință pentru Boli Rare – NoRo este un centru resursă care oferă servicii terapeutice și medicale. Scopul său principal este de a oferi servicii de îngrijire integrată, 
-            de sănătate și sociale persoanelor afectate de boli rare și familiilor acestora, prin facilitarea accesului la îngrijire, 
-            informații, cercetare și educație.</p>
+      <h3 style="text-align:center; font-size:2rem;">Ghiduri utile</h3>
+      <p class="text-justify" style="font-size: 1.5rem;">
 
+        <div style="position: relative; "></div>
+        <div class="sections">
+          <h3 style="text-align:center; font-size:2rem;">Information</h3>
+          <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
+      
+          </div>
       </div>
-    </div>
-    <div class="col-12 col-md-6 g-0">
-      <div class="rightside  ">
         
-        <!-- Content for the right side -->
-      </div>
-    </div>
-  </div>
-
-
-  
-
-  
-  <div style="position: relative; ">
-    <div class="sections">
-      <h3 style="text-align:center; font-size:2rem;">Information</h3>
-      <p style="font-size: 1.5rem;">Other type of info relevant for the main page of the site</p>
-  
+      </p>
       </div>
   </div>
-      <!-- Carousel Section -->
-       <div class="carousel">
-      <div class="container mt-5">
-        <div class="owl-carousel owl-theme mt-5">
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Ghiduri</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Protocoale</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor_aest2.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Diagnostic</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/doctor2.jpg' %}" class="card-img-top">
-                        <h5 class="card-title">Tratament GH</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <img src="{% static 'index/Resources/med1.png' %}" class="card-img-top">
-                        <h5 class="card-title">Tratament</h5>
-                        <p class="card-text">Some quick example text to build on the card title.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div style="position: relative; "></div>
-    <div class="sections">
-      <h3 style="text-align:center; font-size:2rem;">Information</h3>
-      <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
-  
-      </div>
-  </div>
-
-
-
-
-  <section class="game-section">
+    
+<section class="game-section">
     <h2 class="line-title">Trending Medical Topics</h2>
     <div class="owl-carousel custom-carousel owl-theme">
       <div class="item active" style="background-image: url(https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp);">
         <div class="item-desc">
-          <h3>Prader-Wili</h3>
-          <p>Prader-Willi (PRAH-dur VIL-e) syndrome is a rare genetic disorder that results in a number of physical, mental and behavioral problems.</p>
+          <h3>COVID-19</h3>
+          <p>COVID-19 is a highly infectious disease caused by the novel coronavirus. It has led to a global pandemic, affecting millions worldwide.</p>
         </div>
       </div>
       <div class="item" style="background-image: url(https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY);">
@@ -209,42 +163,15 @@
 </section>
 
 
-
-    <footer class="footer">
-        <div class="container2">
-            <p>&copy; 2024 LRC. All rights reserved.</p>
-        </div>
-    </footer>
-    <!-- styleing carusel-->
-<style>
-  .carousel .card {
-      display: flex;             /* Use flexbox for better alignment */
-      flex-direction: column;    /* Stack content vertically */
-      justify-content: space-between; /* Distribute space between items */
-      width: 100%;               /* Ensure cards take full width available */
-      height: auto;              /* Allow height to be determined by content */
-      overflow: hidden;          /* Hide any overflow from images */
-      margin-bottom: 20px;       /* Space between cards */
-  }
-  
-  .carousel .card-img-top {
-      max-width: 100%;           /* Prevent images from exceeding card width */
-      height: 200px;             /* Set a fixed height for images */
-      object-fit: cover;         /* Maintain aspect ratio without distortion */
-  }
-  
-  .card-body {
-      padding: 10px;             /* Add padding around card content */
-  }
-  
-  .card-title {
-      font-size: 1.25rem;        /* Adjust font size for titles */
-      margin: 10px 0;            /* Add some margin to the title */
-  }
-  </style>
+<footer class="footer">
+    <div class="container2">
+        <p>&copy; 2024 LRC. All rights reserved.</p>
+    </div>
+</footer>
+    
     <!-- Initialize Owl Carousel -->
     <script>
-                $(".custom-carousel").owlCarousel({
+               $(".custom-carousel").owlCarousel({
         autoWidth: true,
         loop: false
         });
@@ -254,8 +181,7 @@
             $(this).toggleClass("active");
         });
         });
-
-
+        
         $(document).ready(function(){
             $(".owl-carousel").owlCarousel({
                 loop: true,
@@ -274,17 +200,21 @@
                 }
             });
         });
+    
+
     </script>
-    <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            if (window.scrollY > window.innerHeight/1.2) {
-                navbar.classList.add('navbar-red');
-            } else {
-                navbar.classList.remove('navbar-red');
-            }
-        });
-    </script>
+        <script>
+            window.addEventListener('scroll', function() {
+                var navbar = document.getElementById('navbar');
+                if (window.scrollY > window.innerHeight/1.2) {
+                    navbar.classList.add('navbar-red');
+                } else {
+                    navbar.classList.remove('navbar-red');
+                }
+            });
+        </script>
+
+ 
 </body>
-   {% endblock %}
+   {%endblock%}
 </html>

@@ -213,3 +213,5 @@ def protocoale_terapeutice(request):
 
 def monitorizarea_tratamentului(request):
     return render(request, 'index/template.html')
+def Test(request):
+    return render(request, "index/Test.html")
