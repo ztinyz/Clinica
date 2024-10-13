@@ -1,0 +1,240 @@
+{% extends 'index/navbar.html'%}
+{% load static %}
+{% load custom_filters %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    {%block content%}
+    <head>
+
+        <title>Prader-Wili</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet"  href="{% static 'index/style.css' %}" >
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+ 
+    <style>
+        /* Scoped styles for the cute links container */
+        .cute-links-container {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .cute-links-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cute-links-container ul li {
+            margin: 10px 0;
+        }
+        .cute-links-container ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .cute-links-container ul li a:hover {
+            background-color: #e7f3ff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            color: #007BFF;
+        }
+        .cute-links-container ul li a::before {
+            content: "🔗";
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Styled Links</title>
+    
+
+
+</head>
+
+
+<body >
+
+    <!-- Script section -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'index/scripts.js' %}"></script> 
+    <!--Bootsrap scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+    <div class="photo-section" id="home">
+        <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
+        <div class="photo-overlay">
+            <p>Prader-Wili</p>
+            <p>   {% with path=request.get_full_path|split:"/" %}
+                {{ path.2 }}    <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+                <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
+            {% endwith %}</p>
+        </div>
+    </div>
+
+
+
+     <!-- INCEPUT SITE-->
+   
+<div style="position: relative; ">
+    <div class="sections">
+      <h3 style="text-align:center; font-size:2rem;">DCrierii clinice</h3>
+      <p class="text-justify" style="font-size: 1.5rem;">
+
+        <div style="position: relative; "></div>
+        <div class="sections">
+          <h3 style="text-align:center; font-size:2rem;">Information</h3>
+          <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
+      
+          </div>
+      </div>
+        
+      </p>
+      </div>
+  </div>
+ 
+  <section class="game-section">
+    <h2 class="line-title">Trending Medical Topics</h2>
+    <div class="owl-carousel custom-carousel owl-theme">
+        <div class="item active" style="background-image: url(https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Prader-Wili</h3>
+                <p>Prader-Willi (PRAH-dur VIL-e) syndrome is a rare genetic disorder that results in a number of physical, mental, and behavioral problems.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Telemedicine</h3>
+                <p>Telemedicine involves the use of telecommunication technology to provide healthcare services remotely, improving access to medical care.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/2ZQTdBKFxvkLYhrtyeWOdg_8fa4b085-dafa-4196-9a61-36db54e3c457.jpg?v=1712945641);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Vaccination</h3>
+                <p>Vaccination is a crucial public health tool that helps prevent the spread of infectious diseases by inducing immunity in individuals.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://www.healthcareitnews.com/sites/hitn/files/Global%20healthcare_2.jpg);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Mental Health</h3>
+                <p>Mental health encompasses emotional, psychological, and social well-being, affecting how we think, feel, and act.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://images.everydayhealth.com/images/healthy-living/about-us-hero-alt.jpg?sfvrsn=68592040_1);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Nutrition</h3>
+                <p>Nutrition involves the intake of food necessary for health and growth, playing a vital role in maintaining overall well-being.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://www.watford.gov.uk/images/health1.jpg);">
+            <div class="item-desc" data-url="{% url 'Test' %}">
+                <h3>Genomics</h3>
+                <p>Genomics is the study of genomes, the complete set of DNA within an organism, and its applications in medicine and biology.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .item {
+        transition: transform 0.3s ease; /* Smooth transition for scaling */
+        cursor: pointer; /* Indicate that the item is clickable */
+    }
+
+    .item:hover {
+        transform: scale(1.05); /* Scale the card on hover */
+    }
+
+    .item-desc {
+        position: relative;
+        z-index: 1; /* Ensure text appears above the background */
+        padding: 10px; /* Add some padding */
+        color: white; /* Adjust text color for visibility */
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('.item-desc').on('click', function() {
+            // Get the URL from the data attribute
+            const url = $(this).data('url');
+            // Navigate to the URL
+            window.location.href = url;
+        });
+    });
+</script>
+
+
+<footer class="footer">
+    <div class="container2">
+        <p>&copy; 2024 LRC. All rights reserved.</p>
+    </div>
+</footer>
+    
+    <!-- Initialize Owl Carousel -->
+    <script>
+               $(".custom-carousel").owlCarousel({
+        autoWidth: true,
+        loop: false
+        });
+        $(document).ready(function () {
+        $(".custom-carousel .item").click(function () {
+            $(".custom-carousel .item").not($(this)).removeClass("active");
+            $(this).toggleClass("active");
+        });
+        });
+        
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    
+
+    </script>
+        
+
+ 
+</body>
+   {%endblock%}
+</html>
