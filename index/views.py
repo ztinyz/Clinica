@@ -219,10 +219,10 @@ def Trasaturi_clinice(request):
     return render(request, "index/Trasaturi_clinice.html")
 def Obezitate(request):
     return render(request, "index/Obezitate.html")
-def Criterii_clinice(request):
-    return render(request, "index/Criterii_clinice.html")
 def Comportament(request):
     return render(request, "index/Comportament.html")
+def Criterii_clinice(request):
+    return render(request, "index/Criterii_clinice.html")
 def Criterii_obezitate(request):
     return render(request, "index/Criterii_obezitate.html")
 def Diagnostic_genetic(request):
