@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Dashboard</title>
+    <style>
+        body, html {
+            font-family: "Lato", sans-serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            line-height: 1.8;
+        }
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 8px;
+            background-color: #ffffff;
+            height: 100%;
+            width: 100%;
+        }
+        .div1 {
+            grid-column: span 5 / span 5;
+            background-color: #afafaf;
+            text-align: left; /* Align text to the left */
+            padding-left: 10px; /* Add padding to indent */
+            font-size: 2em; /* Increase font size */
+            font-weight: bold; /* Make text bold */
+            color: #333; /* Change text color */
+        }
+        .div2 {
+            grid-row: span 4 / span 4;
+            grid-row-start: 2;
+            background-color: #f8f9fa;
+        }
+        .div2 ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+        }
+        .div2 li {
+            margin: 10px 0; /* Add margin between list items */
+        }
+        .div2 a {
+            text-decoration: none; /* Remove underline */
+            color: #007bff; /* Change link color */
+            font-size: 1.2em; /* Increase font size */
+            transition: color 0.3s; /* Add transition for color change */
+        }
+        .div2 a:hover {
+            color: #0056b3; /* Change color on hover */
+        }
+        .div3 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 5;
+            grid-row-start: 2;
+            background-color: #f8f9fa;
+        }
+        .div4 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 5;
+            grid-row-start: 4;
+            background-color: #f8f9fa;
+        }
+        .div5 {
+            grid-column: span 3 / span 3;
+            grid-row: span 4 / span 4;
+            grid-column-start: 2;
+            grid-row-start: 2;
+            background-color: #f8f9fa;
+        }
+
+        /* Media query for phones */
+        @media (max-width: 600px) {
+            .parent {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .div1 {
+                grid-column: span 1 / span 1;
+                aspect-ratio: 4 /1;
+            }
+            .div2, .div3, .div4, .div5 {
+                grid-column: span 1 / span 1;
+                grid-row: auto;
+                aspect-ratio: 1 / 1.5; /* Maintain aspect ratio */
+            }
+            .div2 {
+                order: 2;
+            }
+            .div3 {
+                order: 3;
+            }
+            .div4 {
+                order: 4;
+            }
+            .div5 {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="parent">
+        <div class="div1"><p style="padding: 20,20,20,20;">Dashboard</p></div>
+        <div class="div2">
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <li><a href="#section4">Section 4</a></li>
+            </ul>
+        </div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+        <div class="div5">5</div>
+    </div>
+</body>
+</html>
