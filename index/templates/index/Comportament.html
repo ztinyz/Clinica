@@ -63,24 +63,102 @@
             color: white;
             /* Adjust text color for visibility */
         }
-        @media (max-width: 768px) {
-        body {
-            font-size: 1.2rem;
-        }
-        th, td {
-            padding: 8px;
-        }
-    }
 
-    /* Media query for extra-small devices (small phones) */
-    @media (max-width: 480px) {
-        body {
-            font-size: 1rem;
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.2rem;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
         }
-        th, td {
-            padding: 6px;
+
+        /* Media query for extra-small devices (small phones) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 1rem;
+            }
+
+            th,
+            td {
+                padding: 6px;
+            }
         }
-    }
+        /* Card container styling */
+        .card-container {
+            padding: 5%;
+            background: rgba(236, 236, 236, 0.67);
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        /* Heading and list styling */
+        .card-container h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .card-container ul {
+            font-size: 1.5rem;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-container ul {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-container h1 {
+                font-size: 1.2rem;
+            }
+
+            .card-container ul {
+                font-size: 1rem;
+            }
+        }
+
+        .table_container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .clinical-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .header {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            background-color: #efefef;
+        }
+
+        .cell {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
     </style>
 
 
@@ -122,154 +200,113 @@
     <!-- INCEPUT SITE-->
     <div class="container" style="padding: 20px;">
         <div class="row justify-content-center">
-            <!-- First Card (Original Gray) -->
             <div class="col-12 g-0">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background:rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Comportament</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Anxietate, temper tantrums, impulsivitate,
-                                rigiditate/rezistenta la schimbari, comportament obsesiv-compulsiv, deficite in cognitia
-                                sociala – modificari observate din copilaria timpurie si mai mult in adolescenta, unori
-                                diminua in intensitate dupa varsta de 40 ani.</li>
-                            <li style="margin-bottom: 5px;">• Trasaturi sugestive pentru tulburarea din spectrul autist,
-                                insa mai rar acesti pacienti sunt diagnosticati cu TSA; 26% din pacienti indeplinesc
-                                criterii de autism (18% dintre cei cu deletie si 35% dintre cei cu disomie
-                                uniparentala).</li>
-                            <li style="margin-bottom: 5px;">• ADHD.</li>
-                            <li style="margin-bottom: 5px;">• Psihoza mai frecvent la adultul tanar, mai frecvent in
-                                disomia uniparentala (65% vs 25% in deletie).</li>
-                            <li style="margin-bottom: 5px;">• Aceste modificari interfera cel mai mult cu calitatea
-                                vietii, inclusiv cu abilitatea de a trai independent.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Comportament</h1>
+                        <ul>
+                            <li>Anxietate, temper tantrums, impulsivitate, rigiditate/rezistenta la schimbari, comportament obsesiv-compulsiv, deficite in cognitia sociala – modificari observate din copilaria timpurie si mai mult in adolescenta, unori diminua in intensitate dupa varsta de 40 ani.</li>
+                            <li>Trasaturi sugestive pentru tulburarea din spectrul autist, insa mai rar acesti pacienti sunt diagnosticati cu TSA; 26% din pacienti indeplinesc criterii de autism (18% dintre cei cu deletie si 35% dintre cei cu disomie uniparentala).</li>
+                            <li>ADHD.</li>
+                            <li>Psihoza mai frecvent la adultul tanar, mai frecvent in disomia uniparentala (65% vs 25% in deletie).</li>
+                            <li>Aceste modificari interfera cel mai mult cu calitatea vietii, inclusiv cu abilitatea de a trai independent.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Second Card (Lighter Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <!-- Lighter gray -->
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Insensibilitatea la durere</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Perceptia durerii este in mod tipic scazuta si poate masca
-                                prezenta infectiei, injuriei sau fracturilor. Este dificil a localiza durerea si adesea
-                                descriu durerea doar tarziu, cand afectiunea este severa.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Insensibilitatea la durere</h1>
+                        <ul>
+                            <li>Perceptia durerii este in mod tipic scazuta si poate masca prezenta infectiei, injuriei sau fracturilor. Este dificil a localiza durerea si adesea descriu durerea doar tarziu, cand afectiunea este severa.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Third Card (Original Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Trasaturi dismorfice</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Caracteristic – diametru bifrontal ingust, fante
-                                palpebrale cu forma migdalata, creasta nazala ingusta, buza superioara ingusta cu
-                                comisuri bucale orientate in jos.</li>
-                            <li style="margin-bottom: 5px;">• Trasaturi vizibile de la nastere sau progreseaza ulterior.
-                            </li>
-                            <li style="margin-bottom: 5px;">• Tratamentul cu GH poate atenua tabloul dismorfic.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Trasaturi dismorfice</h1>
+                        <ul>
+                            <li>Caracteristic – diametru bifrontal ingust, fante palpebrale cu forma migdalata, creasta nazala ingusta, buza superioara ingusta cu comisuri bucale orientate in jos.</li>
+                            <li>Trasaturi vizibile de la nastere sau progreseaza ulterior.</li>
+                            <li>Tratamentul cu GH poate atenua tabloul dismorfic.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Fourth Card (Lighter Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <!-- Lighter gray -->
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Dermatologic</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Hipopigmentarea parului, ochilor, pielii in cazul deletiei
-                                (gena OCA2).</li>
-                            <li style="margin-bottom: 5px;">• "Piscaturi" ale pielii/mucoaselor cu leziuni deschise,
-                                cronice poate fi una dintre problemele majore (modificari ale pigmentarii, cruste,
-                                infectii).</li>
-                            <li style="margin-bottom: 5px;">• Edemele periferice in cazul persoanelor cu obezitate, cu
-                                modificari cronice la nivelul membrelor.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Dermatologic</h1>
+                        <ul>
+                            <li>Hipopigmentarea parului, ochilor, pielii in cazul deletiei (gena OCA2).</li>
+                            <li>"Piscaturi" ale pielii/mucoaselor cu leziuni deschise, cronice poate fi una dintre problemele majore (modificari ale pigmentarii, cruste, infectii).</li>
+                            <li>Edemele periferice in cazul persoanelor cu obezitate, cu modificari cronice la nivelul membrelor.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Fifth Card (Original Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Oftalmologic</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Strabismul, cel mai frecvent este diagnosticat pana la
-                                varsta de 5 ani.</li>
-                            <li style="margin-bottom: 5px;">• De asemenea se observa si miopia si hipermetropia.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Oftalmologic</h1>
+                        <ul>
+                            <li>Strabismul, cel mai frecvent este diagnosticat pana la varsta de 5 ani.</li>
+                            <li>De asemenea se observa si miopia si hipermetropia.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Sixth Card (Lighter Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <!-- Lighter gray -->
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Tulburari ale somnului</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Latență redusă a mișcărilor rapide ale ochilor (REM).</li>
-                            <li style="margin-bottom: 5px;">• Modificarea arhitecturii somnului.</li>
-                            <li style="margin-bottom: 5px;">• Desaturare in oxigen.</li>
-                            <li style="margin-bottom: 5px;">• Apnee centrală și obstructivă.</li>
-                            <li style="margin-bottom: 5px;">• Disfunctia hipotalamica primara se considera a fi cauza
-                                modificarilor in microstructura somnului si a anomaliilor ventilatiei din timpul
-                                somnului.</li>
-                            <li style="margin-bottom: 5px;">• Unii pacienti prezinta somnolenta diurna excesiva,
-                                similara narcolepsiei, cu initiere precoce a somnului REM si reducerea instabilitatii
-                                somnului non-REM.</li>
-                            <li style="margin-bottom: 5px;">• Narcolepsia este observata la 10-35% dar este adeesea
-                                subdiagnosticata datorita unei somnolente excesive din timpul zilei.</li>
-                            <li style="margin-bottom: 5px;">• Pacientii pot raporta dificultati cu inițierea și
-                                menținerea somnului, adesea se trezesc frecvent pe parcursul nopții.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Tulburari ale somnului</h1>
+                        <ul>
+                            <li>Latență redusă a mișcărilor rapide ale ochilor (REM).</li>
+                            <li>Modificarea arhitecturii somnului.</li>
+                            <li>Desaturare in oxigen.</li>
+                            <li>Apnee centrală și obstructivă.</li>
+                            <li>Disfunctia hipotalamica primara se considera a fi cauza modificarilor in microstructura somnului si a anomaliilor ventilatiei din timpul somnului.</li>
+                            <li>Unii pacienti prezinta somnolenta diurna excesiva, similara narcolepsiei, cu initiere precoce a somnului REM si reducerea instabilitatii somnului non-REM.</li>
+                            <li>Narcolepsia este observata la 10-35% dar este adeesea subdiagnosticata datorita unei somnolente excesive din timpul zilei.</li>
+                            <li>Pacientii pot raporta dificultati cu inițierea și menținerea somnului, adesea se trezesc frecvent pe parcursul nopții.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Seventh Card (Original Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Dismorfie - chirurgia corectiva</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Unii pacienti cu dificultati de ingrijire a dintilor si
-                                afectiuni dentare.</li>
-                            <li style="margin-bottom: 5px;">• De asemenea este important de luat in considerare
-                                tratamentul chirurgical al defectelor craniofaciale.</li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Dismorfie - chirurgia corectiva</h1>
+                        <ul>
+                            <li>Unii pacienti cu dificultati de ingrijire a dintilor si afectiuni dentare.</li>
+                            <li>De asemenea este important de luat in considerare tratamentul chirurgical al defectelor craniofaciale.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Eighth Card (Lighter Gray) -->
             <div class="col-12 g-0" style="margin-top: 20px;">
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <!-- Lighter gray -->
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Cauze secundare ale defectelor cognitive</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Anomalii in dezvoltarea cerebrală (sindromul
-                                Miller-Dieker, sindromul Patau, sindromul Edwards, tulburări genice: Sotos, Rieger).
-                            </li>
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Cauze secundare ale defectelor cognitive</h1>
+                        <ul>
+                            <li>Anomalii in dezvoltarea cerebrală (sindromul Miller-Dieker, sindromul Patau, sindromul Edwards, tulburări genice: Sotos, Rieger).</li>
                         </ul>
                     </div>
                 </div>

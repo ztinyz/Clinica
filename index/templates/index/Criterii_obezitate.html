@@ -43,7 +43,7 @@
 
     <style>
 
-        .card-container {
+        .card_container_buton {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -51,7 +51,7 @@
             padding: 20px;
         }
 
-        .card {
+        .card_buton {
             background-color: #f9fbfd;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,7 +66,7 @@
             justify-content: space-between;
         }
 
-        .card h3 {
+        .card_buton h3 {
             font-size: 1.5rem;
             color: #005bbf;
             margin-bottom: 10px;
@@ -99,13 +99,13 @@
         }
 
         @media (max-width: 768px) {
-            .card {
+            .card_buton {
                 flex: 1 1 calc(50% - 20px);
             }
         }
 
         @media (max-width: 480px) {
-            .card {
+            .card_buton {
                 flex: 1 1 100%;
             }
         }
@@ -152,6 +152,50 @@
                 padding: 6px;
             }
         }
+
+        
+        /* Card container styling */
+        .card-container {
+            padding: 5%;
+            background: rgba(236, 236, 236, 0.67);
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        /* Heading and list styling */
+        .card-container h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .card-container ul {
+            font-size: 1.5rem;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-container ul {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-container h1 {
+                font-size: 1.2rem;
+            }
+
+            .card-container ul {
+                font-size: 1rem;
+            }
+        }
+
     </style>
     <title>Styled Links</title>
 
@@ -202,38 +246,30 @@
     <div class="container" style="padding: 20px;">
         <div class="row justify-content-center">
             <!-- First Card (Original Gray) -->
-            <div class="col-12 g-0">
-                <div class="carddd"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">Semne evocatoare</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">• Obezitate precoce severa: IMC ≥+ 3 DS la copii, IMC>35
-                                kg/m² la adulti
-                                ,unori cu instalare rapida: în câteva luni in obezitatea hipotalamică lesională/ROHHAD
-                                ,rezistentă la tratamentele convenționale - medicale (dietă/activitate fizică) și/sau
-                                chirurgia bariatrică,
-                                ,asociata tulburarilor de comportement alimentar, absenta controlului voluntar al
-                                aportului alimentar
-
-                            </li>
-                            <li style="margin-bottom: 5px;">In obezitatile rare intalnim in general toate aceste semne
-                                clinice.</li>
-                            <li style="margin-bottom: 5px;">Alte semne, presente variabil, in functie de etiologie</li>
-                            <li style="margin-bottom: 5px;">•Anomalii endocrine adesea centrale</li>
-                            <li style="margin-bottom: 5px;">•Anomalii metabolice</li>
-                            <li style="margin-bottom: 5px;">•Anomalii de neurodezvoltare: dizabilitate intelectuala,
-                                tulburare din spectrul autist, tulburari de invatare, anomalii ale limbajului</li>
-                            <li style="margin-bottom: 5px;">•Anomalii psihocomportamentale, emotionaleAnomalii
-                                metabolice</li>
-                            <li style="margin-bottom: 5px;">•Tulburari ale somnului si al controlului functiilor
-                                hipotalamice – tulburari disautonome</li>
+            <div class="col-12 g-0" style="margin-top: 20px;">
+                <div class="card-container">
+                    <div class="card-body">
+                        <h1 class="text-center">Semne evocatoare</h1>
+                        <ul>
+                            <li>• Obezitate precoce severa: IMC ≥+ 3 DS la copii, IMC>35 kg/m² la adulti, uneori cu instalare
+                                rapida: în câteva luni în obezitatea hipotalamică lesională/ROHHAD, rezistentă la tratamentele
+                                convenționale - medicale (dietă/activitate fizică) și/sau chirurgia bariatrică, asociată
+                                tulburarilor de comportament alimentar, absența controlului voluntar al aportului alimentar.</li>
+                            <li>In obezitățile rare întâlnim în general toate aceste semne clinice.</li>
+                            <li>Alte semne, prezente variabil, în funcție de etiologie.</li>
+                            <li>• Anomalii endocrine adesea centrale.</li>
+                            <li>• Anomalii metabolice.</li>
+                            <li>• Anomalii de neurodezvoltare: dizabilitate intelectuală, tulburare din spectrul autist, tulburări
+                                de învățare, anomalii ale limbajului.</li>
+                            <li>• Anomalii psihocomportamentale, emoționale.</li>
+                            <li>• Tulburări ale somnului și al controlului funcțiilor hipotalamice – tulburări disautonome.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="card-container">
-                <div class="card">
+            
+            <div class="card_container_buton">
+                <div class="card_buton">
                     <h3>Algoritm obezitate clinica</h3>
 
                     <div class="details-btn">
