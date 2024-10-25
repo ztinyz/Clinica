@@ -42,114 +42,6 @@
         crossorigin="anonymous" />
 
     <style>
-        /* Scoped styles for the cute links container */
-        .cute-links-container {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
-        }
-
-        .cute-links-container ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .cute-links-container ul li {
-            margin: 10px 0;
-        }
-
-        .cute-links-container ul li a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .cute-links-container ul li a:hover {
-            background-color: #e7f3ff;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-            color: #007BFF;
-        }
-
-        .cute-links-container ul li a::before {
-            content: "🔗";
-            margin-right: 10px;
-            font-size: 20px;
-        }
-
-        /*CSS PENTRU CARDURILE ADUGATE DE LIDIA*/
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .card {
-            background-color: #f9fbfd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            flex: 1 1 calc(33.333% - 20px);
-            max-width: 400px;
-            text-align: center;
-            box-sizing: border-box;
-            border: 1px solid #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            color: #005bbf;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .details-btn {
-            font-size: 1rem;
-            color: #005bbf;
-            text-decoration: none;
-            cursor: pointer;
-            font-weight: bold;
-            padding-top: 10px;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .details-btn a {
-            color: #005bbf;
-            text-decoration: none;
-        }
-
-        .details-btn a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                flex: 1 1 100%;
-            }
-        }
 
         /*CSS PENTRU CARUSELUL LUI CATA*/
         .item {
@@ -211,33 +103,7 @@
         </div>
     </div>
 
-    <div class="card-container">
-        <div class="card">
-            <h3>Scarlatina</h3>
-            <p>Scarlatina este o boală infecțioasă acută, caracterizată clinic prin febră, erupții pe mucoase și piele.
-            </p>
-            <div class="details-btn">
-                <a href="#">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Schizofrenie</h3>
-            <p>Schizofrenia este considerată o boală psihică gravă din cauza simptomelor psihotice.</p>
-            <div class="details-btn">
-                <a href="#">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Sciatică</h3>
-            <p>Sciatica descrie durerea de picior cauzată de radiculopatii lombosacrate.</p>
-            <div class="details-btn">
-                <a href="#">Vezi detalii</a>
-            </div>
-        </div>
-    </div>
-
-
-
+   
     <!-- INCEPUT SITE-->
 
     <div style="position: relative; ">
@@ -247,7 +113,6 @@
 
             <div style="position: relative; "></div>
             <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">Info</h3>
                 <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
 
             </div>
