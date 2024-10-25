@@ -130,16 +130,9 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/car2.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Prader-Wili</p>
-            <p> {% with path=request.get_full_path|split:"/" %}
-                {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
-                <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
-                {% endwith %}
-            </p>
+            <p>Diagnostic</p>
         </div>
     </div>
-
-
 
     <!-- INCEPUT SITE-->
 

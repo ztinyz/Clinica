@@ -5,31 +5,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    {%block content%}
-    <head>
+{%block content%}
 
-        <title>Prader-Wili</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
+<head>
+
+    <title>Prader-Wili</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet"  href="{% static 'index/style.css' %}" >
+    <link rel="stylesheet" href="{% static 'index/style.css' %}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
- 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+
     <style>
         /* Scoped styles for the cute links container */
         .cute-links-container {
@@ -37,13 +48,16 @@
             background-color: #f9f9f9;
             padding: 20px;
         }
+
         .cute-links-container ul {
             list-style: none;
             padding: 0;
         }
+
         .cute-links-container ul li {
             margin: 10px 0;
         }
+
         .cute-links-container ul li a {
             display: flex;
             align-items: center;
@@ -56,40 +70,49 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
+
         .cute-links-container ul li a:hover {
             background-color: #e7f3ff;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
             color: #007BFF;
         }
+
         .cute-links-container ul li a::before {
             content: "🔗";
             margin-right: 10px;
             font-size: 20px;
         }
+
         .item {
-        transition: transform 0.3s ease; /* Smooth transition for scaling */
-        cursor: pointer; /* Indicate that the item is clickable */
-    }
+            transition: transform 0.3s ease;
+            /* Smooth transition for scaling */
+            cursor: pointer;
+            /* Indicate that the item is clickable */
+        }
 
-    .item:hover {
-        transform: scale(1.05); /* Scale the card on hover */
-    }
+        .item:hover {
+            transform: scale(1.05);
+            /* Scale the card on hover */
+        }
 
-    .item-desc {
-        position: relative;
-        z-index: 1; /* Ensure text appears above the background */
-        padding: 10px; /* Add some padding */
-        color: white; /* Adjust text color for visibility */
-    }
+        .item-desc {
+            position: relative;
+            z-index: 1;
+            /* Ensure text appears above the background */
+            padding: 10px;
+            /* Add some padding */
+            color: white;
+            /* Adjust text color for visibility */
+        }
     </style>
     <title>Styled Links</title>
-    
+
 
 
 </head>
 
 
-<body >
+<body>
 
     <!-- Script section -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -97,349 +120,394 @@
     <script>
         AOS.init();
     </script>
-    <script src="{% static 'index/scripts.js' %}"></script> 
+    <script src="{% static 'index/scripts.js' %}"></script>
     <!--Bootsrap scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
 
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
             <p>Trasaturi clinice</p>
-            <p>   {% with path=request.get_full_path|split:"/" %}
-                {{ path.2 }}    <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+            <p> {% with path=request.get_full_path|split:"/" %}
+                {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
-            {% endwith %}</p>
+                {% endwith %}
+            </p>
         </div>
     </div>
 
 
 
-     <!-- INCEPUT SITE-->
+    <!-- INCEPUT SITE-->
 
- 
+
     <!-- Sectiune informatii -->
     <div class="row g-0" style="padding: 20px;">
         <div class="col-12 col-md-6">
-            <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                 <h1 class="text-center" style="font-size: 2rem;">Tablou clinic prenatal</h1>
                 <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                     <li style="margin-bottom: 5px;">• hipotonie prenatala, hipomobilitate fetala</li>
                     <li style="margin-bottom: 5px;">• pozitie fetala anormala la nastere</li>
                     <li style="margin-bottom: 5px;">• copil mic pentru varsta gestationala</li>
-                    <li style="margin-bottom: 5px;">• crestere intrauterina asimetrica cu cresterea raportului cap/abdomen</li>
+                    <li style="margin-bottom: 5px;">• crestere intrauterina asimetrica cu cresterea raportului
+                        cap/abdomen</li>
                     <li style="margin-bottom: 5px;">• polihidraminos</li>
                 </ul>
                 </p>
             </div>
         </div>
         <div class="col-12 col-md-6">
-            <div class="rightside" style="padding-top: 5%; background: hsla(0, 0%, 86%, 0.899); border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+            <div class="rightside"
+                style="padding-top: 5%; background: hsla(0, 0%, 86%, 0.899); border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                 <!-- Changed background color -->
                 <h1 class="text-center" style="font-size: 2rem;">Tablou clinic neonatal</h1>
                 <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                    <li style="margin-bottom: 5px;">• hipotonie centrala, hipomobilitate, letargie, plans slab, reflexe scazute, supt deficitar, difagie, apetit scazut</li>
+                    <li style="margin-bottom: 5px;">• hipotonie centrala, hipomobilitate, letargie, plans slab, reflexe
+                        scazute, supt deficitar, difagie, apetit scazut</li>
                     <li style="margin-bottom: 5px;">• nevoie de tub nazogastric, mameloane artificiale</li>
-                    <li style="margin-bottom: 5px;">• hipotonia se amelioreaza in timp, insa exista un grad de hipotonie in copilarie si la varsta de adult</li>
+                    <li style="margin-bottom: 5px;">• hipotonia se amelioreaza in timp, insa exista un grad de hipotonie
+                        in copilarie si la varsta de adult</li>
                     <li style="margin-bottom: 5px;">• sprijin emoțional și consiliere</li>
                 </ul>
                 </p>
             </div>
         </div>
     </div>
-    
 
 
-<!-- tabel-->
 
-<div
-    style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
-    <h3 style="text-align:center; font-size:2rem;">Frecvența principalelor trăsături clinice</h3>
-    <table style="width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #efefef;">Semn
-                    clinic</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #efefef;">%
-                    din pacienti</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Hipotonie în primul an de viață + alimentație
-                    deficitară, gavaj</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">95%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Retard global de dezvoltare</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Dizabilitate intelectuală – adesea
-                    ușoară/moderată</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Retard și tulburări ale limbajului</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Modificări endocrine - hipogonadism, deficit GH,
-                    hipotiroidism, diabet zaharat, insuficiență corticosuprarenaliană</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Obezitate, hiperfagie</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Tulburări ale comportamentului - anxietate,
-                    tulburare obsesiv-compulsivă, trăsături autistice, ADHD, uneori psihoză în UPD15</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">70%-90%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Creșterea pragului la durere (poate masca
-                    urgențele medicale)</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">60%-80%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Sindrom dismorfic</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">50%-70%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Hipopigmentare</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">50%-70%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Piscături ale pielii</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">50%-60%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Strabism</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">40%-60%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Anomalii ale somnului – apnee centrală, apnee
-                    obstructivă de somn, narcolepsie</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">30%-40%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Scolioză</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">40%-80%</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;">Convulsii – tipic generalizate și tratabile</td>
-                <td style="border: 1px solid #ddd; padding: 10px;">10%-20%</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <!-- tabel-->
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Retard de dezvoltare</h1>
-            <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
+    <div
+        style="max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+        <h3 style="text-align:center; font-size:2rem;">Frecvența principalelor trăsături clinice</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #efefef;">Semn
+                        clinic</th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #efefef;">%
+                        din pacienti</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Hipotonie în primul an de viață + alimentație
+                        deficitară, gavaj</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">95%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Retard global de dezvoltare</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Dizabilitate intelectuală – adesea
+                        ușoară/moderată</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Retard și tulburări ale limbajului</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Modificări endocrine - hipogonadism, deficit GH,
+                        hipotiroidism, diabet zaharat, insuficiență corticosuprarenaliană</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Obezitate, hiperfagie</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">90%-100%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Tulburări ale comportamentului - anxietate,
+                        tulburare obsesiv-compulsivă, trăsături autistice, ADHD, uneori psihoză în UPD15</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">70%-90%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Creșterea pragului la durere (poate masca
+                        urgențele medicale)</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">60%-80%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Sindrom dismorfic</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">50%-70%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Hipopigmentare</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">50%-70%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Piscături ale pielii</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">50%-60%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Strabism</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">40%-60%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Anomalii ale somnului – apnee centrală, apnee
+                        obstructivă de somn, narcolepsie</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">30%-40%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Scolioză</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">40%-80%</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px;">Convulsii – tipic generalizate și tratabile</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">10%-20%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Retard de dezvoltare</h1>
+                <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                     <li style="margin-bottom: 5px;">• achizitii dobandite la varsta dubla fata de varsta obisnuita</li>
-                    <li style="margin-bottom: 5px;">• retard al limbajului, tulburari ale limbajului, anomalii ale articularii cuvintelor, apraxie, insa abilitati verbale bune.</li>
+                    <li style="margin-bottom: 5px;">• retard al limbajului, tulburari ale limbajului, anomalii ale
+                        articularii cuvintelor, apraxie, insa abilitati verbale bune.</li>
                 </ul>
-            </p>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Retard de dezvoltare"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Retard de dezvoltare" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-        </div>
-    </div>
-</div>
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Dizabilitatea intelectuala" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Dizabilitatea intelectuala"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
         </div>
-    </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Dizabilitatea intelectuala</h1>
-            <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Dizabilitatea intelectuala</h1>
+                <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                     <li style="margin-bottom: 5px;">• usoara la majoritatea; IQ mediu=60-70</li>
                     <li style="margin-bottom: 5px;">• 40% nivel intelectual „borderline” sau inteligenta normala</li>
                     <li style="margin-bottom: 5px;">• 20% dizabilitate moderata</li>
                     <li style="margin-bottom: 5px;">• Majoritatea insa prezinta tulburari de invatare</li>
-                    <li style="margin-bottom: 5px;">• Un anumit procent dintre copii poate absolvi o forma medie de invatamant (liceul)</li>
-                    <li style="margin-bottom: 5px;">• Abilitati superioare pentru a rezolva puzzle, abilitate in particular observata la pacientii cu deletie 15q</li>
+                    <li style="margin-bottom: 5px;">• Un anumit procent dintre copii poate absolvi o forma medie de
+                        invatamant (liceul)</li>
+                    <li style="margin-bottom: 5px;">• Abilitati superioare pentru a rezolva puzzle, abilitate in
+                        particular observata la pacientii cu deletie 15q</li>
                 </ul>
-            </p>
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Hipogonadism</h1>
-            <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                <li style="margin-bottom: 5px;">• De cauza hipotalamica, cu posibilă afectare primară gonadală</li>
-                <li style="margin-bottom: 5px;">• Manifestat ca hipoplazie genitală, retard pubertar, infertilitate</li>
-                <li style="margin-bottom: 5px;">• Niveluri scăzute ale gonadotropinelor – hipogonadism hipogonadotrop</li>
-                <li style="margin-bottom: 5px;">• Pubarhă prematură (20-30%); adrenarhă prematură (20%)</li>
-                <li style="margin-bottom: 5px;">• Pubertate precoce centrală idiopatică la 5%</li>
-                <li style="margin-bottom: 5px;">• La bărbați: micropenie, scrot hipoplazic, criptorhidism (90%)</li>
-                <li style="margin-bottom: 5px;">• La femei: hipoplazie genitală mai puțin evidentă</li>
-            </ul>
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Hipogonadism</h1>
+                <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
+                    <li style="margin-bottom: 5px;">• De cauza hipotalamica, cu posibilă afectare primară gonadală</li>
+                    <li style="margin-bottom: 5px;">• Manifestat ca hipoplazie genitală, retard pubertar, infertilitate
+                    </li>
+                    <li style="margin-bottom: 5px;">• Niveluri scăzute ale gonadotropinelor – hipogonadism
+                        hipogonadotrop</li>
+                    <li style="margin-bottom: 5px;">• Pubarhă prematură (20-30%); adrenarhă prematură (20%)</li>
+                    <li style="margin-bottom: 5px;">• Pubertate precoce centrală idiopatică la 5%</li>
+                    <li style="margin-bottom: 5px;">• La bărbați: micropenie, scrot hipoplazic, criptorhidism (90%)</li>
+                    <li style="margin-bottom: 5px;">• La femei: hipoplazie genitală mai puțin evidentă</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Hipogonadism"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Hipogonadism" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-        </div>
-    </div>
-</div>
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Deficitul hormonului de creștere" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Deficitul hormonului de creștere"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
+        </div>
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Deficitul hormonului de creștere</h1>
+                <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
+                    <li style="margin-bottom: 5px;">• 60-70% dintre pacienți au hipostatură, vizibilă după 10 ani</li>
+                    <li style="margin-bottom: 5px;">• Lipsa piscului de creștere pubertar</li>
+                    <li style="margin-bottom: 5px;">• Talie adultă: 155 cm la bărbați și 148 cm la femei</li>
+                    <li style="margin-bottom: 5px;">• Deficit de GH și la adulți; tratament recomandat indiferent de
+                        deficit</li>
+                    <li style="margin-bottom: 5px;">• Mâini și picioare mici (acromicrie) – sub percentila 5</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Deficitul hormonului de creștere</h1>
-            <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                <li style="margin-bottom: 5px;">• 60-70% dintre pacienți au hipostatură, vizibilă după 10 ani</li>
-                <li style="margin-bottom: 5px;">• Lipsa piscului de creștere pubertar</li>
-                <li style="margin-bottom: 5px;">• Talie adultă: 155 cm la bărbați și 148 cm la femei</li>
-                <li style="margin-bottom: 5px;">• Deficit de GH și la adulți; tratament recomandat indiferent de deficit</li>
-                <li style="margin-bottom: 5px;">• Mâini și picioare mici (acromicrie) – sub percentila 5</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Tratamentul hormonal</h1>
-            <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Tratamentul hormonal</h1>
+                <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                     <li style="margin-bottom: 5px;">• Majoritatea pacienților primesc tratament hormonal</li>
                     <li style="margin-bottom: 5px;">• Testosteron, estrogen, GH</li>
                     <li style="margin-bottom: 5px;">• Tratament de lungă durată, până la 18 ani</li>
                 </ul>
-            </p>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Tratamentul hormonal"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Tratamentul hormonal" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-        </div>
-    </div>
-</div>
 
-<div class="row g-0" style="padding: 20px;">
-    <div class="col-12 col-md-6 g-0">
-        <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-            <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top" alt="Image for Imunodeficiența" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+    <div class="row g-0" style="padding: 20px;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
+                    alt="Image for Imunodeficiența"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
         </div>
-    </div>
-    <div class="col-12 col-md-6 g-0">
-        <div class="leftside" style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
-            <h1 class="text-center" style="font-size: 2rem;">Imunodeficiența</h1>
-            <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
+        <div class="col-12 col-md-6 g-0">
+            <div class="leftside"
+                style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: hsla(0, 0%, 86%, 0.899);">
+                <h1 class="text-center" style="font-size: 2rem;">Imunodeficiența</h1>
+                <p class="text-justify" style="font-size: 1.5rem; padding-left: 10%; padding-right: 10%;">
                 <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                     <li style="margin-bottom: 5px;">• Poate fi congenitală sau dobândită</li>
                     <li style="margin-bottom: 5px;">• Infecții recurente (virale, bacteriene, fungice)</li>
                     <li style="margin-bottom: 5px;">• Examen clinic de neglijare</li>
                 </ul>
-            </p>
-        </div>
-    </div>
-</div>
-
-
-
-  <section class="game-section">
-    <h2 class="line-title">Trending Medical Topics</h2>
-    <div class="owl-carousel custom-carousel owl-theme">
-        <div class="item active" style="background-image: url(https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Prader-Wili</h3>
-                <p>Prader-Willi (PRAH-dur VIL-e) syndrome is a rare genetic disorder that results in a number of physical, mental, and behavioral problems.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Telemedicine</h3>
-                <p>Telemedicine involves the use of telecommunication technology to provide healthcare services remotely, improving access to medical care.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/2ZQTdBKFxvkLYhrtyeWOdg_8fa4b085-dafa-4196-9a61-36db54e3c457.jpg?v=1712945641);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Vaccination</h3>
-                <p>Vaccination is a crucial public health tool that helps prevent the spread of infectious diseases by inducing immunity in individuals.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(https://www.healthcareitnews.com/sites/hitn/files/Global%20healthcare_2.jpg);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Mental Health</h3>
-                <p>Mental health encompasses emotional, psychological, and social well-being, affecting how we think, feel, and act.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(https://images.everydayhealth.com/images/healthy-living/about-us-hero-alt.jpg?sfvrsn=68592040_1);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Nutrition</h3>
-                <p>Nutrition involves the intake of food necessary for health and growth, playing a vital role in maintaining overall well-being.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(https://www.watford.gov.uk/images/health1.jpg);">
-            <div class="item-desc" data-url="{% url 'Test' %}">
-                <h3>Genomics</h3>
-                <p>Genomics is the study of genomes, the complete set of DNA within an organism, and its applications in medicine and biology.</p>
+                </p>
             </div>
         </div>
     </div>
-</section>
 
-<footer class="footer">
-    <div class="container2">
-        <p>&copy; 2024 LRC. All rights reserved.</p>
-    </div>
-</footer>
 
-<script>
-    $(document).ready(function() {
-        $('.item-desc').on('click', function() {
-            // Get the URL from the data attribute
-            const url = $(this).data('url');
-            // Navigate to the URL
-            window.location.href = url;
+
+    <section class="game-section">
+        <h2 class="line-title">Trending Medical Topics</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+            <div class="item active"
+                style="background-image: url(https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Prader-Wili</h3>
+                    <p>Prader-Willi (PRAH-dur VIL-e) syndrome is a rare genetic disorder that results in a number of
+                        physical, mental, and behavioral problems.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Telemedicine</h3>
+                    <p>Telemedicine involves the use of telecommunication technology to provide healthcare services
+                        remotely, improving access to medical care.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/2ZQTdBKFxvkLYhrtyeWOdg_8fa4b085-dafa-4196-9a61-36db54e3c457.jpg?v=1712945641);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Vaccination</h3>
+                    <p>Vaccination is a crucial public health tool that helps prevent the spread of infectious diseases
+                        by inducing immunity in individuals.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://www.healthcareitnews.com/sites/hitn/files/Global%20healthcare_2.jpg);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Mental Health</h3>
+                    <p>Mental health encompasses emotional, psychological, and social well-being, affecting how we
+                        think, feel, and act.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://images.everydayhealth.com/images/healthy-living/about-us-hero-alt.jpg?sfvrsn=68592040_1);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Nutrition</h3>
+                    <p>Nutrition involves the intake of food necessary for health and growth, playing a vital role in
+                        maintaining overall well-being.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://www.watford.gov.uk/images/health1.jpg);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Genomics</h3>
+                    <p>Genomics is the study of genomes, the complete set of DNA within an organism, and its
+                        applications in medicine and biology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container2">
+            <p>&copy; 2024 LRC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('.item-desc').on('click', function () {
+                // Get the URL from the data attribute
+                const url = $(this).data('url');
+                // Navigate to the URL
+                window.location.href = url;
+            });
         });
-    });
-</script>
+    </script>
 
 
 
-    
+
     <!-- Initialize Owl Carousel -->
     <script>
-               $(".custom-carousel").owlCarousel({
-        autoWidth: true,
-        loop: false
+        $(".custom-carousel").owlCarousel({
+            autoWidth: true,
+            loop: false
         });
         $(document).ready(function () {
-        $(".custom-carousel .item").click(function () {
-            $(".custom-carousel .item").not($(this)).removeClass("active");
-            $(this).toggleClass("active");
+            $(".custom-carousel .item").click(function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
+            });
         });
-        });
-        
-        $(document).ready(function(){
+
+        $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 margin: 10,
@@ -457,12 +525,13 @@
                 }
             });
         });
-    
+
 
     </script>
-        
 
- 
+
+
 </body>
-   {%endblock%}
+{%endblock%}
+
 </html>
