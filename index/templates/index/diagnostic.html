@@ -43,6 +43,7 @@
 
     <!-- styleing carusel-->
     <style>
+        
         .carousel .card {
             display: flex;
             /* Use flexbox for better alignment */
@@ -120,6 +121,68 @@
             padding: 6px;
         }
     }
+    /* Container for the clinic section */
+.clinic-section {
+    position: relative;
+    max-width: 800px; /* Set a maximum width */
+    margin: 0 auto;   /* Center the section */
+    padding: 20px;    /* Add padding for spacing */
+}
+
+/* Title styling specific to clinic section */
+.clinic-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+/* Description paragraph styling specific to clinic section */
+.clinic-section .section-description {
+    text-align: justify;
+    font-size: 1.5rem;
+    margin-bottom: 15px; /* Add some space below paragraphs */
+}
+
+/* List styling specific to clinic section */
+.clinic-section .section-list {
+    font-size: 1.5rem;
+    padding-left: 20px;
+    list-style: none;
+    margin-bottom: 15px; /* Add some space below lists */
+}
+
+.clinic-section .section-list li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+/* Responsive adjustments specific to clinic section */
+@media (max-width: 768px) {
+    .clinic-section {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .clinic-section .section-title {
+        font-size: 1.8rem; /* Slightly smaller title */
+    }
+
+    .clinic-section .section-description,
+    .clinic-section .section-list {
+        font-size: 1.3rem; /* Smaller text for better readability */
+    }
+}
+
+@media (max-width: 576px) {
+    .clinic-section .section-title {
+        font-size: 1.5rem; /* Even smaller title */
+    }
+
+    .clinic-section .section-description,
+    .clinic-section .section-list {
+        font-size: 1.2rem; /* Further reduce text size */
+    }
+}
+
+    
     </style>
 
 
@@ -156,29 +219,29 @@
 
     <div style="position: relative; ">
         <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">Clinic SPW</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
-                De dorit: diagnostic in primele 6 luni de viata.
-                Argumente pentru stabilirea unui diagnostic precoce:
-            </p>
-            <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                <li style="margin-bottom: 5px;">• Intervenții în perioada timpurie a bolii</li>
-                <li style="margin-bottom: 5px;">• Educarea unui comportament alimentar corect cu ameliorarea creșterii
-                    ponderale excesive și reducerea morbidității pe termen lung</li>
-                <li style="margin-bottom: 5px;">• Managementul tulburărilor de oralitate</li>
-                <li style="margin-bottom: 5px;">• Managementul adecvat al tulburărilor de interacțiune socială</li>
-                <li style="margin-bottom: 5px;">• Posibilitatea de terapii precoce care ar permite
-                    corectarea/modificarea anumitor căi patogenetice</li>
-            </ul>
-            <p class="text-justify" style="font-size: 1.5rem;">Sunt propuse astfel:</p>
-            <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                <li style="margin-bottom: 5px;">• Intervenții pentru prevenția obezității în copilărie</li>
-                <li style="margin-bottom: 5px;">• Intervenții pentru ameliorarea abilităților sociale</li>
-                <li style="margin-bottom: 5px;">• Intervenții pentru ameliorarea calității vieții</li>
-                <li style="margin-bottom: 5px;">• Intervenții pentru susținerea familiei și a celor care îngrijesc
-                    pacienții</li>
-            </ul>
+            <div class="clinic-section">
+                <h3 class="section-title">Clinic SPW</h3>
+                <p class="section-description">
+                    De dorit: diagnostic in primele 6 luni de viata.
+                    Argumente pentru stabilirea unui diagnostic precoce:
+                </p>
+                <ul class="section-list">
+                    <li>• Intervenții în perioada timpurie a bolii</li>
+                    <li>• Educarea unui comportament alimentar corect cu ameliorarea creșterii ponderale excesive și reducerea morbidității pe termen lung</li>
+                    <li>• Managementul tulburărilor de oralitate</li>
+                    <li>• Managementul adecvat al tulburărilor de interacțiune socială</li>
+                    <li>• Posibilitatea de terapii precoce care ar permite corectarea/modificarea anumitor căi patogenetice</li>
+                </ul>
+                <p class="section-description">Sunt propuse astfel:</p>
+                <ul class="section-list">
+                    <li>• Intervenții pentru prevenția obezității în copilărie</li>
+                    <li>• Intervenții pentru ameliorarea abilităților sociale</li>
+                    <li>• Intervenții pentru ameliorarea calității vieții</li>
+                    <li>• Intervenții pentru susținerea familiei și a celor care îngrijesc pacienții</li>
+                </ul>
+            </div>
         </div>
+        
     </div>
 
 

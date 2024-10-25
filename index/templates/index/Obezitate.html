@@ -42,7 +42,6 @@
         crossorigin="anonymous" />
 
     <style>
-
         .item {
             transition: transform 0.3s ease;
             /* Smooth transition for scaling */
@@ -64,6 +63,7 @@
             color: white;
             /* Adjust text color for visibility */
         }
+
         @media (max-width: 768px) {
             body {
                 font-size: 1.2rem;
@@ -84,6 +84,172 @@
             th,
             td {
                 padding: 6px;
+            }
+        }
+
+        :root {
+            --main-font-size: 1.5rem;
+            /* Base font size */
+            --title-font-size: 2rem;
+            /* Title font size */
+            --sub-title-font-size: 2rem;
+            /* Subtitle font size */
+            --border-color: #ddd;
+            /* Border color */
+            --background-color: rgba(236, 236, 236, 0.67);
+            /* Background color */
+            --max-width: 800px;
+            /* Max width for containers */
+            --padding: 20px;
+            /* Standard padding */
+        }
+
+        /* Titles */
+        .title {
+            text-align: center;
+            font-size: var(--title-font-size);
+            font-weight: bold;
+        }
+
+        .description {
+            position: relative;
+            text-align: center;
+        }
+
+        .description p {
+            font-size: calc(var(--main-font-size) * 1.2);
+            /* Responsive font size */
+        }
+
+        /* Nutritional Phases Container */
+        .nutritional-phases {
+            max-width: var(--max-width);
+            margin: 20px auto;
+            padding: var(--padding);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: var(--sub-title-font-size);
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .header-row {
+            background-color: #efefef;
+        }
+
+        th,
+        td {
+            border: 2px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            font-size: calc(var(--main-font-size) * 0.8);
+            /* Smaller font size for table */
+        }
+
+        td {
+            padding: 10px;
+            font-size: calc(var(--main-font-size) * 0.7);
+            /* Even smaller font for table cells */
+        }
+
+        /* Padding for sections */
+        .padding-section {
+            padding: var(--padding);
+        }
+
+        /* Left and Right Side Styles */
+        .leftside,
+        .rightside {
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: var(--background-color);
+        }
+
+        .leftside {
+            padding-top: 5%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* List Styles */
+        .list {
+            font-size: var(--main-font-size);
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .list li {
+            margin-bottom: 5px;
+        }
+
+        /* Card Styles */
+        .card {
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: var(--background-color);
+        }
+
+        .card-body {
+            padding: var(--padding);
+        }
+
+        /* Image Styles */
+        .card-img-top {
+            border-radius: 20px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+
+            .title,
+            .sub-title,
+            .list,
+            th,
+            td {
+                font-size: calc(var(--main-font-size) * 0.9);
+                /* Adjust font size for smaller screens */
+            }
+
+            .nutritional-phases,
+            .card {
+                padding: 10px;
+                /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .title,
+            .sub-title,
+            .list,
+            th,
+            td {
+                font-size: calc(var(--main-font-size) * 0.8);
+                /* Further reduce font size */
+            }
+
+            .leftside,
+            .rightside {
+                display: block;
+                /* Stack elements on small screens */
             }
         }
     </style>
@@ -126,160 +292,128 @@
 
 
     <!-- tabel-->
-    <h3 style="text-align:center; font-size:2rem; font-weight: bold;">Faze nutriționale pentru persoanele cu SPW</h3>
-    <div style="position: relative; text-align: center; ">
-        <p style="font-size: 1.5rem;">Există șapte faze nutriționale diferite, tipice în cazul persoanelor cu SPW</p>
-
+    <h3 class="title">Faze nutriționale pentru persoanele cu SPW</h3>
+    <div class="description">
+        <p>Există șapte faze nutriționale diferite, tipice în cazul persoanelor cu SPW</p>
     </div>
-    <div
-        style="max-width: 800px; margin: 20px auto; padding: 20px; border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); background-color: #ffffff;">
-        <h3 style="text-align:center; font-size:2rem; font-weight: 100; margin-bottom: 20px;">Frecvența principalelor
-            faze nutriționale</h3>
-        <table style="width: 100%; border-collapse: collapse;">
+    <div class="nutritional-phases">
+        <h3 class="sub-title">Frecvența principalelor faze nutriționale</h3>
+        <table>
             <thead>
-                <tr style="background-color: #efefef;">
-                    <th style="border: 2px solid #ddd; padding: 12px; text-align: left; font-size: 1.2rem;">Faza</th>
-                    <th style="border: 2px solid #ddd; padding: 12px; text-align: left; font-size: 1.2rem;">Vârsta</th>
-                    <th style="border: 2px solid #ddd; padding: 12px; text-align: left; font-size: 1.2rem;">Trăsături
-                        clinice</th>
+                <tr class="header-row">
+                    <th>Faza</th>
+                    <th>Vârsta</th>
+                    <th>Trăsături clinice</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">0</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Prenatală</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Scăderea mișcărilor fetale și
-                        greutate mai mică la naștere</td>
+                    <td>0</td>
+                    <td>Prenatală</td>
+                    <td>Scăderea mișcărilor fetale și greutate mai mică la naștere</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">1a</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">De la naștere până la 9 luni
-                    </td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Hipotonie cu dificultăți de
-                        alimentare și apetit scăzut</td>
+                    <td>1a</td>
+                    <td>De la naștere până la 9 luni</td>
+                    <td>Hipotonie cu dificultăți de alimentare și apetit scăzut</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">1b</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">9-25 luni</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Alimentare ameliorată,
-                        dezvoltare somatică adecvată</td>
+                    <td>1b</td>
+                    <td>9-25 luni</td>
+                    <td>Alimentare ameliorată, dezvoltare somatică adecvată</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">2a</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">2.1-4.5 ani</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Creștere ponderală în exces,
-                        apetit crescut, consum caloric în exces</td>
+                    <td>2a</td>
+                    <td>2.1-4.5 ani</td>
+                    <td>Creștere ponderală în exces, apetit crescut, consum caloric în exces</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">2b</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">4.5-8 ani</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Apetit crescut și aport caloric
-                        în exces, nu simte senzația de sațietate</td>
+                    <td>2b</td>
+                    <td>4.5-8 ani</td>
+                    <td>Apetit crescut și aport caloric în exces, nu simte senzația de sațietate</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">3</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">8 ani-adult</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Hiperfagie, cel mai des nu simte
-                        senzația de sațietate</td>
+                    <td>3</td>
+                    <td>8 ani-adult</td>
+                    <td>Hiperfagie, cel mai des nu simte senzația de sațietate</td>
                 </tr>
                 <tr>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">4</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Adult</td>
-                    <td style="border: 2px solid #ddd; padding: 10px; font-size: 1rem;">Apetit nu atât de mult
-                        insatiabil pentru unii</td>
+                    <td>4</td>
+                    <td>Adult</td>
+                    <td>Apetit nu atât de mult insatiabil pentru unii</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div class="container">
-        <div class="row g-0" style="padding: 20px;">
-            <div class="col-12 col-md-6 g-0">
-                <div class="leftside"
-                    style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <h1 class="text-center" style="font-size: 2rem;">Modificări ale apetitului - Hiperfagia</h1>
-                    <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                        <li style="margin-bottom: 5px;">• Cauza: Prin modificări hipotalamice, ceea ce conduc la lipsa
-                            satietății.</li>
-                        <li style="margin-bottom: 5px;">• Trasaturi:</li>
-                        <li style="margin-bottom: 5px;">• Comportament „cautător al alimentelor” - caută și ascunde
-                            alimente, consumă obiecte necomestibile, fură mâncare sau bani pentru a cumpăra mâncare.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 g-0">
-                <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                    <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
-                        alt="Image for Hiperfagia"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                </div>
-            </div>
-        </div>
-
-        <div class="container" style="padding: 20px;">
-            <div class="row justify-content-center">
-                <div class="col-12 g-0"> <!-- Full width for the card -->
-                    <div class="card"
-                        style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background:rgba(236, 236, 236, 0.67);">
-                        <div class="card-body" style="padding: 5%;">
-                            <h1 class="text-center" style="font-size: 2rem;">Obezitatea</h1>
-                            <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                                <li style="margin-bottom: 5px;">• Cauza: Prin comportament hiperfagic și prin scăderea
-                                    necesarului caloric total – scăderea metabolismului bazal, scăderea activității și
-                                    scăderea masei musculare.</li>
-                                <li style="margin-bottom: 5px;">• Trasaturi:</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;">‣ Obezitate centrală (abdomen,
-                                    solduri, coapse).</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Totuși cu adipozitate viscerală
-                                    mai scăzută față de gradul obezității.</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Reprezintă o cauză majoră de
-                                    morbiditate și mortalitate.</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Un diagnostic precoce implică o
-                                    monitorizare anticipativă față de istoria naturală și fazele nutriționale.</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Educația pacientului/familiei –
-                                    despre riscul obezității și nevoia monitorizării greutății și restricție calorică
-                                    începând cu vârsta de 18-36 luni – dieta, exercițiu și program de supervizare
-                                    adecvat pot preveni instalarea obezității.</li>
-                                <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Plus tratament cu GH (asociat
-                                    stilului de viață) previne obezitatea, modifică aspectul facial tipic de SPW,
-                                    ameliorează retardul de dezvoltare și abilitățile cognitive.</li>
-                            </ul>
-                        </div>
+    <div class="container padding-section">
+        <div class="row justify-content-center">
+            <!-- Card 1: Modificări ale apetitului - Hiperfagia -->
+            <div class="col-12 g-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center">Modificări ale apetitului - Hiperfagia</h1>
+                        <ul class="list">
+                            <li>• Cauza: Prin modificări hipotalamice, ceea ce conduc la lipsa satietății.</li>
+                            <li>• Trasaturi:</li>
+                            <li>• Comportament „cautător al alimentelor” - caută și ascunde alimente, consumă obiecte necomestibile, fură mâncare sau bani pentru a cumpăra mâncare.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-
-
-        <div class="row g-0" style="padding: 20px;">
-            <div class="col-12 col-md-6 g-0">
-                <div class="leftside"
-                    style="padding-top: 5%; border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <h1 class="text-center" style="font-size: 2rem;">Tablou gastrointestinal acut</h1>
-                    <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                        <li style="margin-bottom: 5px;">• Incetinirea golirii stomacului (60-80%).</li>
-                        <li style="margin-bottom: 5px;">• Vărsături rare (80-90%).</li>
-                        <li style="margin-bottom: 5px;">• Risc crescut de necroză gastrică dacă pacientul prezintă
-                            hiperfagie semnificativă.</li>
-                        <li style="margin-bottom: 5px;">• Semne de alarmă pentru inflamație/necroza gastrică
-                            amenințătoare de viață!!! - Distensie abdominală, meteorism, durere, letargie, apetit
-                            scăzut, vărsătură – consult medical în urgență, imagistică radiologică și uneori chirurgie
-                            în urgență.</li>
-                        <li style="margin-bottom: 5px;">• A evita medicația antidiareică – risc de distensie colonică
-                            severă, necroză, ruptură.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 g-0">
-                <div class="rightside" style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-                    <img src="{% static 'index/Resources/doctor_aest1.jpg' %}" class="card-img-top"
-                        alt="Image for Tablou gastrointestinal acut"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+        <div class="container padding-section">
+            <div class="row justify-content-center">
+            <!-- Card 2: Tablou gastrointestinal acut -->
+            <div class="col-12 g-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center">Tablou gastrointestinal acut</h1>
+                        <ul class="list">
+                            <li>• Încetinirea golirii stomacului (60-80%).</li>
+                            <li>• Vărsături rare (80-90%).</li>
+                            <li>• Risc crescut de necroză gastrică dacă pacientul prezintă hiperfagie semnificativă.</li>
+                            <li>• Semne de alarmă pentru inflamație/necroza gastrică amenințătoare de viață!!! - Distensie abdominală, meteorism, durere, letargie, apetit scăzut, vărsătură – consult medical în urgență, imagistică radiologică și uneori chirurgie în urgență.</li>
+                            <li>• A evita medicația antidiareică – risc de distensie colonică severă, necroză, ruptură.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+
+    <div class="container padding-section">
+        <div class="row justify-content-center">
+            <div class="col-12 g-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center">Obezitatea</h1>
+                        <ul class="list">
+                            <li>• Cauza: Prin comportament hiperfagic și prin scăderea necesarului caloric total –
+                                scăderea metabolismului bazal, scăderea activității și scăderea masei musculare.
+                            </li>
+                            <li>• Trasaturi:</li>
+                            <li>‣ Obezitate centrală (abdomen, solduri, coapse).</li>
+                            <li>‣ Totuși cu adipozitate viscerală mai scăzută față de gradul obezității.</li>
+                            <li>‣ Reprezintă o cauză majoră de morbiditate și mortalitate.</li>
+                            <li>‣ Un diagnostic precoce implică o monitorizare anticipativă față de istoria naturală
+                                și fazele nutriționale.</li>
+                            <li>‣ Educația pacientului/familiei – despre riscul obezității și nevoia monitorizării
+                                greutății și restricție calorică începând cu vârsta de 18-36 luni – dieta, exercițiu
+                                și program de supervizare adecvat pot preveni instalarea obezității.</li>
+                            <li>‣ Plus tratament cu GH (asociat stilului de viață) previne obezitatea, modifică
+                                aspectul facial tipic de SPW, ameliorează retardul de dezvoltare și abilitățile
+                                cognitive.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
 

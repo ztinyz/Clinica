@@ -42,7 +42,6 @@
         crossorigin="anonymous" />
 
     <style>
-
         .item {
             transition: transform 0.3s ease;
             /* Smooth transition for scaling */
@@ -64,6 +63,7 @@
             color: white;
             /* Adjust text color for visibility */
         }
+
         @media (max-width: 768px) {
             body {
                 font-size: 1.2rem;
@@ -84,6 +84,76 @@
             th,
             td {
                 padding: 6px;
+            }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Container and Card Styling */
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(236, 236, 236, 0.67);
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            padding: 5%;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* List Styling */
+        .card-list {
+            font-size: 1.5rem;
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .card-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 4%;
+                /* Reduce padding for smaller screens */
+            }
+
+            .card-title {
+                font-size: 1.8rem;
+                /* Slightly smaller title */
+            }
+
+            .card-list {
+                font-size: 1.3rem;
+                /* Smaller font for readability */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-title {
+                font-size: 1.5rem;
+                /* Smaller title */
+            }
+
+            .card-list {
+                font-size: 1.2rem;
+                /* Further reduce text size */
             }
         }
     </style>
@@ -125,141 +195,113 @@
 
     <!-- INCEPUT SITE-->
     <div class="sections">
-
-        <p class="text-center" style="font-size: 1.5rem;">Semne clinice evocatoare diferite in functie de varsta</p>
-
+        <p class="section-header">Semne clinice evocatoare diferite in functie de varsta</p>
     </div>
-    <div class="container" style="padding: 20px;">
+    
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 g-0"> <!-- Full width for the card -->
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">PRENATAL</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Imobilism fetal in ultimul trimestru
-                            </li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Polihidramnios</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Pseudoartrogripoza</li>
-                            <li style="margin-bottom: 5px;">•Alte semne:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard de crestere intrauterin
-                                (uneori)</li>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">PRENATAL</h1>
+                        <ul class="card-list">
+                            <li>• Semne evocatoare:</li>
+                            <li>‣ Imobilism fetal in ultimul trimestru</li>
+                            <li>‣ Polihidramnios</li>
+                            <li>‣ Pseudoartrogripoza</li>
+                            <li>• Alte semne:</li>
+                            <li>‣ Retard de crestere intrauterin (uneori)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container" style="padding: 20px;">
+    
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 g-0"> <!-- Full width for the card -->
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">NEONATAL</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ hipotonie severa si inexplicabila
-                                (orice nou-nascut cu hipotonie trebuie testat genetic)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de supt si coordonare
-                                supt/deglutitie, apetit scazut</li>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">NEONATAL</h1>
+                        <ul class="card-list">
+                            <li>• Semne evocatoare:</li>
+                            <li>‣ Hipotonie severa si inexplicabila (orice nou-nascut cu hipotonie trebuie testat genetic)</li>
+                            <li>‣ Tulburari de supt si coordonare supt/deglutitie, apetit scazut</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container" style="padding: 20px;">
+    
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 g-0"> <!-- Full width for the card -->
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">VARSTA INTRE 1 LUNA SI 2 ANI</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ hipotonie severa (in special axiala)
-                                si inexplicabila</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de supt si coordonare
-                                supt/deglutitie, tulburari importante ale oralitatii</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard de dezvoltare, retard al
-                                achizitiilor motorii</li>
-                            <li style="margin-bottom: 5px;">•Alte semne:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dismorfism–buza superioara fina,ochi
-                                migdalati, maini/picioare mici(acromicrie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ baieti – criptorhidie </li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ interactiune sociala deficitara</li>
-
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">VARSTA INTRE 1 LUNA SI 2 ANI</h1>
+                        <ul class="card-list">
+                            <li>• Semne evocatoare:</li>
+                            <li>‣ Hipotonie severa (in special axiala) si inexplicabila</li>
+                            <li>‣ Tulburari de supt si coordonare supt/deglutitie, tulburari importante ale oralitatii</li>
+                            <li>‣ Retard de dezvoltare, retard al achizitiilor motorii</li>
+                            <li>• Alte semne:</li>
+                            <li>‣ Dismorfism – buza superioara fina, ochi migdalati, maini/picioare mici (acromicrie)</li>
+                            <li>‣ Baieti – criptorhidie</li>
+                            <li>‣ Interactiune sociala deficitara</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container" style="padding: 20px;">
+    
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 g-0"> <!-- Full width for the card -->
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">VARSTA INTRE 2 ANI SI 12 ANI</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ Obezitate, hiperfagie</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard de dezvoltare/dizabilitate
-                                intelectuala moderate, hipotonie uneori persistenta;</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ istoric de hipotonie plus tulburari
-                                de alimentatie – nou-nascut/sugar</li>
-                            <li style="margin-bottom: 5px;">•Alte semne:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ o controlul mediului/al accesului la
-                                alimente de obicei depasite de abilitatea pacientului de a procura alimente (preocupare
-                                cvasicontinua) </li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ baieti – criptorhidie </li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dismorfism–buza superioara fina,ochi
-                                migdalati, maini/picioare mici(acromicrie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de invatare; interactiune
-                                sociala deficitara</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ talie mica sau incetinirea vitezei
-                                cresterii</li>
-
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">VARSTA INTRE 2 ANI SI 12 ANI</h1>
+                        <ul class="card-list">
+                            <li>• Semne evocatoare:</li>
+                            <li>‣ Obezitate, hiperfagie</li>
+                            <li>‣ Retard de dezvoltare/dizabilitate intelectuala moderate, hipotonie uneori persistenta</li>
+                            <li>‣ Istoric de hipotonie plus tulburari de alimentatie – nou-nascut/sugar</li>
+                            <li>• Alte semne:</li>
+                            <li>‣ Controlul mediului/al accesului la alimente, de obicei depasite de abilitatea pacientului de a procura alimente (preocupare cvasicontinua)</li>
+                            <li>‣ Baieti – criptorhidie</li>
+                            <li>‣ Dismorfism – buza superioara fina, ochi migdalati, maini/picioare mici (acromicrie)</li>
+                            <li>‣ Tulburari de invatare; interactiune sociala deficitara</li>
+                            <li>‣ Talia mica sau incetinirea vitezei cresterii</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container" style="padding: 20px;">
+    
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 g-0"> <!-- Full width for the card -->
-                <div class="card"
-                    style="border-radius: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); background: rgba(236, 236, 236, 0.67);">
-                    <div class="card-body" style="padding: 5%;">
-                        <h1 class="text-center" style="font-size: 2rem;">ADOLESCENT SI ADULT</h1>
-                        <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
-                            <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ obezitate severa plus tulburare de
-                                comportament alimentar (hiperfagie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dizabilitate intelectuala moderata
-                            </li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard pubertar complet/partial –
-                                hipogonadism</li>
-                            <li style="margin-bottom: 5px;">•Alte semne:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dismorfism–buza superioara fina,ochi
-                                migdalati, maini/picioare mici(acromicrie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de comportament si
-                                psihiatrice </li>
-
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">ADOLESCENT SI ADULT</h1>
+                        <ul class="card-list">
+                            <li>• Semne evocatoare:</li>
+                            <li>‣ Obezitate severa plus tulburare de comportament alimentar (hiperfagie)</li>
+                            <li>‣ Dizabilitate intelectuala moderata</li>
+                            <li>‣ Retard pubertar complet/partial – hipogonadism</li>
+                            <li>• Alte semne:</li>
+                            <li>‣ Dismorfism – buza superioara fina, ochi migdalati, maini/picioare mici (acromicrie)</li>
+                            <li>‣ Tulburari de comportament si psihiatrice</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
 
     <section class="game-section">
