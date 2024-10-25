@@ -66,6 +66,21 @@
             margin-right: 10px;
             font-size: 20px;
         }
+        .item {
+        transition: transform 0.3s ease; /* Smooth transition for scaling */
+        cursor: pointer; /* Indicate that the item is clickable */
+    }
+
+    .item:hover {
+        transform: scale(1.05); /* Scale the card on hover */
+    }
+
+    .item-desc {
+        position: relative;
+        z-index: 1; /* Ensure text appears above the background */
+        padding: 10px; /* Add some padding */
+        color: white; /* Adjust text color for visibility */
+    }
     </style>
     <title>Styled Links</title>
     
@@ -391,23 +406,11 @@
     </div>
 </section>
 
-<style>
-    .item {
-        transition: transform 0.3s ease; /* Smooth transition for scaling */
-        cursor: pointer; /* Indicate that the item is clickable */
-    }
-
-    .item:hover {
-        transform: scale(1.05); /* Scale the card on hover */
-    }
-
-    .item-desc {
-        position: relative;
-        z-index: 1; /* Ensure text appears above the background */
-        padding: 10px; /* Add some padding */
-        color: white; /* Adjust text color for visibility */
-    }
-</style>
+<footer class="footer">
+    <div class="container2">
+        <p>&copy; 2024 LRC. All rights reserved.</p>
+    </div>
+</footer>
 
 <script>
     $(document).ready(function() {
@@ -421,11 +424,7 @@
 </script>
 
 
-<footer class="footer">
-    <div class="container2">
-        <p>&copy; 2024 LRC. All rights reserved.</p>
-    </div>
-</footer>
+
     
     <!-- Initialize Owl Carousel -->
     <script>

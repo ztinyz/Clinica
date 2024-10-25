@@ -82,6 +82,28 @@
             margin-right: 10px;
             font-size: 20px;
         }
+
+        .item {
+            transition: transform 0.3s ease;
+            /* Smooth transition for scaling */
+            cursor: pointer;
+            /* Indicate that the item is clickable */
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            /* Scale the card on hover */
+        }
+
+        .item-desc {
+            position: relative;
+            z-index: 1;
+            /* Ensure text appears above the background */
+            padding: 10px;
+            /* Add some padding */
+            color: white;
+            /* Adjust text color for visibility */
+        }
     </style>
     <title>Styled Links</title>
 
@@ -124,10 +146,10 @@
 
     <!-- INCEPUT SITE-->
     <div class="sections">
-        
+
         <p class="text-center" style="font-size: 1.5rem;">Semne clinice evocatoare diferite in functie de varsta</p>
-    
-        </div>
+
+    </div>
     <div class="container" style="padding: 20px;">
         <div class="row justify-content-center">
             <div class="col-12 g-0"> <!-- Full width for the card -->
@@ -241,13 +263,17 @@
                         <h1 class="text-center" style="font-size: 2rem;">ADOLESCENT SI ADULT</h1>
                         <ul style="font-size: 1.5rem; padding-left: 20px; list-style: none;">
                             <li style="margin-bottom: 5px;">•Semne evocatoare:</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ obezitate severa plus tulburare de comportament alimentar (hiperfagie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dizabilitate intelectuala moderata</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard pubertar complet/partial – hipogonadism</li>
+                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ obezitate severa plus tulburare de
+                                comportament alimentar (hiperfagie)</li>
+                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dizabilitate intelectuala moderata
+                            </li>
+                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ retard pubertar complet/partial –
+                                hipogonadism</li>
                             <li style="margin-bottom: 5px;">•Alte semne:</li>
                             <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ dismorfism–buza superioara fina,ochi
                                 migdalati, maini/picioare mici(acromicrie)</li>
-                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de comportament si psihiatrice </li>
+                            <li style="margin-bottom: 5px; padding-left: 20px;"> ‣ tulburari de comportament si
+                                psihiatrice </li>
 
                         </ul>
                     </div>
@@ -310,29 +336,13 @@
         </div>
     </section>
 
-    <style>
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+    <footer class="footer">
+        <div class="container2">
+            <p>&copy; 2024 LRC. All rights reserved.</p>
+        </div>
+    </footer>
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
-    </style>
 
     <script>
         $(document).ready(function () {
@@ -344,13 +354,6 @@
             });
         });
     </script>
-
-
-    <footer class="footer">
-        <div class="container2">
-            <p>&copy; 2024 LRC. All rights reserved.</p>
-        </div>
-    </footer>
 
     <!-- Initialize Owl Carousel -->
     <script>
