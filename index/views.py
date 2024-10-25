@@ -227,3 +227,15 @@ def Criterii_obezitate(request):
     return render(request, "index/Criterii_obezitate.html")
 def Diagnostic_genetic(request):
     return render(request, "index/Diagnostic_genetic.html")
+def Genetica_regiunii(request):
+    return render(request, "index/Genetica_regiunii.html")
+def Modificari_genetice(request):
+    return render(request, "index/Modificari_genetice.html")
+def Testare_genetica(request):
+    return render(request, "index/Testare_genetica.html")
+def Algoritm_testare_genetica(request):
+    return render(request, "index/Algoritm_testare_genetica.html")
+def Sfat_genetic(request):
+    return render(request, "index/Sfat_genetic.html")
+def Corelatii_genotip_fenotip(request):
+    return render(request, "index/Corelatii_genotip_fenotip.html")

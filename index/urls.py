@@ -80,4 +80,10 @@ urlpatterns = [
     path('Criterii_clinice/', views.Criterii_clinice, name='Criterii_clinice'),
     path('Criterii_obezitate/', views.Criterii_obezitate, name='Criterii_obezitate'),
     path('Diagnostic_genetic/', views.Diagnostic_genetic, name='Diagnostic_genetic'),
+    path('Genetica_regiunii/', views.Genetica_regiunii, name='Genetica_regiunii'),
+    path('Modificari_genetice/', views.Modificari_genetice, name='Modificari_genetice'),
+    path('Testare_genetica/', views.Testare_genetica, name='Testare_genetica'),
+    path('Algoritm_testare_genetica/', views.Algoritm_testare_genetica, name='Algoritm_testare_genetica'),
+    path('Sfat_genetic/', views.Sfat_genetic, name='Sfat_genetic'),
+    path('Corelatii_genotip_fenotip/', views.Corelatii_genotip_fenotip, name='Corelatii_genotip_fenotip'),
 ]

@@ -104,6 +104,73 @@
             color: white;
             /* Adjust text color for visibility */
         }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #f9fbfd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #005bbf;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .details-btn {
+            font-size: 1rem;
+            color: #005bbf;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .details-btn a {
+            color: #005bbf;
+            text-decoration: none;
+        }
+
+        .details-btn a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+
     </style>
     <title>Styled Links</title>
 
@@ -148,21 +215,65 @@
 
     <div style="position: relative; ">
         <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">gentics</h3>
+            <h3 style="text-align:center; font-size:2rem;">Diagnostic genetic</h3>
             <p class="text-justify" style="font-size: 1.5rem;">
 
             <div style="position: relative; "></div>
             <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">lalalllalalla</h3>
-                <p class="text-justify" style="font-size: 1.5rem;">Olevant for the site</p>
-
+                <p class="text-justify" style="font-size: 1.5rem;">Diverse informatii despre diagnosticul genetic</p>
             </div>
         </div>
-
         </p>
     </div>
+
+    <!--CARDURI DRAGUTE-->
+    <div class="card-container">
+        <div class="card">
+            <h3>Genetica regiunii 15q11q13 </h3>
+            <p>Informatii despre regiunea genetica afectata
+            </p>
+            <div class="details-btn">
+                <a href="{% url 'Genetica_regiunii' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Modificari genetice in PWS</h3>
+            <p>Informatii despre Modificarile genetice prezente in sindromul PWS</p>
+            <div class="details-btn">
+                <a href="{% url 'Modificari_genetice' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Testarea genetica in SPW</h3>
+            <p>Informatii despre testele genetice indicate in functie de mecanismul genetic</p>
+            <div class="details-btn">
+                <a href="{% url 'Testare_genetica' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Algoritm de testare genetica</h3>
+            <p>Informatii despre algoritm de testare genetica</p>
+            <div class="details-btn">
+                <a href="{% url 'Algoritm_testare_genetica' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Sfat genetic</h3>
+            <p>Sfaturi din punct de vedere genetic</p>
+            <div class="details-btn">
+                <a href="{% url 'Sfat_genetic' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Corelatii genotip-fenotip</h3>
+            <p>Informatii despre diferetele statistice observate in frecventa anumitor caracteristice genetice</p>
+            <div class="details-btn">
+                <a href="{% url 'Corelatii_genotip_fenotip' %}">Vezi detalii</a>
+            </div>
+        </div>
     </div>
 
+    </div>
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
         <div class="owl-carousel custom-carousel owl-theme">
@@ -234,6 +345,7 @@
         });
     </script>
 
+    
 
 
     <!-- Initialize Owl Carousel -->
