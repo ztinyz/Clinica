@@ -40,68 +40,43 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-
-    <style>
-        /*CSS PENTRU CARUSELUL LUI CATA*/
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
-
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
-
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
-        @media (max-width: 768px) {
-            body {
+        <title>Regiunea 15q11q13</title>
+        <style>
+            .card-container {
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                background-color: rgba(236, 236, 236, 0.67);
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+            }
+    
+            .card-container h1 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+    
+            .card-container h2 {
+                font-size: 1.5rem;
+                margin-top: 20px;
+            }
+    
+            .card-container ul, .card-container ol {
+                padding-left: 20px;
+            }
+    
+            .card-container li {
+                margin-bottom: 10px;
+            }
+    
+            .card-container strong {
                 font-size: 1.2rem;
             }
-
-            th,
-            td {
-                padding: 8px;
-            }
-        }
-
-        /* Media query for extra-small devices (small phones) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 1rem;
-            }
-
-            th,
-            td {
-                padding: 6px;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
-        padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
-    }
+        </style>
     
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
-    }
-    </style>
-    <title>Styled Links</title>
 
 
 
@@ -129,7 +104,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>GEN REG</p>
+            <p>GENETICA REGIUNII</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -143,21 +118,62 @@
 
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative; ">
-        <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">Ghiduri utile</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
+    <div style="position: relative;">
+        <div class="row g-0">
+            <div class="card-container">
+                <h1>Regiunea 15q11q13</h1>
+                <p>Regiunea 15q11q13 este împărțită în 4 subregiuni diferite:</p>
+                <ol>
+                    <li>
+                        <strong>1. Subregiune proximala centromerica (BP1-BP2)</strong>
+                        <ul>
+                            <li>- neamprentată</li>
+                            <li>- conține patru gene: NIPA1, NIPA2, CYFIP1, TUBGCP5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>2. Subregiune a sindromului Prader-Willi (SPW)</strong>
+                        <ul>
+                            <li>- amprentată pe cromozomul matern</li>
+                            <li>- Conține:</li>
+                            <ul>
+                                <li>• gene care codifică polipeptide: MKRN3, MAGEL2, NDN, PWRN1, NPAP1, SNURF-SNRPN</li>
+                                <li>• 6 grupe de gene care codifică ARN mic nucleolar (snoRNA), printre care cluster SNORD116</li>
+                                <li>• o genă care codifică un ARN a cărui funcție nu este bine cunoscută (IPW) – ARN lung necodant</li>
+                                <li>• centrul de amprentare (IC) cu componentă AS (maternă) și PWS (paternă)</li>
+                            </ul>
+                           
+                            <li>- cea mai mică regiune afectată în SPW (PWS-SRO) are 4,3 kb, incluzând promotorul, insula CpG, exonul 1 și o mică parte a intronului 1 al SNURF-SNRPN</li>
+                            <li>- AS-SRO se află la aproximativ 35 kb proximal de exonul 1 al SNURF-SNRPN</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3. Subregiune a sindromului Angelman (SA)</strong>
+                        <ul>
+                            <li>- cu amprentare paternă</li>
+                            <li>- conține 2 gene: UBE3A, ATP10A</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>4. Subregiune distala</strong>
+                        <ul>
+                            <li>- neamprentată, expresie biparentală</li>
+                            <li>- conține 5 gene: GABRB3, GABRA5, GABRG3, OCA2, HERC2</li>
+                        </ul>
+                    </li>
+                </ol>
 
-            <div style="position: relative; "></div>
-            <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">Info</h3>
-                <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
-
+                <h2>Breakpoints și Deleții</h2>
+                <ul>
+                    <li>- Există trei puncte comune de ruptura a regiunii 15q11q13 în SPW și SA: BP1, BP2, BP3. Mai rar ruptura se poate produce distal, în BP4 sau BP5</li>
+                    <li>- Între BP1 și BP2 se află regiunea proximală centromerică</li>
+                    <li>- Între BP2 și BP3 se află celelalte trei regiuni</li>
+                    <li>- Delețiile de tip 1 (T1D) se extind de la BP1 la BP3</li>
+                    <li>- Delețiile de tip 2 (T2D) se extind de la BP2 la BP3</li>
+                    <li>- 90% din delețiile din SPW sunt T1D și T2D</li>
+                </ul>
             </div>
         </div>
-
-        </p>
-    </div>
     </div>
 
     <section class="game-section">
