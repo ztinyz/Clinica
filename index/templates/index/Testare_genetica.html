@@ -40,69 +40,129 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-
+    <title>Regiunea 15q11q13</title>
     <style>
-
-        /*CSS PENTRU CARUSELUL LUI CATA*/
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            /* Center the card and provide space around it */
+            max-width: 90%;
+            /* Ensure it fits within the parent container */
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
         }
+
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+
+        .card-container li {
+            margin-bottom: 10px;
+        }
+
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
+            .card-container {
+                padding: 15px;
+                margin: 15px auto;
+                /* Ensure margins are consistent */
+            }
+
+            .card-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-container h2 {
                 font-size: 1.2rem;
             }
 
-            th,
-            td {
-                padding: 8px;
+            .card-container strong {
+                font-size: 1rem;
             }
         }
 
-        /* Media query for extra-small devices (small phones) */
         @media (max-width: 480px) {
-            body {
+            .card-container {
+                padding: 10px;
+                margin: 10px auto;
+                /* Maintain consistent margins */
+            }
+
+            .card-container h1 {
+                font-size: 1.2rem;
+            }
+
+            .card-container h2 {
                 font-size: 1rem;
             }
 
-            th,
-            td {
-                padding: 6px;
+            .card-container strong {
+                font-size: 0.9rem;
             }
         }
-        .footer {
-        background-color: #0c926e;
-        padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
-    }
+
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .genetic-table th,
+        .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .genetic-table td {
+            background-color: #fff;
+        }
+
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
     </style>
-    <title>Styled Links</title>
 
 
 
@@ -130,7 +190,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>TEST GEN</p>
+            <p>Modificari genetice in SPW</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -139,24 +199,152 @@
         </div>
     </div>
 
+
+
+
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative; ">
-        <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">Ghiduri utile</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
+    <div style="position: relative;">
+        <div class="row g-0">
+            <div class="card-container">
+                <h1>Testarea Genetică</h1>
 
-            <div style="position: relative; "></div>
-            <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">Info</h3>
-                <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
+<table class="genetic-table">
+    <thead>
+        <tr>
+            <th>Mecanism</th>
+            <th>Procentaj</th>
+            <th>Analiza metilarii</th>
+            <th>SNP-array</th>
+            <th>Testare markeri microsateliti</th>
+            <th>MS-MLPA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Deleția 15q</td>
+            <td>~60%-70%</td>
+            <td></td>
+            <td class="highlight">+</td>
+            <td></td>
+            <td class="highlight">+</td>
+        </tr>
+        <tr>
+            <td>DUP 15 – izodisomia completă</td>
+            <td>4%-5%</td>
+            <td></td>
+            <td class="highlight">+</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>DUP 15 – izodisomia segmentală</td>
+            <td>17%-23%</td>
+            <td>Anomalii ale metilării ADN; nu se poate identifica mecanismul precis</td>
+            <td class="highlight">+</td>
+            <td></td>
+            <td class="highlight">+</td>
+        </tr>
+        <tr>
+            <td>DUP 15 heterodisomie</td>
+            <td>~8%-11%</td>
+            <td></td>
+            <td></td>
+            <td class="highlight">+</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Deleția centrului de amprentare</td>
+            <td><0.5%</td>
+            <td></td>
+            <td class="highlight">+</td>
+            <td></td>
+            <td class="highlight">+</td>
+        </tr>
+        <tr>
+            <td>Defecte ale amprentării prin epimutație</td>
+            <td>~2%-4%</td>
+            <td>Anomalii ale metilării ADN; nu se poate identifica mecanismul precis</td>
+            <td class="highlight">+</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+                <h2>Testarea genetică de primă intenție</h2>
+                <ul>
+                    <li><strong>Analiza metilării, adesea prin MLPA</strong>
+                        <ul>
+                            <li>Identifică amprentarea maternă 15q11.2-q13</li>
+                            <li>Nu poate preciza mecanismul</li>
+                            <li>Nu poate face diferența între disomia uniparentală și anomalii ale centrului de
+                                amprentare</li>
+                        </ul>
+                    </li>
+                    <li><strong>Analiza cromozomială prin microarray – SNParray</strong>
+                        <ul>
+                            <li>Diagnostic și identificarea precisă a cauzei:</li>
+                            <ul>
+                                <li>Deleții – identifică deleții de tip 2, de tip 1, și deleții atipice</li>
+                                <li>Anomalii cromozomiale dezechilibrate</li>
+                                <li>Delețiile centrului de amprentare</li>
+                                <li>Diagnosticul diferențial cu alte boli cu tablou Prader-Willi-like (deleție SNORD116)
+                                </li>
+                                <li>Identificarea DUP15 prin izodisomie completă și segmentală</li>
+                                <li>Nu permite identificarea heterodisomiei</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
 
+                <h2>Testarea genetică de a doua intenție</h2>
+                <p>Dacă există anomalii ale metilării 15q11.2-q13 cu amprentare maternă, dar fără deleție sau DUP15 la
+                    SNParray sau MS-MLPA:</p>
+                <ul>
+                    <li>Se recomandă testarea markerilor microsatelitari ai pacientului și a părinților pentru a
+                        identifica DUP15 prin heterodisomie sau anomalii ale metilării prin defecte epigenetice ale
+                        amprentării.</li>
+                </ul>
+
+                <h2>Alte opțiuni de testare</h2>
+                <ul>
+                    <li><strong>Testarea MLPA:</strong>
+                        <ul>
+                            <li>Poate identifica și aproxima mărimea deleției paterne</li>
+                            <li>Poate identifica delețiile de tip 1 și 2</li>
+                            <li>Identifică centrul de amprentare și delețiile SNORD116</li>
+                        </ul>
+                    </li>
+                    <li><strong>Testarea MS-MLPA:</strong> Nu poate distinge între UPD15 de anomalii ale amprentării
+                        prin epimutații</li>
+                    <li><strong>Secvențierea ADN:</strong>
+                        <ul>
+                            <li>La pacienții cu anomalii ale metilării 15q11.2-q13 care prezintă doar alela maternă,
+                                poate identifica anomalii ale amprentării prin mutații/deleții ale centrului de
+                                amprentare.</li>
+                            <li>MS-MLPA și SNParray mai frecvent indicate întrucât permit identificarea deletiilor
+                                centrului de amprentare prin densitatea bună a sondelor.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Analiza FISH:</strong>
+                        <ul>
+                            <li>Limitată doar la probele specifice utilizate (de obicei SNRPN)</li>
+                            <li>Poate identifica deleția 15q11.2-q13</li>
+                            <li>Nu poate evalua întreaga regiune 15q11.2-q13</li>
+                            <li>Nu poate determina mărimea deleției</li>
+                            <li>Nu poate da informații despre restul cromozomului</li>
+                            <li>Nu poate identifica UPD15</li>
+                            <li>Nu poate identifica anomalii ale centrului de amprentare</li>
+                            <li>Nu este un test de primă intenție, însă poate fi folosit pentru a clarifica riscul de
+                                recurență.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        </p>
-    </div>
-    </div>
+
 
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
@@ -213,7 +401,13 @@
 
     <footer class="footer">
         <div class="container2">
-            <p>&copy; 2024 LRC. All rights reserved.</p>
+            <p>&copy; Driscoll DJ, Miller JL, Cassidy SB. Prader-Willi Syndrome. 1998 Oct 6 [Updated 2024 Dec 5]. In:
+                Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of
+                Washington, Seattle; 1993-2024. Available from: https://www.ncbi.nlm.nih.gov/books/NBK1330/
+                Protocole National de Diagnostic et de Soins (PNDS) Syndrome de Prader-Willi. Centre de référence du
+                syndrome de Prader-Willi et autres Obésités Rares avec troubles du comportement alimentaire (PRADORT),
+                2021
+            </p>
         </div>
     </footer>
 
@@ -224,6 +418,15 @@
                 const url = $(this).data('url');
                 // Navigate to the URL
                 window.location.href = url;
+            });
+        });
+    </script>
+
+    <!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
             });
         });
     </script>

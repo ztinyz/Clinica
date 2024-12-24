@@ -40,68 +40,86 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+        <title>Regiunea 15q11q13</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <style>
-        /*CSS PENTRU CARUSELUL LUI CATA*/
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
-        @media (max-width: 768px) {
-            body {
-                font-size: 1.2rem;
-            }
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
 
-            th,
-            td {
-                padding: 8px;
-            }
-        }
+.card-container li {
+    margin-bottom: 10px;
+}
 
-        /* Media query for extra-small devices (small phones) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 1rem;
-            }
+.card-container strong {
+    font-size: 1.2rem;
+}
 
-            th,
-            td {
-                padding: 6px;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
+
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
         padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
+        margin: 10px auto; /* Maintain consistent margins */
     }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
+
+    .card-container h1 {
+        font-size: 1.2rem;
     }
-    </style>
-    <title>Styled Links</title>
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
 
 
 
@@ -129,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Prader-Wili</p>
+            <p>Modificari genetice in SPW</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -143,22 +161,55 @@
 
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative; ">
-        <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">SFAT GENETIC</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
-
-            <div style="position: relative; "></div>
-            <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">Info</h3>
-                <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
-
-            </div>
-        </div>
-
-        </p>
+    <div>
+        <p>Diagnosticul genetic are două obiective:</p>
+        <ol>
+            <li>
+                <strong>Confirmă suspiciunea clinică = prin analiza metilării SNRPN – test de primă intenție</strong>
+                <ul>
+                    <li>Dacă testul metilării este pozitiv – treci la punctul 2</li>
+                    <li>Dacă testul metilării este negativ
+                        <ul>
+                            <li>Probabilitate PWS foarte scăzută, nu exclusă, pentru că:</li>
+                            <ul>
+                                <li>Posibil test fals negativ</li>
+                                <li>Anomalie 15q11q13 fără amprentare anormală</li>
+                                <li>Rearanjamente cromozomiale rare</li>
+                                <li>Modificare SNORD116</li>
+                            </ul>
+                            <li>Dacă fenotipul clinic este foarte sugestiv pentru PWS:
+                                <ul>
+                                    <li>Repetă testul pe o probă diferită și, dacă este posibil, printr-o altă tehnică de analiză a metilării diferită</li>
+                                    <li>A se efectua un cariotip</li>
+                                    <li>Caută deleții ale clusterului SNORD116</li>
+                                    <li>Posibil de căutat mutații ale genei MAGEL2 – dacă fenotipul este SPW-like</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Trebuie să identifice și mecanismul genetic responsabil</strong>
+                <ul>
+                    <li>Important pentru sfatul genetic</li>
+                    <li>Inițial caută deleția tipică a regiunii 15q11q13, posibil prin tehnici PCR cantitative, MLPA, FISH, tehnici de array cromozomial</li>
+                    <li>Dacă este deleție, este recomandat un cariotip ulterior (copil + părinți) - prin analiza morfologiei cromozomilor 15 se pot observa rearanjamente complexe (rar, dar risc de recurență crescut).</li>
+                    <li>Dacă nu este deleție, caută disomia uniparentală maternă – MS-MLPA, SNP array</li>
+                    <li>Confirmarea disomiei materne – pasul următor – cariotipul mamei și copilului pentru a exclude o disomie 15 prin translocație robertsoniană (foarte rară, dar risc crescut de recurență)</li>
+                    <li>Dacă nu este deleție, nu este disomie uniparentală maternă, caută anomalii ale centrului de amprentare (2-3%) (risc de recurență crescut, 50%) - prin SNP array (deleții mici) sau secvențiere</li>
+                    <li>Anomalii ale centrului de amprentare pot fi transmise de la tată (purtător de alelă maternă, inactivă deci, tată fără tablou clinic)</li>
+                    <li>Dacă nu este deleție, nu este disomie maternă, nu este mutația centrului de amprentare, caută epimutația (mecanism epigenetic, risc de recurență foarte scăzut)</li>
+                    <li>Dacă nu există anomalii ale metilării și cariotipul este normal, dar tablou clinic SPW-like, caută MAGEL2 și SNORD116</li>
+                    <ul>
+                        <li><strong>MAGEL2:</strong> Sindromul Schaaf-Yang, cauzat de afectarea neuronilor secretanți de ocitocină din nucleul hipotalamic paraventricular, cu fenotip neonatal similar SPW, ulterior dizabilitate intelectuală mai severă, disfuncții endocrine, obezitate mai rar</li>
+                        <li><strong>SNORD116:</strong> Regiunea critică minimă SPW (SNORD116, IPW, VC SNORD109A)</li>
+                    </ul>
+                </ul>
+            </li>
+        </ol>
     </div>
-    </div>
+    
 
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
@@ -215,7 +266,9 @@
 
     <footer class="footer">
         <div class="container2">
-            <p>&copy; 2024 LRC. All rights reserved.</p>
+            <p>&copy; Driscoll DJ, Miller JL, Cassidy SB. Prader-Willi Syndrome. 1998 Oct 6 [Updated 2024 Dec 5]. In: Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle; 1993-2024. Available from: https://www.ncbi.nlm.nih.gov/books/NBK1330/
+                Protocole National de Diagnostic et de Soins (PNDS) Syndrome de Prader-Willi. Centre de référence du syndrome de Prader-Willi et autres Obésités Rares avec troubles du comportement alimentaire (PRADORT), 2021
+                </p>
         </div>
     </footer>
 
@@ -226,6 +279,15 @@
                 const url = $(this).data('url');
                 // Navigate to the URL
                 window.location.href = url;
+            });
+        });
+    </script>
+
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
             });
         });
     </script>

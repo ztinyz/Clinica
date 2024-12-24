@@ -40,68 +40,86 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+        <title>Regiunea 15q11q13</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <style>
-        /*CSS PENTRU CARUSELUL LUI CATA*/
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
-        @media (max-width: 768px) {
-            body {
-                font-size: 1.2rem;
-            }
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
 
-            th,
-            td {
-                padding: 8px;
-            }
-        }
+.card-container li {
+    margin-bottom: 10px;
+}
 
-        /* Media query for extra-small devices (small phones) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 1rem;
-            }
+.card-container strong {
+    font-size: 1.2rem;
+}
 
-            th,
-            td {
-                padding: 6px;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
+
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
         padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
+        margin: 10px auto; /* Maintain consistent margins */
     }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
+
+    .card-container h1 {
+        font-size: 1.2rem;
     }
-    </style>
-    <title>Styled Links</title>
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
 
 
 
@@ -129,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>MODIFICARI GEN</p>
+            <p>Modificari genetice in SPW</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -139,24 +157,52 @@
     </div>
 
 
+
+
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative; ">
-        <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">Ghiduri utile</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
-
-            <div style="position: relative; "></div>
-            <div class="sections">
-                <h3 style="text-align:center; font-size:2rem;">Info</h3>
-                <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
-
+    <div style="position: relative;">
+        <div class="row g-0">
+            <div class="card-container">
+                <p>SPW se produce prin pierderea expresiei genelor în regiunea SPW paternă, prin:</p>
+                <ol>
+                    <li>
+                        <strong>1. Deleția interstițială a regiunii 15q11-q13 a cromozomului patern (70%)</strong>
+                        <ul>
+                            <li>a. Cea mai frecventă este deleția de tip 2 (T2D) sau deleția scurtă (între BP2 și BP3)</li>
+                            <li>b. Deleția lungă sau de tip 1 (T1D), între BP1 și BP3, este mai rară</li>
+                            <li>c. Alte deleții, atipice - 5-10% din cazuri:
+                                <ul>
+                                    <li>- Mai lungi, până la BP4 sau BP5</li>
+                                    <li>- Mai scurte, care afectează centrul de amprentare</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>2. Disomia uniparentală de origine maternă (DUPm)</strong>
+                        <ul>
+                            <li>- Mai frecvent dacă vârsta maternă este crescută (25%)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>3. Disfuncția a centrului de amprentare (IC) (2-5%)</strong>
+                        <ul>
+                            <li>- Modificări epigenetice (epimutație primară)</li>
+                            <li>- Microdeleție specifică a IC a cromozomului patern – mai rar</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>4. Anomalii cromozomiale</strong>
+                        <ul>
+                            <li>- Translocații, cromozomi markeri etc., care implică 15q11q13 (<1%)</li>
+                        </ul>
+                    </li>
+                </ol>
             </div>
         </div>
-
-        </p>
     </div>
-    </div>
+    
 
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
@@ -224,6 +270,15 @@
                 const url = $(this).data('url');
                 // Navigate to the URL
                 window.location.href = url;
+            });
+        });
+    </script>
+
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
             });
         });
     </script>
