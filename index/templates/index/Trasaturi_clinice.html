@@ -97,6 +97,18 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
         }
+        .card-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+        .card {
+        flex: 1;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
 
         /* Heading and list styling */
         .card-container h1 {
@@ -312,90 +324,8 @@
                         <li>o Uneori, vârsta osoasă avansată</li>
                     </ul>
                 </ul>
-
             </div>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="card-container">
-                <h1>Dizabilitatea intelectuala</h1>
-                <ul>
-                    <ul class="section-list">
-                        <li>• Majoritatea - dizabilitate intelectuală ușoară - IQ mediu = 60-70</li>
-                        <li>• 40% - nivel intelectual „borderline” / inteligență normală</li>
-                        <li>• 20% - dizabilitate intelectuală medie</li>
-                    </ul>
-                    <p class="section-description">Particularități:</p>
-                    <ul class="section-list">
-                        <li>o Majoritatea - tulburări de învățare</li>
-                        <li>o Unii pacienți finalizează o formă medie de învățământ (bacalaureat)</li>
-                        <li>o Abilități superioare pentru a rezolva puzzle (pacienții cu deleție 15q)</li>
-                    </ul>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row g-0">
-        <div class="col-12 col-md-6">
-            <div class="card-container">
-                <h1>Disfuncția hipotalamo-hipofizară</h1>
-                <ul>
-                    <li> Responsabilă de deficite hormonale multiple</li>
-                    <ul>
-                        <li>o GH</li>
-                        <li>o FSH, LH</li>
-                        <li>o TSH</li>
-                        <li>o ACTH</li>
-                        <li>o Anomalii ale neuronilor secretați de ocitocină</li>
-                    </ul>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row g-0">
-            <div class="col-12 col-md-6">
-                <div class="card-container">
-                    <h1>Diabetul tip 2</h1>
-                    <ul>
-                        <li>• Complicație a obezității severe</li>
-                        <ul>
-                            <li>o 25% dintre adulții cu SPW prezintă diabet tip 2</li>
-                            <li>o Vârsta medie la debut de 20 ani</li>
-                        </ul>
-                        <li>• Scăderea vârstei la diagnostic și intervenția timpurie au condus la reducerea numărului de
-                            pacienți cu obezitate morbidă și diabet zaharat tip 2</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row g-0">
-            <div class="col-12 col-md-6">
-                <div class="card-container">
-                    <h1>Hipotiroidismul central</h1>
-                    <ul>
-                        <li>• Profil hormonal: TSH normal și FT4 scăzut</li>
-                        <ul>
-                            <li>o 25% dintre pacienții cu SPW</li>
-                            <li>o Vârsta medie la diagnostic 2 ani</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row g-0">
-            <div class="col-12 col-md-6">
-                <div class="card-container">
-                    <h1>Insuficiența suprarenaliana centrală</h1>
-                    <ul>
-                        <li>• Rară la adulții cu SPW</li>
-                        <ul>
-                            <li>o 1.2% dintre adulții cu SPW</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
         <div class="col-12 col-md-6">
             <div class="card-container">
                 <h1>Deficitul hormonului de creștere</h1>
@@ -437,6 +367,75 @@
             </div>
         </div>
     </div>
+    </div>
+
+    <div class="row g-0">
+        <div class="col-12 col-md-6">
+            <div class="card-container">
+                <h1>Dizabilitatea intelectuala</h1>
+                <ul>
+                    <ul class="section-list">
+                        <li>• Majoritatea - dizabilitate intelectuală ușoară - IQ mediu = 60-70</li>
+                        <li>• 40% - nivel intelectual „borderline” / inteligență normală</li>
+                        <li>• 20% - dizabilitate intelectuală medie</li>
+                    </ul>
+                    <p class="section-description">Particularități:</p>
+                    <ul class="section-list">
+                        <li>o Majoritatea - tulburări de învățare</li>
+                        <li>o Unii pacienți finalizează o formă medie de învățământ (bacalaureat)</li>
+                        <li>o Abilități superioare pentru a rezolva puzzle (pacienții cu deleție 15q)</li>
+                    </ul>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card-container">
+                <h1>Diabetul tip 2</h1>
+                <ul>
+                    <li>• Complicație a obezității severe</li>
+                    <ul>
+                        <li>o 25% dintre adulții cu SPW prezintă diabet tip 2</li>
+                        <li>o Vârsta medie la debut de 20 ani</li>
+                    </ul>
+                    <li>• Scăderea vârstei la diagnostic și intervenția timpurie au condus la reducerea numărului de
+                        pacienți cu obezitate morbidă și diabet zaharat tip 2</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row g-0">
+        <div class="col-12 col-md-6">
+            <div class="card-container">
+                <h1>Disfuncția hipotalamo-hipofizară</h1>
+                <ul>
+                    <li> Responsabilă de deficite hormonale multiple</li>
+                    <ul>
+                        <li>o GH</li>
+                        <li>o FSH, LH</li>
+                        <li>o TSH</li>
+                        <li>o ACTH</li>
+                        <li>o Anomalii ale neuronilor secretați de ocitocină</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card-container">
+                <h1>Hipotiroidismul central</h1>
+                <ul>
+                    <li>• Profil hormonal: TSH normal și FT4 scăzut</li>
+                    <ul>
+                        <li>o 25% dintre pacienții cu SPW</li>
+                        <li>o Vârsta medie la diagnostic 2 ani</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <div class="table_container">
         <h3 class="title">Frecvența principalelor trăsături clinice</h3>
