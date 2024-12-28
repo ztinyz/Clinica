@@ -1,65 +1,148 @@
-{% extends 'login/navbar.html'%}
+{% load static %}
+
 <!DOCTYPE html>
-<html>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
-    <head>
-        <title>Login</title>
-    </head>
-    <!-- Script section -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        AOS.init();
-    </script>
-  
-    <!--Bootsrap scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-    
-    <body>
-      {%block content%}  
-    <div class="fsec">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="{% static 'login/css/styles.css' %}">
    
-        <div class="form-container">
-            <form class="form" action="{% url 'login:login' %}" method="post">
-                {% csrf_token %}
-                <p class="title">Login </p>
-                {% if message %}
-                <div>{{ message }}</div>
-                {% endif %}
-                <p class="message">Login now and get full access to our app. </p>
-                   <label>
-                    <input class="input" type="text" placeholder="" name="username" required>
-                    <span>Username</span>
-                </label> 
-                    
-                <label>
-                    <input class="input" type="password" placeholder="" name="password" required>
-                    <span>Password</span>
-                </label>
-       
-                <button class="submit" type="submit" value="Login" >Submit</button>
-                <p class="signin">Forgot your password ? <a href="{% url 'login:reset' %}">Reset</a> </p>
-                <p class="signin">Don't have an acount ? <a href="{% url 'login:register' %}">Register</a> </p>
-            </form>
-            </div>
-        </div>
+   <title>Responsive login and registration form - Bedimcode</title>
+</head>
 
-        <!-- <form action="{% url 'login:login' %}" method="post">
-            {% csrf_token %}
-            <input type="text" name="username" placeholder="Username" required>
-            <br>
-            <input type="password" name="password" placeholder="Password" required>
-            <br>
-            <input type="submit" value="Login">
-            <h1>Forgot your password?</h1>
-            <a href="{% url 'login:reset' %}">Reset</a>
-            <h1>Don't have an account?</h1>
-            <a href="{% url 'login:register' %}">Register</a>
-        </form> -->
-        {%endblock%}
-    </body>
+<body>
+
+   <!--=============== LOGIN IMAGE ===============-->
+   <svg class="login__blob" viewBox="0 0 566 840" xmlns="http://www.w3.org/2000/svg">
+      <mask id="mask0" mask-type="alpha">
+         <path d="M342.407 73.6315C388.53 56.4007 394.378 17.3643 391.538 
+         0H566V840H0C14.5385 834.991 100.266 804.436 77.2046 707.263C49.6393 
+         591.11 115.306 518.927 176.468 488.873C363.385 397.026 156.98 302.824 
+         167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z"/>
+      </mask>
+   
+      <g mask="url(#mask0)">
+         <path d="M342.407 73.6315C388.53 56.4007 394.378 17.3643 391.538 
+         0H566V840H0C14.5385 834.991 100.266 804.436 77.2046 707.263C49.6393 
+         591.11 115.306 518.927 176.468 488.873C363.385 397.026 156.98 302.824 
+         167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z"/>
+   
+         <!-- Insert your image (recommended size: 1000 x 1200) -->
+         <image class="login__img" href="{% static 'login/img/bg-img.jpg' %}"/>
+      </g>
+   </svg>      
+
+   <!--=============== LOGIN ===============-->
+   <div class="login container grid" id="loginAccessRegister">
+      <!--===== LOGIN ACCESS =====-->
+      <div class="login__access">
+         <h1 class="login__title">Log in to your account.</h1>
+         
+         <div class="login__area">
+            <form action="" class="login__form">
+               <div class="login__content grid">
+                  <div class="login__box">
+                     <input type="email" id="email" required placeholder=" " class="login__input">
+                     <label for="email" class="login__label">Email</label>
+         
+                     <i class="ri-mail-fill login__icon"></i>
+                  </div>
+      
+                  <div class="login__box">
+                     <input type="password" id="password" required placeholder=" " class="login__input">
+                     <label for="password" class="login__label">Password</label>
+         
+                     <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
+                  </div>
+               </div>
+      
+               <a href="#" class="login__forgot">Forgot your password?</a>
+      
+               <button type="submit" class="login__button">Login</button>
+            </form>
+   
+            <div class="login__social">
+               <p class="login__social-title">Or login with</p>
+   
+               <div class="login__social-links">
+                  <a href="#" class="login__social-link">
+                     <img src="{% static 'login/img/icon-google.svg' %}" alt="image" class="login__social-img">
+                  </a>
+   
+                  <a href="#" class="login__social-link">
+                     <img src="{% static 'login/img/icon-facebook.svg' %}" alt="image" class="login__social-img">
+                  </a>
+   
+                  <a href="#" class="login__social-link">
+                     <img src="{% static 'login/img/icon-apple.svg' %}" alt="image" class="login__social-img">
+                  </a>
+               </div>
+            </div>
+   
+            <p class="login__switch">
+               Don't have an account? 
+               <button id="loginButtonRegister">Create Account</button>
+            </p>
+         </div>
+      </div>
+
+      <!--===== LOGIN REGISTER =====-->
+      <div class="login__register">
+         <h1 class="login__title">Create new account.</h1>
+
+         <div class="login__area">
+            <form action="" class="login__form">
+               <div class="login__content grid">
+                  <div class="login__group grid">
+                     <div class="login__box">
+                        <input type="text" id="names" required placeholder=" " class="login__input">
+                        <label for="names" class="login__label">Names</label>
+   
+                        <i class="ri-id-card-fill login__icon"></i>
+                     </div>
+   
+                     <div class="login__box">
+                        <input type="text" id="surnames" required placeholder=" " class="login__input">
+                        <label for="surnames" class="login__label">Surnames</label>
+   
+                        <i class="ri-id-card-fill login__icon"></i>
+                     </div>
+                  </div>
+
+                  <div class="login__box">
+                     <input type="email" id="emailCreate" required placeholder=" " class="login__input">
+                     <label for="emailCreate" class="login__label">Email</label>
+
+                     <i class="ri-mail-fill login__icon"></i>
+                  </div>
+
+                  <div class="login__box">
+                     <input type="password" id="passwordCreate" required placeholder=" " class="login__input">
+                     <label for="passwordCreate" class="login__label">Password</label>
+
+                     <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
+                  </div>
+               </div>
+
+               <button type="submit" class="login__button">Create account</button>
+            </form>
+
+            <p class="login__switch">
+               Already have an account? 
+               <button id="loginButtonAccess">Log In</button>
+            </p>
+         </div>
+      </div>
+   </div>
+   
+   <!--=============== MAIN JS ===============-->
+   <script src="{% static 'login/js/main.js' %}"></script>
+
+</body>
+
 </html>
