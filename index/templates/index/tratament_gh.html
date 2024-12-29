@@ -40,88 +40,113 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-        <title>Regiunea 15q11q13</title>
-        <style>
-            .card-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(236, 236, 236, 0.67);
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px auto; /* Center the card and provide space around it */
-    max-width: 90%; /* Ensure it fits within the parent container */
-    box-sizing: border-box;
-    overflow: hidden;
-}
 
-.card-container h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+    <style>
 
-.card-container h2 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-}
+        .item {
+            transition: transform 0.3s ease;
+            /* Smooth transition for scaling */
+            cursor: pointer;
+            /* Indicate that the item is clickable */
+        }
 
-.card-container ul,
-.card-container ol {
-    padding-left: 20px;
-}
+        .item:hover {
+            transform: scale(1.05);
+            /* Scale the card on hover */
+        }
 
-.card-container li {
-    margin-bottom: 10px;
-}
+        .item-desc {
+            position: relative;
+            z-index: 1;
+            /* Ensure text appears above the background */
+            padding: 10px;
+            /* Add some padding */
+            color: white;
+            /* Adjust text color for visibility */
+        }
 
-.card-container strong {
-    font-size: 1.2rem;
-}
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #f9fbfd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .card-container {
-        padding: 15px;
-        margin: 15px auto; /* Ensure margins are consistent */
-    }
+        .card h3 {
+            font-size: 1.5rem;
+            color: #009970;
+            margin-bottom: 10px;
+        }
 
-    .card-container h1 {
-        font-size: 1.5rem;
-    }
+        .card p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
 
-    .card-container h2 {
-        font-size: 1.2rem;
-    }
+        .details-btn {
+            font-size: 1rem;
+            color: #00b383;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
 
-    .card-container strong {
-        font-size: 1rem;
-    }
-}
+        .details-btn a {
+            color: #00b383;
+            text-decoration: none;
+        }
 
-@media (max-width: 480px) {
-    .card-container {
+        .details-btn a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+        .footer {
+        background-color: #0c926e;
         padding: 10px;
-        margin: 10px auto; /* Maintain consistent margins */
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .container2 p {
+        margin: 0;
+        padding: 0;
+        word-wrap: break-word; /* Ensures the text breaks to the next line */
+        max-width: 100%; /* Ensures it doesn't overflow */
     }
 
-    .card-container h1 {
-        font-size: 1.2rem;
-    }
-
-    .card-container h2 {
-        font-size: 1rem;
-    }
-
-    .card-container strong {
-        font-size: 0.9rem;
-    }
-}
-
-        </style>
-
-
+    </style>
+ 
 
 </head>
 
@@ -147,9 +172,9 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Modificari genetice in SPW</p>
+            <p>Tratament GH</p>
             <p> {% with path=request.get_full_path|split:"/" %}
-                {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+                 <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
                 {% endwith %}
             </p>
@@ -158,52 +183,36 @@
 
 
 
-
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative;">
-        <div class="row g-0">
-            <div class="card-container">
-                <p>SPW se produce prin pierderea expresiei genelor în regiunea SPW paternă, prin:</p>
-                <ol>
-                    <li>
-                        <strong>1. Deleția interstițială a regiunii 15q11-q13 a cromozomului patern (70%)</strong>
-                        <ul>
-                            <li>a. Cea mai frecventă este deleția de tip 2 (T2D) sau deleția scurtă (între BP2 și BP3)</li>
-                            <li>b. Deleția lungă sau de tip 1 (T1D), între BP1 și BP3, este mai rară</li>
-                            <li>c. Alte deleții, atipice - 5-10% din cazuri:
-                                <ul>
-                                    <li>- Mai lungi, până la BP4 sau BP5</li>
-                                    <li>- Mai scurte, care afectează centrul de amprentare</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>2. Disomia uniparentală de origine maternă (DUPm)</strong>
-                        <ul>
-                            <li>- Mai frecvent dacă vârsta maternă este crescută (25%)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>3. Disfuncția a centrului de amprentare (IC) (2-5%)</strong>
-                        <ul>
-                            <li>- Modificări epigenetice (epimutație primară)</li>
-                            <li>- Microdeleție specifică a IC a cromozomului patern – mai rar</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>4. Anomalii cromozomiale</strong>
-                        <ul>
-                            <li>- Translocații, cromozomi markeri etc., care implică 15q11q13 (<1%)</li>
-                        </ul>
-                    </li>
-                </ol>
+
+    <!--CARDURI DRAGUTE-->
+    <div class="card-container">
+        <div class="card">
+            <h3>Copii</h3>
+            <p>Protocolul terapeutic corespunzator copiilor
+            </p>
+            <div class="details-btn">
+                <a href="{% url 'tratamentGH_copii' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Perioada de tranzitie</h3>
+            <p>Protocolul terapeutic corespunzator pacientilor aflati in perioada de tranzitie</p>
+            <div class="details-btn">
+                <a href="{% url 'tratamentGH_tranzitie' %}">Vezi detalii</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Adulti</h3>
+            <p>Protocolul terapeutic corespunzator adultilor</p>
+            <div class="details-btn">
+                <a href="{% url 'tratamentGH_adulti' %}">Vezi detalii</a>
             </div>
         </div>
     </div>
-    
 
+    </div>
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
         <div class="owl-carousel custom-carousel owl-theme">
@@ -265,6 +274,7 @@
         </div>
     </footer>
 
+
     <script>
         $(document).ready(function () {
             $('.item-desc').on('click', function () {
@@ -276,14 +286,7 @@
         });
     </script>
 
-<!--buton din cardul cu informatii-->
-    <script>
-        document.querySelectorAll('.details-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('More details will be shown here.');
-            });
-        });
-    </script>
+    
 
 
     <!-- Initialize Owl Carousel -->

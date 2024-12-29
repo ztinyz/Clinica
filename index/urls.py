@@ -88,4 +88,7 @@ urlpatterns = [
     path('Corelatii_genotip_fenotip/', views.Corelatii_genotip_fenotip, name='Corelatii_genotip_fenotip'),
     path('Diagnostic_prenatal/', views.Diagnostic_prenatal, name='Diagnostic_prenatal'),
     path('Diagnostic_diferential/', views.Diagnostic_diferential, name='Diagnostic_diferential'),
+    path('tratamentGH_copii/', views.tratamentGH_copii, name='tratamentGH_copii'),
+    path('tratamentGH_adulti/', views.tratamentGH_adulti, name='tratamentGH_adulti'),
+    path('tratamentGH_tranzitie/', views.tratamentGH_tranzitie, name='tratamentGH_tranzitie'),
 ]

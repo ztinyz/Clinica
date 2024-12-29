@@ -16,7 +16,7 @@ def diagnostic(request):
     return render(request, 'index/diagnostic.html')
 
 def tratament_gh(request):
-    return render(request, 'index/template.html')
+    return render(request, 'index/tratament_gh.html')
 
 def tratament(request):
     return render(request, 'index/template.html')
@@ -243,3 +243,9 @@ def Diagnostic_prenatal(request):
     return render(request, "index/Diagnostic_prenatal.html")
 def Diagnostic_diferential(request):
     return render(request, "index/Diagnostic_diferential.html")
+def tratamentGH_copii(request):
+    return render(request, "index/tratamentGH_copii.html")
+def tratamentGH_tranzitie(request):
+    return render(request, "index/tratamentGH_tranzitie.html")
+def tratamentGH_adulti(request):
+    return render(request, "index/tratamentGH_adulti.html")

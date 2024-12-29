@@ -1,0 +1,555 @@
+{% extends 'index/navbar.html'%}
+{% load static %}
+{% load custom_filters %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+{%block content%}
+
+<head>
+
+    <title>Prader-Wili</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="{% static 'index/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+        <title>Algoritm testare genetica</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
+
+.card-container li {
+    margin-bottom: 10px;
+}
+
+.card-container strong {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
+
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        padding: 10px;
+        margin: 10px auto; /* Maintain consistent margins */
+    }
+
+    .card-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Script section -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static 'index/scripts.js' %}"></script>
+    <!--Bootsrap scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+
+    <div class="photo-section" id="home">
+        <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
+        <div class="photo-overlay">
+            <p>Tratament GH al pacientilor copii</p>
+            <p> {% with path=request.get_full_path|split:"/" %}
+                {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
+                <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
+                {% endwith %}
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <!-- INCEPUT SITE-->
+
+    <style>
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    
+        .genetic-table th, .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    
+        .genetic-table td {
+            background-color: #fff;
+        }
+    
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+    
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+    
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+    
+        .card-container li {
+            margin-bottom: 10px;
+        }
+    
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+    </style>
+    
+    <div class="card-container">
+        <p><strong>1. Scopul tratamentului la persoanele cu SPW este:</strong></p>
+        <ul>
+            <li>• îmbunătăţirea creşterii lineare în copilărie</li>
+            <li>• atingerea taliei ţinte finale</li>
+            <li>• îmbunătăţirea compoziţiei corporale.</li>
+        </ul>
+        <p>Dacă se iniţiază terapia cu hormon de creştere, se recomandă continuarea ei cât timp beneficiile depăşesc riscurile.</p>
+        
+        <p><strong>2. Evaluarea pacientului înainte de iniţierea terapiei cu rhGH:</strong></p>
+        <p><em>• Obligatoriu de către echipe multidisciplinare desemnate în centre universitare agreate.</em></p>
+        <table class="genetic-table">
+            <thead>
+                <tr>
+                    <th>Specialitate</th>
+                    <th>Măsuri specifice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Endocrinologie</td>
+                    <td>
+                        <ul>
+                            <li><span style="color: rgb(46, 98, 181);">• Auxologie:</span> înălțime, greutate, IMC, circumferință abdominală, status pubertar.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Vârstă osoasă:</span> pentru pacienții pediatrici.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Funcție tiroidiană:</span> TSH, FT4.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Ax hipotalamo-hipofizo-adrenal:</span> indicație de evaluare individualizată, în funcție de tabloul clinic, anamneză, dar obligatorie dozarea matinală bazală a ACTH și cortizolului.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Ax GH-IGF1:</span> determinare IGF 1, teste stimulare GH (obligatorii la pacienții adulți), la copii ele NU sunt considerate esențiale în luarea deciziei de tratament cu rhGH.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Dacă vârsta ≥ 6 ani - evaluare metabolică:</span> hemoglobină glicozilată, glicemie a jeun, insulinemie, ± test oral de toleranță la glucoză pentru pacienții la risc (antecedente familiale diabet zaharat, acanthosis nigricans)</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Evaluare risc cardio-vascular:</span>colesterol total, trigliceride, HDL colesterol, LDL colesterol.</li>
+                            <li><span style="color: rgb(46, 98, 181);">• Evaluare steatoza hepatică:</span> GOT, GPT, ecografie abdominală ± Evaluare compoziție corporală - DXA sau bioimpedanță.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Genetică medicală</td>
+                    <td>
+                        <ul>
+                            <li>• Testare genetică.</li>
+                            <li>• Sfat genetic.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Evaluare nutrițională (pediatru/ endocrinolog/ diabetolog/ dietetician)</td>
+                    <td>
+                        <ul>
+                            <li>• Jurnal de dieta.</li>
+                            <li>• Evaluare compoziție dietă.</li>
+                            <li>• Evaluare consum de calorii.</li>
+                            <li>• Controlul alimentelor disponibile.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Neurologie și psihiatrie pediatrică</td>
+                    <td>
+                        <ul>
+                            <li>• Teste psihometrice.</li>
+                            <li>• Fizioterapie (la nevoie).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>O.R.L.</td>
+                    <td>
+                        <ul>
+                            <li>• Evaluare pentru tulburări respiratorii în somn.</li>
+                            <li>• Recomandări posibile - amigdalectomie, adenoidectomie.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pneumologie</td>
+                    <td>
+                        <ul>
+                            <li>• Monitorizare pulsoximetrică în somn.</li>
+                            <li>• Studiu polisomnografie.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ortopedie pediatrica</td>
+                    <td>
+                        <ul>
+                            <li>• Radiografie coloană vertebrală - evaluare risc scolioză</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <p><strong>3. Contraindicaţii de iniţiere terapie:</strong></p>
+        <ul>
+            <li>• obezitate severă (obezitate > percentila 95 cu complicaţii: steatohepatita nonalcoolică, anomalii ale homeostaziei glicemice)</li>
+            <li>• Ddabet zaharat necontrolat.</li>
+            <li>• apnee obstructivă de somn netratată.</li>
+            <li>• cancer activ.</li>
+            <li>• psihotică activă sau hipersensibilitate la somatropinum.</li>
+            <li>• sarcina.</li>
+        </ul>
+        <p><strong>4. Tratament - doze, mod de administrare</strong></p>
+        <p>• Pacienţi de vârstă pediatrică</p>
+        <ul>
+            <li>- terapia se iniţiază cu doze de 0,5 mg/m<sup>2</sup>, cu ajustarea dozelor la 3 - 6 luni în funcţie de răspunsul clinic şi biochimic (nivel IGF1), până la atingerea dozei de 1 mg/m<sup>2</sup>.</li>
+        </ul>
+        <p>• În perioada de tranziţie</p>
+        <ul>
+            <li>- 0,1 - 0,2 mg/zi, în funcţie de prezenţa edemelor, tratament şi sensibilitate anterioare la rhGH, utilizare concomitentă de preparate orale cu estrogeni</li>
+            <li>- Ajustarea dozelor se va face în funcţie de răspunsul clinic şi biochimic (nivel de IGF1)</li>
+            <li>- Pentru IGF1 nu se recomandă depăşirea nivelului superior al intervalului de referinţă pentru laboratorul folosit.</li>
+        </ul>
+        <p>• Mod de administrare</p>
+        <p><ul>- Somatropinum se administrează injectabil, subcutanat, seara la culcare, iar locul administrării trebuie schimbat pentru a preveni lipoatrofia.</ul></p>
+        <p>• Codul la prescriere (in baza CIM 10 OMS)</p>
+        <p><ul>- Această indicaţie se codifica la prescriere 858</ul></p>
+        
+        <p><strong>5. Monitorizare</strong></p>
+        <p>• Pe tot parcursul terapiei</p>
+        <ul>
+            <li>- se va evalua periodic raportul risc/beneficiu</li>
+            <li>- se vor avea în vedere:</li>
+            <ul>
+                <li>▹ ameliorarea deficitului statural</li>
+                <li>▹ îmbunătăţirea compoziţiei corporale</li>
+                <li>▹ creşterea calităţii vieţii, raportate la apariţia/agravarea comorbidităţilor şi/sau apariţia efectelor adverse.</li>
+            </ul>
+        </ul>
+        <p>• Reguli monitorizare</p>
+        <ul>
+            <li>- La 3 - 6 luni</li>
+            <ul>
+                <li>▹ monitorizare auxologică - greutate, înălţime, indice de masă corporală, evaluare status pubertar</li>
+                <li>▹ evaluare coloană vertebrală</li>
+                <li>▹ dozare IGF1</li>
+                <li>▹ Se preferă inducerea pubertăţii atât la sexul masculin cât şi la sexul feminin cu preparate transdermice conform normelor de bună practică clinică şi la vârsta medie pubertară.</li>
+            </ul>
+            <li>- La 6 - 12 luni</li>
+            <ul>
+                <li>▹ evaluare compoziţie corporală - circumferinţă abdominală şi/sau pliuri cutanate şi/sau DXA sau bioimpedanţă - pentru determinarea procentuală a grăsimii şi a masei musculare corporale</li>
+            </ul>
+            <li>- La 6 - 24 luni</li>
+            <ul>
+                <li>▹ determinarea vârstei osoase</li>
+            </ul>
+            <li>- Repetare polisomnografie:</li>
+            <ul>
+                <li>▹ în primele 3 - 6 luni de tratament la copiii cu vârsta peste 2 ani şi cu apnee uşoară/absenţa apneei</li>
+                <li>▹ în primele 4 - 6 săptămâni la copiii cu vârsta sub 2 ani sau cu apnee moderată</li>
+            </ul>
+        </ul>
+        <p>- Examen ORL</p>
+        <ul>
+            <li>▹ la 6 luni sau mai devreme dacă apar semne şi simptome de apnee obstructivă şi/sau infecţie respiratorie</li>
+        </ul>
+        <p>-Radiografie coloană vertebrală pentru evaluarea progresiei scoliozei - la nevoie</p>
+        <p>- Funcţie tiroidiană (TSH, free T4) - monitorizare la 6 luni</p>
+        <p>- Evaluare ax hipotalamo-hipofizo-adrenal la 6 luni sau în caz de simptomatologie specifică apărută spontan sau în caz de stress - dozare cortizol bazal ±ACTH, respectiv teste dinamice</p>
+        <p>- Evaluare metabolică la 6 luni (glicemie, profil lipidic, insulinemie şi/sau HbA1c, OGTT)</p>
+        <p>- Evaluare psihiatrică - dacă apare deteriorarea comportamentului sau simptomatologie specifică floridă</p>
+        <p>- Echipa multidisciplinară care să includă dialog permanent - inclusiv cu nutriţionist, psiholog, fizioterapeut, logoped.</p>
+        
+        <p><strong>6. Criterii de întrerupere a terapiei:</strong></p>
+        <ul>
+            <li>• Apneea de somn severă</li>
+            <li>• Epifizioliza</li>
+            <li>• Apariţia crizelor comiţiale</li>
+            <li>• Dezvoltarea unei neoplazii</li>
+            <li>• Oricare din contraindicaţiile iniţierii terapiei.</li>
+        </ul>
+        <p><strong>7. Criterii de scădere a dozelor:</strong></p>
+        <ul>
+            <li>• Apneea moderată</li>
+            <li>• Hipertensiunea intracraniană benignă</li>
+            <li>• Edeme</li>
+            <li>• Complicaţii ortopedice cu excepţia epifiziolizei</li>
+            <li>• Apariţia rezistenţei la insulină</li>
+        </ul>
+        <p><strong>8. Consideraţii ale terapiei în perioada de tranziţie</strong></p>
+        <ul>
+            <li>• după vârsta osoasă de 14 ani la fete şi 16 ani la băieţi se opreşte tratamentul şi după 3 - 6 luni de pauză se identifică pacienţii cu deficit de GH prin test la insulină.</li>
+            <li>• GH sub 5 ng/ml în testare defineşte deficitul de GH şi permite reluarea terapiei cu rhGH în doze de 0,1 - 0,2 mg/zi.</li>
+        </ul>
+        <p><strong>9. Prescriptori</strong></p>
+        <p>• Tratamentul cu Somatropin este indicat a fi prescris de medicii din specialitatea Endocrinologie, cu acordul echipei multidisciplinare formată din: endocrinolog, genetician, pneumolog, psiholog, pediatru, psihiatru, ORL în centre universitare unde este posibil şi diagnosticul molecular (Bucureşti, Iaşi, Timişoara, Tg Mureş, Cluj-Napoca, Constanţa).</p>
+        
+    </div>
+    
+    
+
+    <section class="game-section">
+        <h2 class="line-title">Trending Medical Topics</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+            <div class="item active"
+                style="background-image: url(https://cdn.prod.website-files.com/650c1bee516c4e723b11b29a/65206264927e177f8bd65950_651f6a5b0bcc2eb5956182ea_Top%252050%2520Healthcare%2520Companies%2520and%2520Their%2520Impact%2520on%2520the%2520Industry.webp);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Prader-Wili</h3>
+                    <p>Prader-Willi (PRAH-dur VIL-e) syndrome is a rare genetic disorder that results in a number of
+                        physical, mental, and behavioral problems.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://media.licdn.com/dms/image/v2/D4D12AQF-UNBK1Cd76A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692008950713?e=2147483647&v=beta&t=np9IYeph2hO3qky7DCqB0sM5KvXP3HWTBT5bknBBlnY);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Telemedicine</h3>
+                    <p>Telemedicine involves the use of telecommunication technology to provide healthcare services
+                        remotely, improving access to medical care.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/2ZQTdBKFxvkLYhrtyeWOdg_8fa4b085-dafa-4196-9a61-36db54e3c457.jpg?v=1712945641);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Vaccination</h3>
+                    <p>Vaccination is a crucial public health tool that helps prevent the spread of infectious diseases
+                        by inducing immunity in individuals.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://www.healthcareitnews.com/sites/hitn/files/Global%20healthcare_2.jpg);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Mental Health</h3>
+                    <p>Mental health encompasses emotional, psychological, and social well-being, affecting how we
+                        think, feel, and act.</p>
+                </div>
+            </div>
+            <div class="item"
+                style="background-image: url(https://images.everydayhealth.com/images/healthy-living/about-us-hero-alt.jpg?sfvrsn=68592040_1);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Nutrition</h3>
+                    <p>Nutrition involves the intake of food necessary for health and growth, playing a vital role in
+                        maintaining overall well-being.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://www.watford.gov.uk/images/health1.jpg);">
+                <div class="item-desc" data-url="{% url 'Test' %}">
+                    <h3>Genomics</h3>
+                    <p>Genomics is the study of genomes, the complete set of DNA within an organism, and its
+                        applications in medicine and biology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container2">
+            <p>&copy; Protocol terapeutic corespunzător poziţiei nr. 96 cod (H011Q): DCI SOMATROPINUM 
+                ORDINUL nr. 564/499/2021, publicat în Monitorul Oficial, Partea I, nr. 474 din 6 mai 2021.
+                </p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('.item-desc').on('click', function () {
+                // Get the URL from the data attribute
+                const url = $(this).data('url');
+                // Navigate to the URL
+                window.location.href = url;
+            });
+        });
+    </script>
+
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
+            });
+        });
+    </script>
+
+
+    <!-- Initialize Owl Carousel -->
+    <script>
+        $(".custom-carousel").owlCarousel({
+            autoWidth: true,
+            loop: false
+        });
+        $(document).ready(function () {
+            $(".custom-carousel .item").click(function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
+            });
+        });
+
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+
+
+    </script>
+
+
+
+</body>
+{%endblock%}
+
+</html>

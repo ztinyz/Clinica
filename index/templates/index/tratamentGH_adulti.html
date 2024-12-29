@@ -40,7 +40,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-        <title>Regiunea 15q11q13</title>
+        <title>Algoritm testare genetica</title>
         <style>
             .card-container {
     padding: 20px;
@@ -147,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Modificari genetice in SPW</p>
+            <p>Tratament GH al pacientilor adulti</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -161,47 +161,128 @@
 
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative;">
-        <div class="row g-0">
-            <div class="card-container">
-                <p>SPW se produce prin pierderea expresiei genelor în regiunea SPW paternă, prin:</p>
-                <ol>
-                    <li>
-                        <strong>1. Deleția interstițială a regiunii 15q11-q13 a cromozomului patern (70%)</strong>
-                        <ul>
-                            <li>a. Cea mai frecventă este deleția de tip 2 (T2D) sau deleția scurtă (între BP2 și BP3)</li>
-                            <li>b. Deleția lungă sau de tip 1 (T1D), între BP1 și BP3, este mai rară</li>
-                            <li>c. Alte deleții, atipice - 5-10% din cazuri:
-                                <ul>
-                                    <li>- Mai lungi, până la BP4 sau BP5</li>
-                                    <li>- Mai scurte, care afectează centrul de amprentare</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>2. Disomia uniparentală de origine maternă (DUPm)</strong>
-                        <ul>
-                            <li>- Mai frecvent dacă vârsta maternă este crescută (25%)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>3. Disfuncția a centrului de amprentare (IC) (2-5%)</strong>
-                        <ul>
-                            <li>- Modificări epigenetice (epimutație primară)</li>
-                            <li>- Microdeleție specifică a IC a cromozomului patern – mai rar</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>4. Anomalii cromozomiale</strong>
-                        <ul>
-                            <li>- Translocații, cromozomi markeri etc., care implică 15q11q13 (<1%)</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-        </div>
+    <style>
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    
+        .genetic-table th, .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    
+        .genetic-table td {
+            background-color: #fff;
+        }
+    
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+    
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+    
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+    
+        .card-container li {
+            margin-bottom: 10px;
+        }
+    
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+    </style>
+    
+    <div class="card-container">
+        <p><strong>• Abordare pentru diagnostic prenatal în funcție de mecanismul etiopatogenic al cazului index</strong></p>
+        <ul>
+            <li>• Toate cele trei mecanisme cauzale pot fi identificate în perioada prenatală</li>
+            <li>• Analiza metilării SNRPN este metoda cea mai recomandată pentru identificarea anomaliilor de amprentare [Glenn et al 2000, Beygo et al 2019]</li>
+        </ul>
+        <p><strong>a. Dacă suspiciune de microdeleție 15q11.2 după procedură invazivă (puncție de vilozități/amniocenteză):</strong></p>
+        <ul>
+            <li>• Se recomandă SNP array și</li>
+            <li>• Studii de determinare a originii parentale după confirmarea deleției (SPW sau Angelman?)</li>
+        </ul>
+        <p><strong>b. Dacă suspiciune de trisomie 15 omogenă sau mozaic la puncție de vilozități coriale dar cu 46 cromozomi la amniocenteză:</strong></p>
+        <ul>
+            <li>• Posibilitatea salvării trisomiei cauzatoare de SPW (disomie maternă) sau Angelman (disomie paternă):</li>
+            <ul>
+                <li>→ Analiza metilării 15 sau analiza originii parentale a crz 15 din amniocite</li>
+            </ul>
+        </ul>
+        <p><strong>c. Dacă translocație moștenită/de novo a cromozomului 15:</strong></p>
+        <ul>
+            <li>• Sau dacă cromozom marker supranumerar derivat din 15:</li>
+            <ul>
+                <li>→ Analiza SNP array pentru a exclude o deleție ȘI</li>
+                <li>→ Analiza originii parentale a cromozomului 15 SAU analiza metilării (pentru a exclude disomia)</li>
+            </ul>
+        </ul>
+        <p><strong>Testarea NIPT (NonInvasive Prenatal Test) – analiza ADN fetal liber circulant:</strong></p>
+        <ul>
+            <li>• Identifică deleții 15q11.2, dar cu rată crescută de fals pozitivi</li>
+            <li>• Nu poate distinge între SPW și Angelman</li>
+            <li>• Nu identifică disomii uniparentale și anomalii ale amprentării</li>
+        </ul>
+        <p><strong>Diagnosticul de preimplantare:</strong></p>
+        <ul>
+            <li>• Opțiune pentru unele familii, în situația în care a fost identificat:</li>
+            <ul>
+                <li>→ Deleția centrului de amprentare</li>
+                <li>→ Translocație familială – pentru a exclude o disomie</li>
+            </ul>
+        </ul>
+        <p>Testarea prenatală este o decizie personală, însă aceasta trebuie să fie susținută printr-o informare corectă a familiei asupra acestor aspecte.</p>
     </div>
+    
     
 
     <section class="game-section">
