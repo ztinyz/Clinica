@@ -40,67 +40,88 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+        <title>Algoritm testare genetica</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <style>
-        /*CSS PENTRU CARUSELUL LUI CATA*/
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
-        @media (max-width: 768px) {
-            body {
-                font-size: 1.2rem;
-            }
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
 
-            th,
-            td {
-                padding: 8px;
-            }
-        }
+.card-container li {
+    margin-bottom: 10px;
+}
 
-        /* Media query for extra-small devices (small phones) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 1rem;
-            }
+.card-container strong {
+    font-size: 1.2rem;
+}
 
-            th,
-            td {
-                padding: 6px;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
+
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
         padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
+        margin: 10px auto; /* Maintain consistent margins */
     }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
+
+    .card-container h1 {
+        font-size: 1.2rem;
     }
-    </style>
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+
+
 
 </head>
 
@@ -126,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Prader-Wili</p>
+            <p>Corelatii genotip fenotip</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -137,23 +158,104 @@
 
 
 
+
     <!-- INCEPUT SITE-->
 
-    <div style="position: relative; ">
-        <div class="sections">
-            <h3 style="text-align:center; font-size:2rem;">CORELATIII JAKBAJK</h3>
-            <p class="text-justify" style="font-size: 1.5rem;">
-
-            <div style="position: relative; "></div>
-            <div class="sections">
-                <p class="text-justify" style="font-size: 1.5rem;">Other info relevant for the site</p>
-
-            </div>
-        </div>
-
-        </p>
+    <style>
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    
+        .genetic-table th, .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    
+        .genetic-table td {
+            background-color: #fff;
+        }
+    
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+    
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+    
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+    
+        .card-container li {
+            margin-bottom: 10px;
+        }
+    
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+    </style>
+    
+    <div class="card-container">
+        <p>Există diferențe statistice în frecvența/severitatea unor caracteristici fenotipice între deleții și disomii uniparentale.</p>
+        <p>Totuși, nu se cunoaște nicio caracteristică fenotipică care să se coreleze exclusiv doar cu unul dintre cele trei mecanisme moleculare principale.</p>
+        <p><strong>UPD15 (vs del 15q11q13):</strong></p>
+        <ul>
+            <li>• Mai frecvent nașterea postmatură, vârsta maternă avansată [Butler et al 2009], [Miller et al 2011]</li>
+            <li>• Mai rar aspectul facial tipic</li>
+            <li>• Mai rar hipopigmentare</li>
+            <li>• Mai rar abilitățile specifice SPW de joc puzzle [Dykens 2002]</li>
+            <li>• IQ verbal ușor mai mare [Rosenberg et al 2022]</li>
+            <li>• Mai frecvent psihoză [Yang et al 2013]</li>
+            <li>• Mai frecvent tulburare din spectru autist [Bennett et al 2015]</li>
+        </ul>
     </div>
-    </div>
+    
+    
 
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
@@ -210,7 +312,9 @@
 
     <footer class="footer">
         <div class="container2">
-            <p>&copy; 2024 LRC. All rights reserved.</p>
+            <p>&copy; Driscoll DJ, Miller JL, Cassidy SB. Prader-Willi Syndrome. 1998 Oct 6 [Updated 2024 Dec 5]. In: Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle; 1993-2024. Available from: https://www.ncbi.nlm.nih.gov/books/NBK1330/
+                Protocole National de Diagnostic et de Soins (PNDS) Syndrome de Prader-Willi. Centre de référence du syndrome de Prader-Willi et autres Obésités Rares avec troubles du comportement alimentaire (PRADORT), 2021
+                </p>
         </div>
     </footer>
 
@@ -221,6 +325,15 @@
                 const url = $(this).data('url');
                 // Navigate to the URL
                 window.location.href = url;
+            });
+        });
+    </script>
+
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
             });
         });
     </script>
