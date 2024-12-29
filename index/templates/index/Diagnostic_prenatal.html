@@ -40,113 +40,88 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+        <title>Algoritm testare genetica</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <style>
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
+.card-container li {
+    margin-bottom: 10px;
+}
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-        .card {
-            background-color: #f9fbfd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            flex: 1 1 calc(33.333% - 20px);
-            max-width: 400px;
-            text-align: center;
-            box-sizing: border-box;
-            border: 1px solid #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.card-container strong {
+    font-size: 1.2rem;
+}
 
-        .card h3 {
-            font-size: 1.5rem;
-            color: #009970;
-            margin-bottom: 10px;
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
 
-        .card p {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
 
-        .details-btn {
-            font-size: 1rem;
-            color: #00b383;
-            text-decoration: none;
-            cursor: pointer;
-            font-weight: bold;
-            padding-top: 10px;
-            border-top: 1px solid #e0e0e0;
-        }
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
 
-        .details-btn a {
-            color: #00b383;
-            text-decoration: none;
-        }
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
 
-        .details-btn a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                flex: 1 1 100%;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
+@media (max-width: 480px) {
+    .card-container {
         padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
+        margin: 10px auto; /* Maintain consistent margins */
     }
 
-    </style>
- 
+    .card-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+
+
 
 </head>
 
@@ -172,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Diagnostic genetic</p>
+            <p>Diagnostic prenatal</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -183,73 +158,133 @@
 
 
 
+
     <!-- INCEPUT SITE-->
 
-
-    <!--CARDURI DRAGUTE-->
+    <style>
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    
+        .genetic-table th, .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    
+        .genetic-table td {
+            background-color: #fff;
+        }
+    
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+    
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+    
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+    
+        .card-container li {
+            margin-bottom: 10px;
+        }
+    
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+    </style>
+    
     <div class="card-container">
-        <div class="card">
-            <h3>Genetica regiunii 15q11q13 </h3>
-            <p>Informatii despre regiunea genetica afectata
-            </p>
-            <div class="details-btn">
-                <a href="{% url 'Genetica_regiunii' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Modificari genetice in PWS</h3>
-            <p>Informatii despre Modificarile genetice prezente in sindromul PWS</p>
-            <div class="details-btn">
-                <a href="{% url 'Modificari_genetice' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Testarea genetica in SPW</h3>
-            <p>Informatii despre testele genetice indicate in functie de mecanismul genetic</p>
-            <div class="details-btn">
-                <a href="{% url 'Testare_genetica' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Strategia de testare genetica</h3>
-            <p>Informatii despre algoritmulde testare genetica</p>
-            <div class="details-btn">
-                <a href="{% url 'Algoritm_testare_genetica' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Sfat genetic</h3>
-            <p>Sfaturi din punct de vedere genetic</p>
-            <div class="details-btn">
-                <a href="{% url 'Sfat_genetic' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Corelatii genotip-fenotip</h3>
-            <p>Informatii despre unele caracteristici  fenotipice</p>
-            <div class="details-btn">
-                <a href="{% url 'Corelatii_genotip_fenotip' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Diagnostic prenatal</h3>
-            <p>Informatii despre diagnosticul prenatal</p>
-            <div class="details-btn">
-                <a href="{% url 'Diagnostic_prenatal' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Diagnostic diferential</h3>
-            <p>Informatii despre diagnosticul diferential</p>
-            <div class="details-btn">
-                <a href="{% url 'Diagnostic_diferential' %}">Vezi detalii</a>
-            </div>
-        </div>
-        
-        
+        <p><strong>• Abordare pentru diagnostic prenatal în funcție de mecanismul etiopatogenic al cazului index</strong></p>
+        <ul>
+            <li>• Toate cele trei mecanisme cauzale pot fi identificate în perioada prenatală</li>
+            <li>• Analiza metilării SNRPN este metoda cea mai recomandată pentru identificarea anomaliilor de amprentare [Glenn et al 2000, Beygo et al 2019]</li>
+        </ul>
+        <p><strong>a. Dacă suspiciune de microdeleție 15q11.2 după procedură invazivă (puncție de vilozități/amniocenteză):</strong></p>
+        <ul>
+            <li>• Se recomandă SNP array și</li>
+            <li>• Studii de determinare a originii parentale după confirmarea deleției (SPW sau Angelman?)</li>
+        </ul>
+        <p><strong>b. Dacă suspiciune de trisomie 15 omogenă sau mozaic la puncție de vilozități coriale dar cu 46 cromozomi la amniocenteză:</strong></p>
+        <ul>
+            <li>• Posibilitatea salvării trisomiei cauzatoare de SPW (disomie maternă) sau Angelman (disomie paternă):</li>
+            <ul>
+                <li>→ Analiza metilării 15 sau analiza originii parentale a crz 15 din amniocite</li>
+            </ul>
+        </ul>
+        <p><strong>c. Dacă translocație moștenită/de novo a cromozomului 15:</strong></p>
+        <ul>
+            <li>• Sau dacă cromozom marker supranumerar derivat din 15:</li>
+            <ul>
+                <li>→ Analiza SNP array pentru a exclude o deleție ȘI</li>
+                <li>→ Analiza originii parentale a cromozomului 15 SAU analiza metilării (pentru a exclude disomia)</li>
+            </ul>
+        </ul>
+        <p><strong>Testarea NIPT (NonInvasive Prenatal Test) – analiza ADN fetal liber circulant:</strong></p>
+        <ul>
+            <li>• Identifică deleții 15q11.2, dar cu rată crescută de fals pozitivi</li>
+            <li>• Nu poate distinge între SPW și Angelman</li>
+            <li>• Nu identifică disomii uniparentale și anomalii ale amprentării</li>
+        </ul>
+        <p><strong>Diagnosticul de preimplantare:</strong></p>
+        <ul>
+            <li>• Opțiune pentru unele familii, în situația în care a fost identificat:</li>
+            <ul>
+                <li>→ Deleția centrului de amprentare</li>
+                <li>→ Translocație familială – pentru a exclude o disomie</li>
+            </ul>
+        </ul>
+        <p>Testarea prenatală este o decizie personală, însă aceasta trebuie să fie susținută printr-o informare corectă a familiei asupra acestor aspecte.</p>
     </div>
+    
+    
 
-    </div>
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
         <div class="owl-carousel custom-carousel owl-theme">
@@ -311,7 +346,6 @@
         </div>
     </footer>
 
-
     <script>
         $(document).ready(function () {
             $('.item-desc').on('click', function () {
@@ -323,7 +357,14 @@
         });
     </script>
 
-    
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
+            });
+        });
+    </script>
 
 
     <!-- Initialize Owl Carousel -->

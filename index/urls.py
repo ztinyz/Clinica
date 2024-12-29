@@ -86,4 +86,6 @@ urlpatterns = [
     path('Algoritm_testare_genetica/', views.Algoritm_testare_genetica, name='Algoritm_testare_genetica'),
     path('Sfat_genetic/', views.Sfat_genetic, name='Sfat_genetic'),
     path('Corelatii_genotip_fenotip/', views.Corelatii_genotip_fenotip, name='Corelatii_genotip_fenotip'),
+    path('Diagnostic_prenatal/', views.Diagnostic_prenatal, name='Diagnostic_prenatal'),
+    path('Diagnostic_diferential/', views.Diagnostic_diferential, name='Diagnostic_diferential'),
 ]

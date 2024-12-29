@@ -239,3 +239,7 @@ def Sfat_genetic(request):
     return render(request, "index/Sfat_genetic.html")
 def Corelatii_genotip_fenotip(request):
     return render(request, "index/Corelatii_genotip_fenotip.html")
+def Diagnostic_prenatal(request):
+    return render(request, "index/Diagnostic_prenatal.html")
+def Diagnostic_diferential(request):
+    return render(request, "index/Diagnostic_diferential.html")

@@ -40,113 +40,88 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+        <title>Algoritm testare genetica</title>
+        <style>
+            .card-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(236, 236, 236, 0.67);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px auto; /* Center the card and provide space around it */
+    max-width: 90%; /* Ensure it fits within the parent container */
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
-    <style>
+.card-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        .item {
-            transition: transform 0.3s ease;
-            /* Smooth transition for scaling */
-            cursor: pointer;
-            /* Indicate that the item is clickable */
-        }
+.card-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            /* Scale the card on hover */
-        }
+.card-container ul,
+.card-container ol {
+    padding-left: 20px;
+}
 
-        .item-desc {
-            position: relative;
-            z-index: 1;
-            /* Ensure text appears above the background */
-            padding: 10px;
-            /* Add some padding */
-            color: white;
-            /* Adjust text color for visibility */
-        }
+.card-container li {
+    margin-bottom: 10px;
+}
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-        .card {
-            background-color: #f9fbfd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            flex: 1 1 calc(33.333% - 20px);
-            max-width: 400px;
-            text-align: center;
-            box-sizing: border-box;
-            border: 1px solid #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.card-container strong {
+    font-size: 1.2rem;
+}
 
-        .card h3 {
-            font-size: 1.5rem;
-            color: #009970;
-            margin-bottom: 10px;
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 15px;
+        margin: 15px auto; /* Ensure margins are consistent */
+    }
 
-        .card p {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+    .card-container h1 {
+        font-size: 1.5rem;
+    }
 
-        .details-btn {
-            font-size: 1rem;
-            color: #00b383;
-            text-decoration: none;
-            cursor: pointer;
-            font-weight: bold;
-            padding-top: 10px;
-            border-top: 1px solid #e0e0e0;
-        }
+    .card-container h2 {
+        font-size: 1.2rem;
+    }
 
-        .details-btn a {
-            color: #00b383;
-            text-decoration: none;
-        }
+    .card-container strong {
+        font-size: 1rem;
+    }
+}
 
-        .details-btn a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                flex: 1 1 100%;
-            }
-        }
-        .footer {
-        background-color: #0c926e;
+@media (max-width: 480px) {
+    .card-container {
         padding: 10px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-    
-    .container2 p {
-        margin: 0;
-        padding: 0;
-        word-wrap: break-word; /* Ensures the text breaks to the next line */
-        max-width: 100%; /* Ensures it doesn't overflow */
+        margin: 10px auto; /* Maintain consistent margins */
     }
 
-    </style>
- 
+    .card-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .card-container h2 {
+        font-size: 1rem;
+    }
+
+    .card-container strong {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+
+
 
 </head>
 
@@ -172,7 +147,7 @@
     <div class="photo-section" id="home">
         <img class="photo_art" src="{% static 'index/Resources/health.jpg' %}" alt="Descriptive Alt Text">
         <div class="photo-overlay">
-            <p>Diagnostic genetic</p>
+            <p>Diagnostic diferential</p>
             <p> {% with path=request.get_full_path|split:"/" %}
                 {{ path.2 }} <!-- pt partea a 2-a din link gen ghiduri patoligii etc -->
                 <!-- {{ path.1 }} asta e pt prima parte din link gen prader-wili obezitati rare etc -->
@@ -183,73 +158,141 @@
 
 
 
+
     <!-- INCEPUT SITE-->
 
-
-    <!--CARDURI DRAGUTE-->
+    <style>
+        .genetic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    
+        .genetic-table th, .genetic-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        .genetic-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    
+        .genetic-table td {
+            background-color: #fff;
+        }
+    
+        .genetic-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    
+        .genetic-table .note {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+        }
+    
+        .highlight {
+            background-color: #d1e7dd;
+            font-weight: bold;
+        }
+    
+        .card-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 236, 236, 0.67);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .card-container h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        .card-container h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        .card-container ul,
+        .card-container ol {
+            padding-left: 20px;
+        }
+    
+        .card-container li {
+            margin-bottom: 10px;
+        }
+    
+        .card-container strong {
+            font-size: 1.2rem;
+        }
+    </style>
+    
     <div class="card-container">
-        <div class="card">
-            <h3>Genetica regiunii 15q11q13 </h3>
-            <p>Informatii despre regiunea genetica afectata
-            </p>
-            <div class="details-btn">
-                <a href="{% url 'Genetica_regiunii' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Modificari genetice in PWS</h3>
-            <p>Informatii despre Modificarile genetice prezente in sindromul PWS</p>
-            <div class="details-btn">
-                <a href="{% url 'Modificari_genetice' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Testarea genetica in SPW</h3>
-            <p>Informatii despre testele genetice indicate in functie de mecanismul genetic</p>
-            <div class="details-btn">
-                <a href="{% url 'Testare_genetica' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Strategia de testare genetica</h3>
-            <p>Informatii despre algoritmulde testare genetica</p>
-            <div class="details-btn">
-                <a href="{% url 'Algoritm_testare_genetica' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Sfat genetic</h3>
-            <p>Sfaturi din punct de vedere genetic</p>
-            <div class="details-btn">
-                <a href="{% url 'Sfat_genetic' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Corelatii genotip-fenotip</h3>
-            <p>Informatii despre unele caracteristici  fenotipice</p>
-            <div class="details-btn">
-                <a href="{% url 'Corelatii_genotip_fenotip' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Diagnostic prenatal</h3>
-            <p>Informatii despre diagnosticul prenatal</p>
-            <div class="details-btn">
-                <a href="{% url 'Diagnostic_prenatal' %}">Vezi detalii</a>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Diagnostic diferential</h3>
-            <p>Informatii despre diagnosticul diferential</p>
-            <div class="details-btn">
-                <a href="{% url 'Diagnostic_diferential' %}">Vezi detalii</a>
-            </div>
-        </div>
-        
-        
+        <p><strong>Afecțiuni SPW-like – Similarități ale multor patologii cu anumite trăsături ale SPW:</strong></p>
+    
+        <p><strong><h3>Deleția SNORD116:</h3></strong></p>
+        <ul>
+            <li>• Pierderea expresiei genei SNORD116 contribuie la fenotipul SPW.</li>
+            <li>• Dacă există deleția izolată SNORD116 – pacienții prezintă multe, dar nu toate trăsăturile SPW (fenotip SPW atenuat):</li>
+            <ul>
+                <li>→ Fără trăsăturile faciale tipice "gestalt".</li>
+                <li>→ Alte trăsături care nu sunt tipice SPW: macrocefalie, talie înaltă, hirsutism, dezvoltare pubertară normală, IQ normal.</li>
+            </ul>
+        </ul>
+    
+        <p><strong><h5>Afecțiuni cu trăsături similare SPW:</h5></strong></p>
+        <ul>
+            <li><u>Craniofaringiomul:</u> se aseamănă prin afectarea hipotalamică (mai ales dacă debutul este la vârsta mică).</li>
+            <li><u>Talia mică hiperfagică:</u> afecțiune dobândită, corelată cu stresul psihosocial (deficit GH, hiperfagie, tulburări de învățare ușoare).</li>
+            <li><u>Sindromul hipoton:</u> afectează SNC, sepsis neonatal, boli genetice (include efort respirator alterat, absent în SPW).</li>
+            <li><u>Sindromul Angelman:</u> nu se observă tulburări de supt, hipogonadism, trăsături faciale tipice SPW.</li>
+            <li><u>Sindromul miastenic congenital:</u> afectarea mușchilor oculari, bulbari, membrelor.</li>
+            <li><u>Distrofia miotonica congenitală de tip 1:</u> hipotonie severă de la naștere, insuficiență respiratorie, deces precoce.</li>
+            <li><u>Sindromul X fragil:</u> hipotonia poate fi singura trăsătură la sugari, fără trăsături faciale tipice SPW.</li>
+            <li><u>Neuropatia axonală asociată GARS1:</u> include insuficiență respiratorie, fatigabilitate musculară.</li>
+            <li><u>Boala Pompe:</u> hipotonie de la 4 luni (în SPW, hipotonia se observă la naștere), cardiomiopatie hipertrofică.</li>
+            <li><u>Sindromul Schaaf-Yang:</u> similar SPW (hipotonie, tulburări de alimentație), dar include contracturi articulare, autism.</li>
+            <li><u>Atrofia musculară spinală:</u> asociată cu efort respirator alterat (absent în SPW).</li>
+            <li><u>Dizabilitatea intelectuală asociată WAC:</u> hipotonie neonatală, retard de dezvoltare.</li>
+            <li><u>Amiotrofia spinală infantilă X-linkată:</u> afectare a neuronilor motori inferiori.</li>
+            <li><u>Spectrul Zellweger:</u> tulburări craniofaciale și cerebrale specifice (absente în SPW), hepatopatie.</li>
+        </ul>
+    
+        <p><strong>Patologii asociate obezității cu fenotip SPW-like:</strong></p>
+        <ul>
+            <li><u>Osteodistrofia ereditară Albright:</u> Hipostatură, obezitate, fără hipotonie.</li>
+            <li><u>Sindromul Alström:</u> Include nistagmus, distrofie celulară, cardiomiopatie restrictivă, hipoacuzie.</li>
+            <li><u>Sindromul Bardet-Biedl:</u> Obezitate truncală, afectare cognitivă, polidactilie, hipogonadism.</li>
+            <li><u>Sindromul Borjeson-Forssman-Lehmann:</u> Epilepsie, nistagmus, dismorfism facial specific.</li>
+            <li><u>Sindromul Cohen:</u> Hipotonie precoce, microcefalie, retard sever/moderat.</li>
+            <li><u>Sindromul TEMPLE:</u> Retard de creștere prenatal, hipotonie, dismorfism facial tipic.</li>
+        </ul>
+    
+        <p><strong>Anomalii cromozomiale SPW-like:</strong></p>
+        <ul>
+            <li><u>Duplicarea 6q16.3q23.3:</u> fără afectarea genei SIM1.</li>
+            <li><u>Deleția 1p36</u> : hipotonie, retard, obezitate, hiperfagie, tulburări comportamentale).</li>
+            <li><u>Deleția 16p11.2</u> : afectează semnalizarea leptinei/insulinei).</li>
+            <li><u>DupXq27.2-ter, del10q26.</u></li>
+        </ul>
     </div>
+    
+    
+    
 
-    </div>
     <section class="game-section">
         <h2 class="line-title">Trending Medical Topics</h2>
         <div class="owl-carousel custom-carousel owl-theme">
@@ -311,7 +354,6 @@
         </div>
     </footer>
 
-
     <script>
         $(document).ready(function () {
             $('.item-desc').on('click', function () {
@@ -323,7 +365,14 @@
         });
     </script>
 
-    
+<!--buton din cardul cu informatii-->
+    <script>
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('More details will be shown here.');
+            });
+        });
+    </script>
 
 
     <!-- Initialize Owl Carousel -->
