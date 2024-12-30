@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
    <!--=============== LOGIN IMAGE ===============-->
    <svg class="login__blob" viewBox="0 0 566 840" xmlns="http://www.w3.org/2000/svg">
       <mask id="mask0" mask-type="alpha">
@@ -42,19 +41,20 @@
       <!--===== LOGIN ACCESS =====-->
       <div class="login__access">
          <h1 class="login__title">Log in to your account.</h1>
-         
+         {% if message %}
+         <div>{{ message }}</div>
+         {% endif %} 
          <div class="login__area">
-            <form action="" class="login__form">
+            <form action="" class="login__form" action="{% url 'login:login' %}" method="post">
+               {% csrf_token %}
                <div class="login__content grid">
                   <div class="login__box">
-                     <input type="email" id="email" required placeholder=" " class="login__input">
-                     <label for="email" class="login__label">Email</label>
-         
-                     <i class="ri-mail-fill login__icon"></i>
+                     <input type="input" id="username" required placeholder=" " class="login__input" name = "username_login">
+                     <label for="username" class="login__label">Username</label>
                   </div>
       
                   <div class="login__box">
-                     <input type="password" id="password" required placeholder=" " class="login__input">
+                     <input type="password" id="password" required placeholder=" " class="login__input" name = "password_login">
                      <label for="password" class="login__label">Password</label>
          
                      <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
@@ -63,26 +63,8 @@
       
                <a href="#" class="login__forgot">Forgot your password?</a>
       
-               <button type="submit" class="login__button">Login</button>
+               <button type="submit" class="login__button" name="buton_login" value="buton_login">Login</button>
             </form>
-   
-            <div class="login__social">
-               <p class="login__social-title">Or login with</p>
-   
-               <div class="login__social-links">
-                  <a href="#" class="login__social-link">
-                     <img src="{% static 'login/img/icon-google.svg' %}" alt="image" class="login__social-img">
-                  </a>
-   
-                  <a href="#" class="login__social-link">
-                     <img src="{% static 'login/img/icon-facebook.svg' %}" alt="image" class="login__social-img">
-                  </a>
-   
-                  <a href="#" class="login__social-link">
-                     <img src="{% static 'login/img/icon-apple.svg' %}" alt="image" class="login__social-img">
-                  </a>
-               </div>
-            </div>
    
             <p class="login__switch">
                Don't have an account? 
@@ -96,18 +78,19 @@
          <h1 class="login__title">Create new account.</h1>
 
          <div class="login__area">
-            <form action="" class="login__form">
+            <form action="" class="login__form" method = "post" action="{% url 'login:login' %}">
+               {% csrf_token %}
                <div class="login__content grid">
                   <div class="login__group grid">
                      <div class="login__box">
-                        <input type="text" id="names" required placeholder=" " class="login__input">
+                        <input type="text" id="names" required placeholder=" " class="login__input" name="firstname">
                         <label for="names" class="login__label">Names</label>
    
                         <i class="ri-id-card-fill login__icon"></i>
                      </div>
    
                      <div class="login__box">
-                        <input type="text" id="surnames" required placeholder=" " class="login__input">
+                        <input type="text" id="surnames" required placeholder=" " class="login__input" name="lastname">
                         <label for="surnames" class="login__label">Surnames</label>
    
                         <i class="ri-id-card-fill login__icon"></i>
@@ -115,21 +98,38 @@
                   </div>
 
                   <div class="login__box">
-                     <input type="email" id="emailCreate" required placeholder=" " class="login__input">
+                     <input type="input" id="username" required placeholder=" " class="login__input" name="username">
+                     <label for="username" class="login__label">Username</label>
+                  </div>
+
+                  <div class="login__box">
+                     <input type="email" id="emailCreate" required placeholder=" " class="login__input" name="email">
                      <label for="emailCreate" class="login__label">Email</label>
 
                      <i class="ri-mail-fill login__icon"></i>
                   </div>
 
                   <div class="login__box">
-                     <input type="password" id="passwordCreate" required placeholder=" " class="login__input">
-                     <label for="passwordCreate" class="login__label">Password</label>
+                     <input type="password" id="passwordCreate" required placeholder=" " class="login__input" name="password">
+                     <label for="passwordCreate" class="login__label" >Password</label>
+
+                     <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
+                  </div>
+
+                  <div class="login__box">
+                     <input type="password_confirm" id="password_confirm" required placeholder=" " class="login__input" name="password_confirm">
+                     <label for="password_confirm" class="login__label" >Password Confirm</label>
 
                      <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
                   </div>
                </div>
-
-               <button type="submit" class="login__button">Create account</button>
+               <label>
+                  <select class="input" name="user_type" required>
+                      <option value="patient">Pacient</option>
+                      <option value="doctor">Doctor</option>
+                  </select>
+              </label>
+               <button type="submit" class="login__button" name="buton_register" value="buton_register">Create account</button>
             </form>
 
             <p class="login__switch">
