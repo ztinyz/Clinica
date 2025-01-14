@@ -23,7 +23,7 @@ def login_view(request):
             user = authenticate(request, username=username_login, password=password_login)
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('login:dash'))
+                return HttpResponseRedirect(reverse('login:Test'))
             else:
                 return render(request, 'login/login.html', {
                     'message': 'Invalid credentials.'
@@ -206,3 +206,5 @@ def verify_email(request,token):
     user_profile.email_verified = True
     user_profile.save()
     return HttpResponse('Email verified successfully. You can now log in.')
+def Test(request):
+    return render(request, "login/Test.html")
