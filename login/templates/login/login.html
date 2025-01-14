@@ -122,13 +122,24 @@
 
                      <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
                   </div>
+               
+                  <label>
+                     <select class="input" name="user_type"
+                        style="background-color: #f4f6fb; color: #9ba4b5; width: 100%; padding: 20px 5px 5px 10px; outline: none; border: 1px solid rgba(105, 105, 105, 0.397); border-radius: 10px; font-weight: 600; font-size: 1rem;
+                        text-align: center; /* Centers text in Chrome /
+                        text-align-last: center; / Centers text in Firefox */">
+
+                        <option value="patient"
+                           style="font-weight: 600; font-size: 1rem; transition: transform .4s, font-size .4s, color .4s;">
+                           Pacient
+                        </option>
+                        <option value="doctor"
+                           style="font-weight: 600; font-size: 1rem; transition: transform .4s, font-size .4s, color .4s;">
+                           Doctor
+                        </option>
+                     </select>
+                  </label>
                </div>
-               <label>
-                  <select class="input" name="user_type" required>
-                      <option value="patient">Pacient</option>
-                      <option value="doctor">Doctor</option>
-                  </select>
-              </label>
                <button type="submit" class="login__button" name="buton_register" value="buton_register">Create account</button>
             </form>
 
