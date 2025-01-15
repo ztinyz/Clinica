@@ -88,6 +88,7 @@ def login_view(request):
                 login(request, user)
 
                 # Send verification email
+                """
                 subject = 'Verify your email address'
                 message = f'Please click the link to verify your email address: http://127.0.0.1:8000/users/verify-email/{verification_token}/'
                 from_email = 'bardirobert1@gmail.com'
@@ -96,12 +97,14 @@ def login_view(request):
                     send_mail(subject, message, from_email, recipient_list)
                 except Exception as e:
                     return render(request, 'login/login.html', {'message': 'Error sending email: ' + str(e)})
-
+                
                 return render(request, 'login/login.html', {'message': 'Please check your email to verify your account.'})
+                """
             except Exception as e:
                 return render(request, 'login/login.html', {
                     'message': 'Error creating user: ' + str(e)
-                })    
+                })
+                
         else:
             return render(request, 'login/login.html', {
                 'message': 'Error creating user: ' + str(action) + ' ' + str(action2)
